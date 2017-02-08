@@ -37,22 +37,18 @@
 \usepackage{tabularx}
 \usepackage{colortbl}
 \usepackage{hhline}
+
 \ifCLASSINFOpdf
- 
 \else
-  
 \fi
-
-
 
 % correct bad hyphenation here
 \hyphenation{}
 
 
 \begin{document}
-%
-% paper title
-% can use linebreaks \\ within to get better formatting as desired
+\pagestyle{plain}
+
 \title{Handling Imbalance data; lessons learnt from SMOTE}
 
 
@@ -85,6 +81,7 @@ defect prediction, classification, SMOTE, search based software engineering, imb
 
 \IEEEpeerreviewmaketitle
 
+\section{Introduction}
 
 Software defect prediction has been an important research topic in the software engineering field for more than 30 years. It has generated widespread interest for a
 considerable period of time. The driving scenario is resource
@@ -95,19 +92,35 @@ a software system with a higher probable quantity of defects. Current defect pre
 There has been vast amount of studies done to find the best defect prediction performing model which is related to third type of problem. But literature suggests, that no single prediction technique dominates and making sense of the many prediction results is hampered by the use of different data sets, data pre-processing, validation schemes and performance
 statistics. We highly agree to this given so many variations available in the data and there are so many classification techniques available like Statistical, Clustering, Rule-Based, Neural Networks, Nearest Neighbour, Support Vector Machines, Decision trees, ensemble methods, to name a few.
 
-Result by Tantithamthavorn et al~\cite{tantithamthavorn2016automated} also suggested that every dataset comes with different attributes. And also classification techniques often have configurable parameters
-that control characteristics of these classifiers that they produce. Now time has come to even think about hyperparameter optimization of these techniques and come up with an automated process~\cite{agrawal2016wrong, fu2016tuning} to tune these parameters for every dataset.
+%Result by Tantithamthavorn et al~\cite{tantithamthavorn2016automated} also suggested that every dataset comes with different attributes. And also classification techniques often have configurable parameters that control characteristics of these classifiers that they produce. Now time has come to even think about hyperparameter optimization of these techniques and come up with an automated process~\cite{agrawal2016wrong, fu2016tuning} to tune these parameters for every dataset.
 
-This paper deals with the third type of problem for code metrics which is classifying the defect-proneness of software components, typically into two classes, defective and not defective. Ghotra et al~\cite{ghotra2015revisiting} did a comparative study on various learners for defect prediction. They found out that mainly 6 learners have been performing well, namely, Naive Bayes, Logistic regression, Support Vector Machines, Nearest Neighbor, decision tree and Random forest.
+This paper deals with the third type of problem for code metrics (in general CK metrics~\cite{chidamber1994metrics}) which is classifying the defect-proneness of software components, typically into two classes, defective and not defective. Ghotra et al~\cite{ghotra2015revisiting} did a comparative study on various learners for defect prediction. They found out that mainly 6 learners have been performing well, namely, Naive Bayes, Logistic regression, Support Vector Machines, Nearest Neighbor, decision tree and Random forest. But they did not study the effects of class imbalance for such models. Usually most software systems have less than 20\% defective classes. And we want each software quality team to allocate their limited resources to the most defect-prone modules rather than wasting on non-defective modules. This gives us the motivation to find different ways of balancing the minority class combined with a good prediction model to solve the problem of defect prediction.
 
-The other problem which we face is imbalanced classes of these datasets. Usually most software systems usually have less than 20\% defective classes. And we want each software quality team to allocate their limited resources to the most defect-prone
-modules rather than wasting on non-defective modules. This gives us the motivation to find different ways of balancing the minority class combined with a good prediction model to solve the problem of defect prediction.
+Class imbalance has drawn much attention of researchers in software defect prediction. In practice, the performance of defect prediction models may be affected by the class imbalance problem. In this paper, we evaluate the performance of using a class balancing technique (SMOTE~\cite{chawla2002smote}) against running classifiers on the imbalanced datasets. What was observed is even after using smote, there was stability problem as class goes more minor and minor. A general trend should have been that performance should increase as target class goes more minor and minor. To study this instability in results, we propose doing a hyperparameter optimization on SMOTE. For this we used a search-based optimizer (differential evolution, or DE~\cite{storn1997differential}) to tune the parameters of SMOTE to get the best results out of them.
 
-For the reproduction package we generalised our datasets to be comprised of CK metrics~\cite{chidamber1994metrics}. The CK metrics aim at measuring whether a piece of code follows OO principles. It contains a check of these OO design attributes: Weighted Methods for Class (WMC), Depth of Inheritance Tree (DIT), Number of Children (NOC), Response for Class (RFC), Lack of Cohesion of Methods (LCOM), and Coupling Between Objects (CBO)
+Based on these problems, we explore these research questions:  
+   
+\bi
 
-We created a python package generalised to run any CK metrics based dataset and compare results against 6 learners. Since the classes are imbalanced we used SMOTE~\cite{chawla2002smote} (only on Training Data) which is a synthetic minority over-sampling technique.
+\item \textbf{RQ1}: \textbf{Are the default settings of SMOTE results in performance instability?} We will show that using the default settings of SMOTE as suggested by Chawla et al~\cite{chawla2002smote} shows performance instability in imbalanced datsets.
+    \item \textbf{RQ2}: \textbf{Are performance results stable by using DE?} DE dramatically improves performance scores for all 6 learners studied.
+    \item \textbf{RQ3}: \textbf{Do different data sets
+      need different configurations to make results stable?} DE finds different ``best'' parameter settings for different data sets. Hence reusing tunings  suggested  by  any other  previous study  for any dataset is \underline{{\em not}} recommended. Instead,  it is better to
+      use  automatic  tuning  methods  to find the best tuning parameters for the current data set.
+    \item \textbf{RQ4}: \textbf{Is tuning extremely slow?}
+      The advantages of  using DE come at some cost:
+      tuning with DE makes smote three to five times slower.
+      While this is definitely more than not using DE, but this may not be an arduous increase
+      given modern cloud computing environments. 
+    \item \textbf{RQ8}: \textbf{Should SMOTE be used ``off-the-shelf'' with their default tunings?}
+      Based on these findings, our answer to this question is an emphatic ``no''. We can see little reason to use ``off-the-shelf'' SMOTE for any kind of software defect prediction.
+\ei
 
-The remainder of the paper is organized as follows. Section \ref{review} gives a brief related work on defect prediction. Section \ref{motivation} talks about why there is a need to balance the data. Since we found astonishing results with smote, section \ref{smote} talks about SMOTE in defect prediction. Experimental setup is provided in section \ref{experiment}. Results are discussed in Section \ref{results}. Threats to validity section is discussed in section \ref{validity}. Final conclusion is being discussed in section \ref{conclusion}. And section \ref{future} talks about our future work.
+%For the reproduction package we generalised our datasets to be comprised of CK metrics~\cite{chidamber1994metrics}. The CK metrics aim at measuring whether a piece of code follows OO principles. It contains a check of these OO design attributes: Weighted Methods for Class (WMC), Depth of Inheritance Tree (DIT), Number of Children (NOC), Response for Class (RFC), Lack of Cohesion of Methods (LCOM), and Coupling Between Objects (CBO)
+
+%We created a python package generalised to run any CK metrics based dataset and compare results against 6 learners. Since the classes are imbalanced we used SMOTE~\cite{chawla2002smote} (only on Training Data) which is a synthetic minority over-sampling technique.
+
+%The remainder of the paper is organized as follows. Section \ref{review} gives a brief related work on defect prediction. Section \ref{motivation} talks about why there is a need to balance the data. Since we found astonishing results with smote, section \ref{smote} talks about SMOTE in defect prediction. Experimental setup is provided in section \ref{experiment}. Results are discussed in Section \ref{results}. Threats to validity section is discussed in section \ref{validity}. Final conclusion is being discussed in section \ref{conclusion}. And section \ref{future} talks about our future work.
 
 \section{Related Work}
 \label{review}
@@ -174,8 +187,238 @@ analysis, neural network and classification tree) by
 using two module sets of industry legacy software. They reported SMOTE improved the prediction performance of the linear and logistic models, while neural network and classification tree models did not
 benefit from it. In~\cite{van2007experimental} it is identified that classifier performance is improved with SMOTE, but individual learners respond differently on sampling. We will be studying many more models and will show that SMOTE does help in all prediction models.
 
+\subsection{Tuning has big advantages}
+\label{sect:tune}
+
+The impact of tuning is well understood in the theoretical machine learning literature~\cite{bergstra2012random}.  When we tune a
+data miner, what we are really doing is changing how a learner applies its
+heuristics. This means tuned data miners use different heuristics, which means
+they ignore different possible models, which means they return different models;
+i.e. \textit{how} we learn changes \textit{what} we learn.
+
+Yet issues relating to
+tuning are poorly addressed in the software analytics literature. But there are studies done by so many researchers showing big advantages. Fu et al.~\cite{fu2016tuning} surveyed hundreds of recent SE papers in the area
+of software defect prediction from static code attributes. They found that most SE
+  authors do not take steps to explore tunings (rare exception:~\cite{tantithamthavorn2016icse}). For example, Elish et
+  al~\cite{elish2008predicting} compared support vector machines to other data
+  miners for the purposes of defect prediction. That paper tested different
+  ``off-the-shelf'' data miners on the same data set, without adjusting the
+  parameters of each individual learner. Similar comparisons of data miners in SE,
+with no or minimal pre-tuning study, can be found in the work on Lessmann et al.~\cite{4527256}
+and, most recently, in Yang et al~\cite{Yang:2016}.  
+
+We choose to use DE after a literature search on search-based SE methods.
+The literature mentions many optimizers: simulated
+annealing~\cite{feather2002converging, menzies2007business}; various genetic
+algorithms~\cite{goldberg1979complexity} augmented by techniques such as
+DE (differential evolution~\cite{storn1997differential}), tabu search and scatter
+search~\cite{glover1986general, beausoleil2006moss, molina2007sspmo,nebro2008abyss}; particle swarm optimization~\cite{pan2008particle}; numerous
+decomposition approaches that use heuristics to decompose the total space into
+small problems, then apply a response surface methods~\cite{krall2015gale, zuluaga2013active}.
+Of these, we use DE for two reasons. Firstly, it has been proven useful in prior SE tuning
+studies~\cite{fu2016tuning,agrawal2016wrong}. Secondly, our reading of the current literature is
+that there are many advocates for differential evolution.
+
+Fu et al .~\cite{fu2016tuning} showed that using DE to tune the parameters of Software defect prediction learners give large improvements, and the tuning was so simple. In a similar work performed by Agrawal et al.~\cite{agrawal2016wrong} to tune the parameters of LDA (Latent Dirichlet Allocation) gives better model stability. This shows how advantageous it is to tune the parameters of a data miner.
+
 \section{Experimental Setup}
-\label{experiment}
+
+\subsection{\textbf{Data}}
+ We used the data sets available in promise repository\footnote{http://openscience.us/repo/defect/ck/}~\cite{promiserepo}. In total, 14 data sets are used. These datasets have been collected from the work done by Jureczko et al~\cite{jureczko2010towards}. Statistics on these datasets can found in table~\ref{tb:dataset}. Datasets are sorted with low percentage of defective class to high defective class.
+ 
+ \begin{table}[!htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\textbf{Version} & \textbf{Dataset Name} &  \textbf{Defect class \%} & \textbf{Non-Defect class \%}\\[0.5ex]
+\hline
+4.3 & jEdit & 2 & 98 \\
+\hline
+1.0 & Apache Camel & 4 & 96 \\ 
+\hline
+6.0.3 & Apache Tomcat & 9 & 91 \\
+\hline
+6 & Proprietary Projects & 10 & 90 \\
+\hline
+2.0 & Apache Ivy & 11 & 89 \\ 
+\hline
+1.0 & Arcilook & 11.5 & 88.5\\
+\hline
+1.0 & Redaktor & 15 & 85 \\
+\hline
+1.7 & Apache Ant & 22 & 78 \\ 
+\hline
+1.2 & Apache Synapse & 33.5 & 66.5 \\
+\hline
+1.6.1 & Apache Velocity & 34 & 66 \\
+\hline
+3.0 & Apache Poi & 63 & 37 \\
+\hline
+1.4.4 & Xerces & 74 & 26 \\
+\hline
+1.2 & Apache log4j & 92 & 8 \\
+\hline
+2.7.0 & Apache Xalan & 99 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Dataset Statistics}
+\label{tb:dataset}
+\end{table}
+
+\subsection{\textbf{Preprocessing}}
+CK metrics comprises mostly of numerals. But to generalize the package we added pre-processing component. We ignore any string columns in the data. We assume the last column in the dataset is the class label. Originally, the target class contains number of defects. We converted them into binary, i.e if target class has defect then it represents 1 otherwise its 0. The package assumes user has preprocessed the data before passing it to the learners. 
+
+We do a 5-fold stratified cross validation~\cite{refaeilzadeh2009cross} as default which means the training and testing examples have a good representative of the whole. On each fold, we only SMOTE the training examples. SMOTE first selects instances from the minority class and finds 5 nearest neighbors for each instance. We then creates new instances using the selected instances and their neighbors until we have 50\% of minority class in total. Spread Subsample eliminates instances from the majority class until we have 50\% remaining samples that are randomly chosen. Here minority class is chosen during the program execution. So SMOTE is done on whichever minority class is. They can be defective as well as non-defective.
+
+\subsection{\textbf{Classifiers}}
+We used six classifiers which are mentioned in the baseline paper~\cite{ghotra2015revisiting}. Beside every learner we mentioned the important parameter which are hardcoded as suggested by Ghotra et al
+\begin{itemize}
+ \item \textbf{Support Vector Machine (Linear Kernel)}
+ In machine learning, support vector machines (SVMs, also support vector networks) are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier.
+ \item \textbf{Logistic Regression}
+ In statistics, linear regression is an approach for modeling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X.
+ \item \textbf{Naive Bayes}
+ In machine learning, naive Bayes classifiers are a family of simple probabilistic classifiers based on applying Bayes theorem with strong (naive) independence assumptions between the features.
+ \item \textbf{K Nearest Neighbors (K=8)}
+ In pattern recognition, the k-Nearest Neighbors algorithm (or k-NN for short) is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space.
+ \item \textbf{Decision Trees (CART, Split Criteria=Entropy)}
+ A decision tree is a decision support tool that uses a tree-like graph or model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility. It is one way to display an algorithm.
+ \item \textbf{Random Forest (Split Criteria=Entropy)}
+ Random forests or random decision forests are an ensemble learning method for classification, regression and other tasks, that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees. 
+\end{itemize}
+
+According to Ghotra et al~\cite{ghotra2015revisiting}, we are using K=8 for K Nearest Neighbours. Also for Decision trees and Random Forest we are using Entropy as split criteria. Scikit-Learn~\cite{pedregosa2011scikit} provides this feature of selecting the split criteria. Since the classes are highly imbalanced we want training and testing set to have same proportions of both the classes. That is why we used stratified 5- Fold Cross-validation as default.
+
+\subsection{Tuning SMOTE using DE}
+\label{sect:tuning}
+
+%\newpage
+DE  adjusts the parameters of SMOTE given in
+Table~\ref{tb:tuned}. Most of these parameters are explained below. 
+
+\begin{table}[!htbp]
+    \begin{center}
+\scriptsize
+\begin{tabular}{|c|c|c|p{3.5cm}|}
+        \hline 
+        \textbf{Parameters} & \textbf{Defaults} & \textbf{Tuning Range} & \textbf{Description}\\
+        \hline
+        $k$ & 5 & [1,20] & Number of neighbors in SMOTE \\ 
+        \hline
+       $m$ & 50\% & [50,100,200,400] & Number of synthetic examples to create. \\ 
+        \hline
+        $r$ & 2 & [0.1,5] & Power parameter for the Minkowski distance metric.\\
+
+        \hline
+\end{tabular}
+\end{center}
+\caption{List of parameters tuned by this paper}
+\label{tb:tuned}
+\end{table}
+ 
+ $k$ talks about how many neighbors to choose in minority target class so that synthetic examples can be created between them. It is important to select how many synthetic examples to create ($m$) and how much undersampling ($m$) of majority class needs to be done. To select neighbors, power ($r$) of Minkowski distance metric is also tunable.
+
+Differential evolution just randomly picks three different vectors  
+$B,C,D$ from a list called $F$ (the {\em frontier}) for each parent vector A in $F$ ~\cite{storn1997differential}. 
+Each pick generates a new
+vector $E$ (which replaces $A$ if  it scores better).
+$E$ is generated as follows:
+\begin{equation} \label{eq:de}
+  \forall i \in A,  E_i=
+    \begin{cases}
+      B_i + f*(C_i - D_i)& \mathit{if}\;  \mathcal{R} < \mathit{cr}  \\
+      A_i&   \mathit{otherwise}\\ 
+    \end{cases}
+\end{equation}
+where $0 \le \mathcal{R} \le 1$ is a random number,
+and $f,cr$ are constants that represent mutation factor and crossover factor respectively(following
+Storn et al.~\cite{storn1997differential}, we use $cr=0.3$ and $f=0.7$).
+Also, one $A_i$ value (picked at
+random)
+is moved to $E_i$ to ensure that $E$ has at least one
+unchanged part of an existing vector. The Goal of this DE is to maximize the F Score.
+
+\subsection{\textbf{Evaluation Measures}}
+
+Since, this is a binary classification problem, we represent the predictions using a confusion matrix where a `positive' output is the defective class under study and a `negative' output is the non defective class. The confusion matrix is shown in figure \ref{fig:cmatrix}.
+
+\begin{figure}[!htpb]
+
+\begin{center}
+\begin{tabular}{c >{\bfseries}r @{\hspace{0.7em}}c @{\hspace{0.4em}}c @{\hspace{0.7em}}l}
+  \multirow{10}{*}{\rotatebox{90}{\parbox{1.1cm}{\bfseries\centering Predicted value}}} & 
+    & \multicolumn{2}{c}{\bfseries Actual Value} & \\
+  & & \bfseries p & \bfseries n &  \\
+  & p$'$ & TP & FP & \\[2.0em]
+
+  & n$'$ & FN & TN & \\
+\end{tabular}
+\end{center}
+
+\caption{Confusion Matrix}
+
+\label{fig:cmatrix}
+\end{figure}
+
+%\begin{figure}[!htpb]
+%    \centering
+%    \includegraphics[scale=0.35]{cmatrix.png}
+%    \caption{Confusion Matrix}%
+
+%    \label{fig:cmatrix}
+%\end{figure}
+
+We define the measures as
+\begin{itemize}
+\item \textbf{Recall}  is the fraction of relevant instances that are retrieved.
+\[Recall(rec) = \dfrac{TP}{TP + FN}\]
+\item \textbf{Precision} is the fraction of retrieved instances that are relevant.
+\[Precision(prec) = \dfrac{TP}{TP + FP}\]
+\item \textbf{F1 Score} A measure that combines precision and recall which is the harmonic mean of precision and recall.
+\[F1 = \dfrac{2*prec*rec}{prec + rec}\]
+\item \textbf{Accuracy} is a weighted arithmetic mean of Precision and Inverse Precision (weighted by Bias) as well as a weighted arithmetic mean of Recall and Inverse Recall.
+\[Accuracy = \dfrac{TP + TN}{TP + FP + FN + TN}\]
+\item \textbf{False Alarm} is the ratio of false positive to predicted negative total.
+\[False alarm(pf) = \dfrac{FP}{FP + TN}\]
+\end{itemize}
+
+\section{Results}\label{sect:results}
+
+\bi
+
+\item \textbf{RQ1}: \textbf{Are the default settings of SMOTE results in performance instability?} We will show that using the default settings of SMOTE as suggested by Chawla et al~\cite{chawla2002smote} shows performance instability in imbalanced datsets.
+    \item \textbf{RQ2}: \textbf{Are performance results stable by using DE?} DE dramatically improves performance scores for all 6 learners studied.
+    \item \textbf{RQ3}: \textbf{Do different data sets
+      need different configurations to make results stable?} DE finds different ``best'' parameter settings for different data sets. Hence reusing tunings  suggested  by  any other  previous study  for any dataset is \underline{{\em not}} recommended. Instead,  it is better to
+      use  automatic  tuning  methods  to find the best tuning parameters for the current data set.
+    \item \textbf{RQ4}: \textbf{Is tuning extremely slow?}
+      The advantages of  using DE come at some cost:
+      tuning with DE makes smote three to five times slower.
+      While this is definitely more than not using DE, but this may not be an arduous increase
+      given modern cloud computing environments. 
+    \item \textbf{RQ8}: \textbf{Should SMOTE be used ``off-the-shelf'' with their default tunings?}
+      Based on these findings, our answer to this question is an emphatic ``no''. We can see little reason to use ``off-the-shelf'' SMOTE for any kind of software defect prediction.
+\ei
+
+\section{Threats to Validity}
+\label{validity}
+As with any empirical study, biases can affect the final
+results. Therefore, any conclusions made from this work must be considered with the following issues in mind:
+
+\textbf{\textit{Sampling bias}} threatens any classification experiment; i.e., what matters there may not be true here. For example,
+the data sets used here comes from the PROMISE~\cite{promiserepo} repository and were supplied by one individual. Also even though we use 14 open-source data sets for Software Defect prediction (Table~\ref{tb:dataset}) which are mostly from Apache, and some are proprietary projects, there could be other datasets for which our results could be wrong.
+
+\textbf{\textit{Learner bias}}: For building the defect predictors in this
+study, we selected each learner with default parameters like k=8 to use in k-Nearest Neighbor. Since there are studies previously talking of using some predefined parameters based on their conclusions. Classification is a large and active field and any single study can only use a small subset of the known classification algorithms.
+
+\textbf{\textit{Evaluation bias}}: This paper uses 5 measures of evaluation but there are other measures used in software engineering which
+includes Area Under Characteristic curve. Measuring performance with more measures is left for future work.
+
+\textbf{\textit{Order bias}}: With each dataset how data samples are distributed in training and testing set is completely random. Though there could be times when all good samples are binned into training and testing set. To mitigate this order bias, we run
+the experiment 25 times by randomly changing the order of the data samples each time.
+
+
 \section{Conclusion}
 \label{conclusion}
 
