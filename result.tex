@@ -58,17 +58,51 @@ In terms of precision (Figure~\ref{Precision}), we are seeing a decreasing perfo
  and dramatic improvements for AUC (pf,recall).
 \end{lesson}
 
+\begin{figure*}[!t]
+    \centering
+    \begin{minipage}{.33\textwidth}
+        \captionsetup{justification=centering,singlelinecheck=off}
+        \includegraphics[width=\linewidth]{./fig/k.png}
+        \caption{Datasets vs Parameter ($k$) variation}
+        \label{RQ3:k}
+    \end{minipage}%
+    \begin{minipage}{.33\textwidth}
+        \captionsetup{labelsep=space,justification=centering,singlelinecheck=off}
+        \includegraphics[width=\linewidth]{./fig/m.png}
+        \caption{Datasets vs Parameter ($m$) variation}
+        \label{RQ3:a}
+    \end{minipage}
+    \begin{minipage}{.33\textwidth}
+        \captionsetup{labelsep=space,justification=centering,singlelinecheck=off}
+        \includegraphics[width=\linewidth]{./fig/r.png}
+        \caption{Datasets vs Parameter ($r$) variation}
+        \label{RQ3:b}
+    \end{minipage}
+\end{figure*}
+
 \subsection{\textbf{RQ3: Do different data sets
       need different configurations with SMOTE2?}}
 
-abc
+Figures \ref{RQ3:k}, \ref{RQ3:a}, and \ref{RQ3:b} show the results of tuning for each dataset. These parameter settings are found by each learner for that dataset.
+On display in each set of vertical bars are
+the median values generated across 15 evaluations.
+Also, shown are
+the inter-quartile range (IQR) of those tunings (the IQR is the 75th-25th percentile values and is a non-parametric measure of variation
+around the median value). Note that in Figure \ref{RQ3:a}, IQR=0 for  ant dataset where tuning
+          always converged on the same final value.
 
+  These figures
+show how tuning selects the different ranges  of
+parameters. 
+Some of the above numbers are far from the standard values; e.g. Chawla et al.~\cite{chawla2002smote} recommend using $k=$5 neighbors yet in our data sets, best results were seen using $k \approx 13$. On other hand it was suggested to use $m=450$ by ~\cite{pears2014synthetic}, but best results vary with each dataset.
+
+Clearly:
 \begin{lesson}
     DE finds different ``best'' parameter settings for SMOTE for different data sets. Hence reusing tunings  suggested  by  any other  previous study  for any dataset is \underline{{\em not}} recommended. Instead,  it is better to
       use  automatic  tuning  methods  to find the best tuning parameters for the current data set.
 \end{lesson}
 
-\begin{figure}[!b]
+\begin{figure}[!t]
   \captionsetup{justification=centering}
   \includegraphics[width=\linewidth]{./fig/runtimes.png}
   \caption{Datasets vs Runtimes}
@@ -89,9 +123,9 @@ recommendation.
 To understand our timing results, recall that SMOTE2 uses
 Algorithm~1. Based on the psuedocode
 shown above, our pre-experimental expectation is that
-tuning will be three times slower than not tuning.
+tuning will be three times slower than not tuning. Figure~\ref{runtime} has runtimes for 1 tuning goal with 1 learner in question.
  
-Figure~\ref{runtimes} check if that theoretical
+Figure~\ref{runtime} check if that theoretical
 holds true in practice. Shown in circle and square markers are the
   runtimes required to run SMOTE1 and SMOTE2 respectively.  The
   longer runtimes (in square) include the times required for DE to find
