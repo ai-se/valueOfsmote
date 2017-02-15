@@ -68,16 +68,35 @@ abc
       use  automatic  tuning  methods  to find the best tuning parameters for the current data set.
 \end{lesson}
 
-   \textbf{RQ4}: \textbf{Is tuning extremely slow?} 
- 
- \begin{lesson}Tuning with DE makes training three to five times slower, but the improvements which we get for AUC and recall is quite advantageous.
- \end{lesson}
- 
- 
+\begin{figure}[!b]
+  \captionsetup{justification=centering}
+  \includegraphics[width=\linewidth]{./fig/runtimes.png}
+  \caption{Datasets vs Runtimes}
+  \label{runtime}
+\end{figure} 
 
 \subsection{\textbf{RQ4: Is tuning extremely slow?}}
 
-abc
+Search-based SE methods can be very slow. Wang et al.~\cite{wang2013searching} once needed 15
+years of CPU time to find and verify the tunings required for software
+clone detectors. Sayyad et al.~\cite{sayyad2013scalable} routinely used
+$10^6$ evaluations (or more) of their models in order to extract
+products from highly constrained product
+lines. Hence, before recommending any
+search-based method, it is wise to consider the runtime cost of that
+recommendation.
+
+To understand our timing results, recall that SMOTE2 uses
+Algorithm~1. Based on the psuedocode
+shown above, our pre-experimental expectation is that
+tuning will be three times slower than not tuning.
+ 
+Figure~\ref{runtimes} check if that theoretical
+holds true in practice. Shown in circle and square markers are the
+  runtimes required to run SMOTE1 and SMOTE2 respectively.  The
+  longer runtimes (in square) include the times required for DE to find
+  the tunings. Overall, tuning slows down LDA by a factor of up to
+  five (which is very close to our theoretical prediction).
 
 \begin{lesson}
     Tuning with DE makes training three to five times slower, but the improvements which we get for AUC and recall is quite advantageous.
