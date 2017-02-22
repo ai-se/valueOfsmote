@@ -1,56 +1,72 @@
-\begin{figure*}[!t]
-    \centering
-  \begin{minipage}{.49\textwidth}
-        \captionsetup{labelsep=space,justification=centering}
-        \includegraphics[width=\linewidth]{./fig/AUC_tuned2.png}
-  \caption{Area Under Curve}
-  \label{AUC}
-  \end{minipage}
-  \begin{minipage}{.49\textwidth}
-        \captionsetup{justification=centering}
-        \includegraphics[width=\linewidth]{./fig/Recall_tuned2.png}
-  \caption{Recall Scores}
-  \label{Recall}
-    \end{minipage}%
 
+\begin{figure*}[!t]
+\begin{minipage}{.5\linewidth}
+\centering
+        \includegraphics[width=\linewidth]{./fig/AUC_untuned.png}
+        
+  {\bf Figure~\ref{fig:untuned}a:} AUC (pf, recall)
+        \includegraphics[width=\linewidth]{./fig/Recall_untuned.png}
+  {\bf Figure~\ref{fig:untuned}c:} Recall
+    \end{minipage}%
+\begin{minipage}{.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{./fig/prec_untuned.png}
+  {\bf Figure~\ref{fig:untuned}b:} Precision
+        \includegraphics[width=\linewidth]{./fig/pf_untuned.png}
+  {\bf Figure~\ref{fig:untuned}d:} False Alarm
+    \end{minipage}%
+    \caption{SMOTE~1 improvement over No SMOTE}
+    \label{fig:untuned}
 \end{figure*}
 
-\begin{figure*}[!htbp]
-    \centering
-      \begin{minipage}{.49\textwidth}
-        \captionsetup{justification=centering}
-        \includegraphics[width=\linewidth]{./fig/Precision_tuned2.png}
-  \caption{Precision Scores}
-  \label{Precision}
-    \end{minipage}%    
-  \begin{minipage}{.49\textwidth}
-        \captionsetup{justification=centering}
-        \includegraphics[width=\linewidth]{./fig/False_alarm_tuned2.png}
-  \caption{False Alarm Scores}
-  \label{false}
+\begin{figure*}[!t]
+\begin{minipage}{.5\linewidth}
+\centering
+        \includegraphics[width=\linewidth]{./fig/AUC_tuned.png}
+        
+  {\bf Figure~\ref{fig:tuned}a:} AUC (pf, recall)
+        \includegraphics[width=\linewidth]{./fig/Recall_tuned.png}
+  {\bf Figure~\ref{fig:tuned}c:} Recall
     \end{minipage}%
+\begin{minipage}{.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{./fig/prec_tuned.png}
+  {\bf Figure~\ref{fig:tuned}b:} Precision
+        \includegraphics[width=\linewidth]{./fig/pf_tuned.png}
+  {\bf Figure~\ref{fig:tuned}d:} False Alarm
+    \end{minipage}%
+    \caption{SMOTE~2 improvement over SMOTE~1}
+    \label{fig:tuned}
 \end{figure*}
 
 \section{Results}
 \label{sect:results}
-Figures ~\ref{AUC},~\ref{Recall},~\ref{Precision} and~\ref{false} represents all the 4 evaluation criteria against the 6 learners. X-axis represents all 7 datasets in the decreasing percentage of defective classes from left to right. The corresponding percentage is written beside each dataset. Y-axis represents absolute delta improvement between 2 results. Dashed lines represent absolute delta improvement between SMOTE1 - No SMOTE results. Solid lines represent absolute delta improvement between SMOTE2 - No SMOTE results. For figures ~\ref{AUC},~\ref{Recall},~\ref{Precision}, more positive the better and if negative then worse. But for figure ~\ref{false}, it is the other way around. Negative represents better and more positive shows worse results.
+Figure~\ref{fig:untuned} represents the improvement of SMOTE~1 (median value) against the No SMOTE (median value) results and figure~\ref{fig:tuned} represents the improvement of SMOTE~2 (median value) against SMOTE~1 (median value) results. Each figure contains subfigures to all the 4 evaluation measures (mentioned in \tion{measure}) compared with 6 learners (mentioned in \tion{classes}). X-axis represents all 9 datasets in the decreasing percentage of defective classes from left to right. The corresponding percentage of minority class (in this case, defective class) is written beside each dataset. 
 
-\subsection{\textbf{RQ1: Is standard ``off-the-shelf'' SMOTE1 with their default tunings recommended for defect prediction?}}
+For subfigures (AUC, Recall and Precision) in each figure~\ref{fig:untuned} and \ref{fig:tuned}, more positive the better and if it goes negative then the corresponding learners performed worse. On the other hand for subfigure (false alarm, it is other way around. Negative represents better and more positive shows worse results. AUC values are shown in figure~\ref{fig:untuned}a. Redaktor dataset is selected from X-axis, and yellow bar represents NB which corresponds to about $-0.05$ AUC value. This denotes that NB performed better without using SMOTE. On the other hand for the same dataset, KNN (which is represented in dark blue bar) shows the value of $0.24$. This shows KNN performed way better after applying SMOTE. Now, for NB (still represented by yellow bar), false alarm value (represented in figure~\ref{fig:untuned}d) is about $-0.03$ for the same dataset, redaktor. This informs that NB reduces the false positive (FP from \ref{fig:cmatrix}) after applying SMOTE. On the other hand for same dataset, KNN worsens the false alarm making it not recommended to use SMOTE if evaluation goal is false alarm.
 
-From all the 4 figures mentioned above, we are seeing about 25\% improvement in AUC for 3 learners which are KNN, LR and SVM (Figure~\ref{AUC}). For other learners the improvements are either 0 or becomes negative by 5\%. It is recommended to use SMOTE1 for these 3 learners. For recall, doing SMOTE1 is highly recommended for imbalanced datasets. All 6 learners kept performing better and better as defective class percentage went minor and minor (Figure~\ref{Recall}). This is what was expected for applying SMOTE.
+For SMOTE~2 improvement over SMOTE~1 (figure~\ref{fig:tuned}), AUC values are shown in subfigure~\ref{fig:tuned}a. Redaktor dataset is selected from X-axis, and yellow bar represents NB which corresponds to about $-0.08$ AUC value. This denotes that NB performed worse by tuning the parameters of SMOTE~1. The original parameter settings of SMOTE~1 worked the best. On the other hand for the same dataset, KNN (which is represented in dark blue bar) shows the value of $0.35$. This shows KNN outperformed the ``off-the-shelf'' SMOTE when tuned using DE.
 
-In terms of precision (Figure~\ref{Precision}), we are seeing a decreasing performance for most datasets against most learners. This concludes we shouldn't be using SMOTE1 if the goal is to have better precision. If we used SMOTE, then it comes with an expense of increasing false alarm (Figure~\ref{false}).
+\subsection{\textbf{RQ1: Is standard ``off-the-shelf'' SMOTE1 preprocessing method important for defect prediction?}}
+
+By looking at the results of AUC from figure~\ref{fig:untuned}a, only 4 bars are negative, and rest all the remaining 50 bars (in total 9 datasets with 6 learners in each) have  positive effect by using SMOTE~1 as a preprocessing method. We are seeing a maximum improvement of about 30\%. These improvements are quite modest as to ignore the importance of SMOTE.
+
+Results for precision (in figure~\ref{fig:untuned}b), are not much interesting, but the decrease in precision value is not that arduous except for the redaktor dataset. Though we will not recommend using SMOTE whenever we want higher precision value. Since precision is decreased using SMOTE, it was expected to have increased false alarm \cite{menzies2007problems} and the same is observed from figure~\ref{fig:untuned}d. There is an increase in error among false positives but the increase is very minimal.
+
+As for recall (figure~\ref{fig:untuned}c), only 4 bars are negative, and rest all the remaining 50 bars (in total 9 datasets with 6 learners in each) have positive effect by using SMOTE~1. We are seeing a maximum improvement of about 60\%. These improvements are quite steep as to ignore the importance of SMOTE at any point. It is also observed that performance keeps increasing as target class becomes more minor and minor. This is what was expected after applying SMOTE to imbalance datasets.
 
 \begin{lesson}
-    For defect data, SMOTE1 has little effect on 
- precision, modest improvements for AUC(pf,recall) and largest improvements for recall.
+    For defect data, SMOTE1 has little added value for 
+ precision, modest improvements for AUC (pf,recall) and largest improvements for recall.
 \end{lesson}
 
-\subsection{\textbf{RQ2: Is tuned SMOTE better than the standard untuned SMOTE?}}
+\subsection{\textbf{RQ2: Can tuning SMOTE~1 (SMOTE~2) achieve better results?}}
 
-From all the 4 figures mentioned above, we are seeing minimum of 50\% improvement than SMOTE1 for AUC for all 6 learners (Figure~\ref{AUC}). It is highly recommended to use SMOTE2 if the tuning goal is to improve higher AUC. For recall, doing SMOTE2 has good improvements than SMOTE1. And all 6 learners kept performing better and better as defective class percentage went minor and minor (Figure~\ref{Recall}). This is what was expected for applying SMOTE.
+Now when we look at the results of AUC from figure~\ref{fig:tuned}a, only 1 bar is negative, and rest all the remaining 53 bars (in total 9 datasets with 6 learners in each) have  positive effect after we tune the parameters of SMOTE~1. We are seeing a maximum improvement of about 70\% and on an average 50\%. These improvements are quite steep in nature and just to remind you that these results are improvement over SMOTE~1. If we combine the results, then we can surely say to tune the parameters of SMOTE and train using any learner, we will get atleast 100\% improvement in most cases.
 
-In terms of precision (Figure~\ref{Precision}), we are seeing a decreasing performance for most datasets against most learners which is similar to what was observed with SMOTE1 results. This concludes we shouldn't be using SMOTE2 if the goal is to have better precision. And if we used SMOTE2, then it comes with some not large false alarm increase (Figure~\ref{false}).
+We are seeing the similar trend of results for precision (in figure~\ref{fig:tuned}b), just like in Figure~\ref{fig:untuned}b, that even after tuning for precision, we are not seeing much improvement. Though we definitely improved precision slightly than SMOTE~1 but the increment is not that large to recommend SMOTE~2 or SMOTE~1. And even after trying to minimise the false alarm (figure~\ref{fig:tuned}d) value, DE could not find a good parameter setting.
+
+As for recall (figure~\ref{fig:untuned}c), only 5 bars are negative, and rest all the remaining 49 bars (in total 9 datasets with 6 learners in each) have either positive effect or no effect after tuning. We are seeing a maximum improvement of about 65\% but the average improvement is close to 15\%. But these improvements combined with SMOTE~1 suggests that we should always tune SMOTE whenever the goal is to achieve higher recall.
 
 \begin{lesson}
     For defect data, SMOTE2  

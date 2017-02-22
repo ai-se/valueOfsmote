@@ -556,6 +556,8 @@ i.e. we only SMOTE the training samples
 \ei
 
 \subsection{\textbf{Classifiers}}
+\label{sect:classes}
+
 We used six classifiers which are mentioned in the baseline paper~\cite{ghotra2015revisiting}
 using the default
 parameters  suggested by Ghotra et al.
@@ -753,7 +755,7 @@ and the Y-axis represents:
 As with any empirical study, biases can affect the final
 results. Therefore, any conclusions made from this work must be considered with the following issues in mind:
 
-\textbf{\textit{Sampling bias}} threatens any classification experiment; i.e., what matters there may not be true here. For example, the data sets used here comes from the PROMISE~\cite{promiserepo} repository and were supplied by one individual. Also even though we used 7 open-source data sets for Software Defect prediction (Table~\ref{tb:dataset}) which are mostly from Apache, and some are proprietary projects, there could be other datasets for which our results could be wrong.
+\textbf{\textit{Sampling bias}} threatens any classification experiment; i.e., what matters there may not be true here. For example, the data sets used here comes from the PROMISE~\cite{promiserepo} repository and were supplied by one individual. Also even though we used 9 open-source data sets for Software Defect prediction (Table~\ref{tb:dataset}) which are mostly from Apache, and some are proprietary projects, there could be other datasets for which our results could be wrong.
 
 \textbf{\textit{Learner bias}}: For building the defect predictors in this
 study, we selected each learner with default parameters like k=8 to use in k-Nearest Neighbor. Since there are studies previously talking of using some predefined parameters based on their conclusions. Classification is a large and active field and any single study can only use a small subset of the known classification algorithms.
