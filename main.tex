@@ -131,21 +131,21 @@ class while at the same time, synthesizing
 more examples 
 of the minority class.
 The off-the-shelf version SMOTE,
-which we call SMOTE~1,
+which we call SMOTE1,
 uses a set of default parameters. Our tuned version
-of SMOTE, which we call SMOTE~2,
+of SMOTE, which we call SMOTE2,
 uses parameters  found by a search-based SE technique
 called Differential Evolution (DE). 
 
-In studies with SMOTE~1 and SMOTE~2 performed on
- 9 defect data sets, we find that SMOTE~1 may or may not be useful, depending on the evaluation goal. For example,
+In studies with SMOTE1 and SMOTE2 performed on
+ 9 defect data sets, we find that SMOTE1 may or may not be useful, depending on the evaluation goal. For example,
  for precision the results were mixed (sometimes better sometimes worse).
 On the other hand, the tunings
-used in SMOTE~2 lead to dramatic improvements in  AUC (pf, recall) and these were 
-much better than SMOTE~1. Other large improvements were seen in recall results using SMOTE~2 (and here again SMOTE~2 performed better than SMOTE~1).
+used in SMOTE2 lead to dramatic improvements in  AUC (pf, recall) and these were 
+much better than SMOTE1. Other large improvements were seen in recall results using SMOTE2 (and here again SMOTE2 performed better than SMOTE1).
 
 Hence, we conclude that (a)~SMOTE
-is useful but (b)~it is best {\em not} to use the default parameters of off-the-shelf SMOTE~1. More generally, we caution all researchers to tune their analytics tools before
+is useful but (b)~it is best {\em not} to use the default parameters of off-the-shelf SMOTE1. More generally, we caution all researchers to tune their analytics tools before
 trusting the results they generate.
 \end{abstract}
 
@@ -206,33 +206,33 @@ neural networks or support vectors machines \cite{japkowicz2002class}.
 % data. For instance, Van et al.~\cite{van2009knowledge}
 % have looked into how the level of noise in data (quality) impact the performance of the classifiers. This makes a necessary argument to study preprocessing filters and how it can affect the performance of classifiers. In this paper we have tackled only the class imbalance problem.
 
-Accordingly,   we evaluate the performance of using a class balancing technique (which we are calling standard SMOTE~1~\cite{chawla2002smote}).
+Accordingly,   we evaluate the performance of using a class balancing technique (which we are calling standard SMOTE1~\cite{chawla2002smote}).
 We examine an off-the-shelf version
-of SMOTE, called SMOTE~1, that uses
+of SMOTE, called SMOTE1, that uses
 the standard defaults for that algorithm. 
 The results were somewhat disappointing
 so we applied a hyperparameter optimization
-method called differential evolution, or DE~\cite{storn1997differential}) to tune the parameters of SMOTE~1. 
-We call this tuned version SMOTE~2.
+method called differential evolution, or DE~\cite{storn1997differential}) to tune the parameters of SMOTE1. 
+We call this tuned version SMOTE2.
 
-Using SMOTE~1 and SMOTE~2, we then
+Using SMOTE1 and SMOTE2, we then
 explored  these  questions:  
  
-  \textbf{RQ1}: \textbf{Is standard ``off-the-shelf'' SMOTE~1 preprocessing method important for defect prediction?} 
+  \textbf{RQ1}: \textbf{Is standard ``off-the-shelf'' SMOTE1 preprocessing method important for defect prediction?} 
 
- \begin{lesson}For defect data, SMOTE~1 has adverse effect on 
+ \begin{lesson}For defect data, SMOTE1 has adverse effect on 
  precision, modest improvements for AUC (pf, recall) and largest improvements in recall.
  \end{lesson}
 
- \textbf{RQ2}: \textbf{Can tuning SMOTE~1  achieve better results?} 
+ \textbf{RQ2}: \textbf{Can tuning SMOTE1  achieve better results?} 
  
- \begin{lesson}For defect data, SMOTE~2  
- offered    improvements over SMOTE~1 for recall
+ \begin{lesson}For defect data, SMOTE2  
+ offered    improvements over SMOTE1 for recall
  and dramatic improvements for AUC (pf, recall).
  \end{lesson}
  
  \textbf{RQ3}: \textbf{Do different data sets
-      need different configurations with SMOTE~2?} 
+      need different configurations with SMOTE2?} 
  
  \begin{lesson}DE finds different ``best'' parameter settings for SMOTE for different data sets.
  \end{lesson}
@@ -357,6 +357,7 @@ and a section describing our conclusions and future work.
 %The remainder of the paper is organized as follows. Section \ref{review} gives a brief related work on defect prediction. Section \ref{motivation} talks about why there is a need to balance the data. Since we found astonishing results with smote, section \ref{smote} talks about SMOTE in defect prediction. Experimental setup is provided in section \ref{experiment}. Results are discussed in Section \ref{results}. Threats to validity section is discussed in section \ref{validity}. Final conclusion is being discussed in section \ref{conclusion}. And section \ref{future} talks about our future work.
 
 \section{Related Work}
+\subsection{Defect Prediction}
 \label{sect:review}
 
 Much prior work has estimated number of defects remaining in software systems~\cite{hall2012systematic} using statistical approaches, capture-recapture 
@@ -431,8 +432,7 @@ compare  the  performance  of  defect prediction  models,  they  used  the  Area
 They ran the Scott-Knott test to group classification techniques into statistically distinct ranks. After running these evaluation criteria, they concluded that Naive Bayes, Logistic regression, Support Vector Machines, Nearest Neighbor, decision tree and Random forest performed the best depending on various data sets. Accordingly, 
 we use these learners in this paper.
 
-\section{Motivation}
-\subsection{Preprocessing to balance the class}
+\subsection{Class Imbalance Problem}
 \label{sect:motivation}
 
 Class imbalance learning refers to learning from data sets that exhibit significant imbalance among or within classes. Class imbalance  is concerned with the situation in which some classes of data are
@@ -471,15 +471,17 @@ Wang et al.~\cite{wang2013using} studied various undersampling and oversampling 
 Pelayo et al.~\cite{pelayo2007applying} studied the effects of percentage of oversampling and undersampling done. They found out that different percentage of each helps improve the accuracies of decision tree learner for defect prediction using CK metrics. Menzies et al.~\cite{menzies2008implications} undersampled the non-defect class to balance training
 data, and checked how little information was required to learn a defect predictor. They found that throwing away data does not degrade the performance of Naive Bayes and C4.5 decision trees, and instead improves the performance of C4.5. Some other papers also showed the usefulness of resampling based on different learners~\cite{pelayo2007applying, pelayo2012evaluating, riquelme2008finding}.
 
+\section{Motivation}
+
 \subsection{On the Value of SMOTE for SE}
 \label{sect:smote}
 
-This section lists some of the results achieved by SMOTE for SE data sets. Some authors found SMOTE to be advantageous, others do not. Accordingly, the rest of this paper conducts a detailed study on the value of SMOTE.
+This section lists some of the results achieved by SMOTE for SE data sets. Some authors found SMOTE to be advantageous, others do not. This represent difference in opinions, hence this paper conducts a study on the value of SMOTE.
 
 SMOTE works by creating a new minority-class sample at a random point along the line
 segments joining any/all of the $k$ minority class nearest neighbors. Depending upon the
 amount of over-sampling required, neighbors from the $k$ nearest neighbors are randomly
-chosen. Our implementation currently uses 5 nearest neighbors for SMOTE~1 method and for SMOTE~2, DE finds the best $k$. Synthetic samples
+chosen. Our implementation currently uses 5 nearest neighbors for SMOTE1 method and for SMOTE2, DE finds the best $k$. Synthetic samples
 are generated in the following way:
 \bi
 \item
@@ -541,7 +543,7 @@ Fu et al.~\cite{fu2016tuning} showed that using DE to tune the parameters of Sof
 All the data, source code and results can be found on-line
 %\footnote{https://github.com/ai-se/Smote\_tune}.
 \footnote{Blinded for peer review}.
-We have 3 results which we have named as, (a) Baseline learner results without SMOTE (No SMOTE), (b) Standard SMOTE with default parameters (SMOTE~1) and (c) Tuned SMOTE using DE (SMOTE~2).
+We have 3 results which we have named as, (a) Baseline learner results without SMOTE (No SMOTE), (b) Standard SMOTE with default parameters (SMOTE1) and (c) Tuned SMOTE using DE (SMOTE2).
 
 \subsection{\textbf{Data}}
  We used the data sets available in promise repository\footnote{http://openscience.us/repo/defect/ck/}~\cite{promiserepo}. In total, 9 imbalanced data sets are used which were collected by Jureczko et al.~\cite{jureczko2010towards}. Statistics on these data sets can be found in Table~\ref{tb:dataset}. Data sets are sorted with low percentage of defective class to high defective class. These data sets have already been used in various defect prediction case studies by various researchers~\cite{he2012investigation,peters2013better,peters2013balancing,turhan2013empirical} making these data sets more important.
@@ -634,7 +636,7 @@ parameters  suggested by Ghotra et al.
 
 As per Ghotra et al.~\cite{ghotra2015revisiting}, we used $k=8$ for $k$ Nearest Neighbours. Also for Decision trees and Random Forest we are using Entropy as split criteria. Most of these implementations are provided in Scikit-Learn~\cite{pedregosa2011scikit} and available open source.
 
-\subsection{\textbf{Tuning SMOTE using DE (SMOTE~2)}}
+\subsection{\textbf{Tuning SMOTE using DE (SMOTE2)}}
 \label{sect:tuning}
 
 %\newpage
@@ -781,21 +783,18 @@ and the Y-axis represents:
 
 \input{result}
 
-\begin{figure*}[!htbp]
-\begin{minipage}{.5\linewidth}
+\begin{figure}[!htbp]
+\begin{minipage}{\linewidth}
 \centering
         \includegraphics[width=.95\linewidth]{./fig/acc_tuned.png}
         
-  {\bf Figure~\ref{fig:untuned}a:} Accuracy
-    \end{minipage}%
-\begin{minipage}{.5\linewidth}
-        \centering
+  {\bf Figure~\ref{fig:threats}a:} Accuracy
         \includegraphics[width=.95\linewidth]{./fig/f_tuned.png}
-  {\bf Figure~\ref{fig:untuned}b:} Fscore
+  {\bf Figure~\ref{fig:threats}b:} Fscore
     \end{minipage}%
-    \caption{SMOTE~2 improvement over SMOTE~1. Legends represent the classifiers mentioned in \tion{classes}}
+    \caption{SMOTE2 improvement over SMOTE1. Legends represent the classifiers mentioned in \tion{classes}}
     \label{fig:threats}
-\end{figure*}
+\end{figure}
 
 \section{Threats to Validity}
 \label{sect:validity}
@@ -809,7 +808,7 @@ Though we have used 9 open-source data sets for Software Defect prediction (Tabl
 \textbf{\textit{Learner bias}}: For building the defect predictors in this
 study, we selected each learner with default parameters like k=8 in $k$-NN, entropy as split criteria in RF, and DT. The above predefined parameters have been used in the conclusions made by other studies~\cite{ghotra2015revisiting,tantithamthavorn2016automated}. But classification is a large and active field and any single study can only use a small subset of the known classification algorithms.
 
-\textbf{\textit{Evaluation bias}}: Most highly cited papers~\cite{ghotra2015revisiting,tantithamthavorn2016automated} have only concluded using $AUC\ (pf, recall)$ whereas we went ahead and are reporting 3 other measures. There are other measures used in software engineering which includes Accuracy, Fscore. But still we performed SMOTE~2 on Fscore and Accuracy and did not find any improvement (Figure~\ref{fig:threats}). Anyway, accuracy is not the best measure to report for defect prediction as we do not want any true negative numbers included. Fscore is the harmonic mean of precision and recall and if you recall our SMOTE~2 results, we are seeing  improvements in recall and  decrease in precision making Fscore negligible.
+\textbf{\textit{Evaluation bias}}: Most highly cited papers~\cite{ghotra2015revisiting,tantithamthavorn2016automated} have only concluded using $AUC\ (pf, recall)$ whereas we went ahead and are reporting 3 other measures. There are other measures used in software engineering which includes Accuracy, Fscore. But still we performed SMOTE2 on Fscore and Accuracy and did not find any improvement (Figure~\ref{fig:threats}). Anyway, accuracy is not the best measure to report for defect prediction as we do not want any true negative numbers included. Fscore is the harmonic mean of precision and recall and if you recall our SMOTE2 results, we are seeing  improvements in recall and  decrease in precision making Fscore negligible.
 
 \textbf{\textit{Order bias}}: With each data set how data samples are distributed in training and testing set is completely random. Though there could be times when all good samples are binned into training and testing set. To mitigate this order bias, we run
 the experiment 25 times by randomly changing the order of the data samples each time.
@@ -820,8 +819,8 @@ the experiment 25 times by randomly changing the order of the data samples each 
 Based on the above, we offer a specific and general conclusion. Most specifically, we recommend.
 \bi
  \item Previous studies~\cite{ghotra2015revisiting,tantithamthavorn2016automated} have mostly reported on only 1 evaluation goal, but we reported on many.
- \item Any study~\cite{ghotra2015revisiting} that have reported AUC without studying the effects of class imbalance needs to be analyzed again by applying SMOTE. We say this since SMOTE~1 showed big improvements in AUC.
- \item Whenever we want to maximise a certain evaluation goal, specifically AUC and recall, then it is recommended to tune the parameters of SMOTE~1.
+ \item Any study~\cite{ghotra2015revisiting} that have reported AUC without studying the effects of class imbalance needs to be analyzed again by applying SMOTE. We say this since SMOTE1 showed big improvements in AUC.
+ \item Whenever we want to maximise a certain evaluation goal, specifically AUC and recall, then it is recommended to tune the parameters of SMOTE1.
  \item Unlike the advise of Chawal et al.~\cite{chawla2002smote} of using $k=5$ for SMOTE, we should have automatic methods like DE to tune the parameters of SMOTE and find the best parameter settings.
  \item Do not use someone else's pre-tuned SMOTE, since, as shown here, the best tunings vary from data set to data set.
 \ei
@@ -830,7 +829,7 @@ Our experience is that this recommendation is a justified demand since tuning ad
 
 In future, we plan to work on other similar issues like:
 \bi
- \item Tuning SMOTE and learners at the same time and comparing against the results of No SMOTE, SMOTE~1, and SMOTE~2.
+ \item Tuning SMOTE and learners at the same time and comparing against the results of No SMOTE, SMOTE1, and SMOTE2.
  \item Predicting the quantities of defects which is regression based model rather having a binary based classification model with tuning.
 \ei
 
