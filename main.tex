@@ -137,8 +137,8 @@ of SMOTE, which we call SMOTE2,
 uses parameters  found by a search-based SE technique
 called Differential Evolution (DE). 
 
-In studies with SMOTE1 and SMOTE2 performed on
- 9 defect data sets, we find that SMOTE1 may or may not be useful, depending on the evaluation goal. For example,
+In studies with SMOTE1 and SMOTE2, performed on
+ 9 defect data sets, we find that SMOTE1 may or may not be useful depending on the evaluation goal. For example,
  for precision the results were mixed (sometimes better sometimes worse).
 On the other hand, the tunings
 used in SMOTE2 lead to dramatic improvements in  AUC (pf, recall) and these were 
@@ -151,7 +151,10 @@ trusting the results they generate.
 
 %\keywords{
 %Performance Prediction, SBSE, Sampling, Rank-based method}
-\keywords{defect prediction, classification, SMOTE, search based software engineering, imbalance data, preprocessing}
+\keywords{Software repository mining, 
+search based software engineering,
+defect prediction, classification, 
+data analytics for software engineering, SMOTE,  imbalanced data, preprocessing}
 
 \maketitle
 
@@ -164,7 +167,7 @@ trusting the results they generate.
 
 \section{Introduction}
 
-Time and manpower being finite resources, it
+Since time and manpower are finite resources, it
 makes sense to assign personnel and/or resources to areas of
 a software system with a higher probable quantity of defects. Current defect prediction work focuses on (i) estimating the number of defects remaining in software systems, (ii) discovering defect associations, and (iii) classifying the defect-proneness of software components, typically into two classes defect-prone and not defect-prone. 
 % There has been vast amount of studies done to find the best defect prediction performing model which is related to third type of problem. But literature suggests, that no single prediction technique dominates and making sense of the many prediction results is hampered by the use of different data sets, data pre-processing, validation schemes and performance
@@ -432,7 +435,7 @@ compare  the  performance  of  defect prediction  models,  they  used  the  Area
 They ran the Scott-Knott test to group classification techniques into statistically distinct ranks. After running these evaluation criteria, they concluded that Naive Bayes, Logistic regression, Support Vector Machines, Nearest Neighbor, decision tree and Random forest performed the best depending on various data sets. Accordingly, 
 we use these learners in this paper.
 
-\subsection{Class Imbalance Problem}
+\subsection{Class Imbalance }
 \label{sect:motivation}
 
 Class imbalance learning refers to learning from data sets that exhibit significant imbalance among or within classes. Class imbalance  is concerned with the situation in which some classes of data are
@@ -441,7 +444,7 @@ the under-represented class is called the {\em minority} class,
 and correspondingly the class having the larger size is called the
 {\em majority} class. In this paper, we say that imbalance is worse when the percent frequency of
 the minority class {\em decreases}. That is,
-{\em minority=5\%} is worse than {\em minorty=20\%}.
+{\em minority=5\%} is worse than {\em minority=20\%}.
 
 Misclassifying an example from the minority class is usually more costly. For software defect prediction, due to the nature of the problem, the defect case is much less likely to happen than the non-defect case.  The failure of finding a defect could degrade software quality greatly (since more bugs
 are delivered to the client). Hence,
@@ -449,7 +452,8 @@ our learning objective can be generally described
 as ``obtaining a classifier that will provide higher performances for the minority class''.
 
 Numerous methods have been proposed to tackle class
-imbalance problems at data and algorithm levels. Data-level include a variety of resampling techniques, manipulating training data to rectify the skewed class distributions, such as random oversampling, random undersampling, and SMOTE~\cite{estabrooks2004multiple}. Algorithm-level methods address class imbalance by
+imbalance problems at data and algorithm levels. Data-level methids
+include a variety of resampling techniques, manipulating training data to rectify the skewed class distributions, such as random oversampling, random undersampling, and SMOTE~\cite{estabrooks2004multiple}. Algorithm-level methods address class imbalance by
 modifying their training mechanism directly with the 
 goal of better accuracy on the minority class, including cost-sensitive learning algorithms ~\cite{he2009learning}.
 Algorithm-level methods require specific treatments for different
@@ -476,7 +480,9 @@ data, and checked how little information was required to learn a defect predicto
 \subsection{On the Value of SMOTE for SE}
 \label{sect:smote}
 
-This section lists some of the results achieved by SMOTE for SE data sets. Some authors found SMOTE to be advantageous, others do not. This represent difference in opinions, hence this paper conducts a study on the value of SMOTE.
+This section lists some of the results achieved by SMOTE for SE data sets. Some authors found SMOTE to be advantageous, others do not. This 
+difference of opinions was one of the main motivations
+for this paper.
 
 SMOTE works by creating a new minority-class sample at a random point along the line
 segments joining any/all of the $k$ minority class nearest neighbors. Depending upon the
@@ -506,7 +512,10 @@ benefit from it. In~\cite{van2007experimental} it is identified that classifier 
 \subsection{Importance of Tuning}
 \label{sect:tune}
 
-The impact of tuning is well understood in the theoretical machine learning literature~\cite{bergstra2012random}.  When we tune a
+The previous section documented a strange difference of opinion
+about the value of SMOTE. One explanation for these differing results 
+is that SMOTE was been run with different control parameters.
+The impact of tuning a learner's control parameters is well understood in the theoretical machine learning literature~\cite{bergstra2012random}.  When we tune a
 data miner, what we are really doing is changing how a learner applies its
 heuristics. This means tuned data miners use different heuristics, which means
 they ignore different possible models, which means they return different models;
@@ -540,9 +549,8 @@ Fu et al.~\cite{fu2016tuning} showed that using DE to tune the parameters of Sof
 \section{Experimental Setup}
 \label{sect:experiment}
 
-All the data, source code and results can be found on-line
+All the data, source code and results can be found on-line\footnote{Blinded for peer review}.
 %\footnote{https://github.com/ai-se/Smote\_tune}.
-\footnote{Blinded for peer review}.
 We have 3 results which we have named as, (a) Baseline learner results without SMOTE (No SMOTE), (b) Standard SMOTE with default parameters (SMOTE1) and (c) Tuned SMOTE using DE (SMOTE2).
 
 \subsection{\textbf{Data}}
@@ -682,7 +690,7 @@ to the legal range min..max of that parameter.
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \begin{algorithm}
-  
+ \scriptsize
     \begin{algorithmic}[1]
     \Require $np=10$, $f=0.7$, $cr=0.3$, $iter=3$, Goal $\in$ Finding maximum/minimum score
     \Ensure $Score, final\_generation$
@@ -813,25 +821,29 @@ study, we selected each learner with default parameters like k=8 in $k$-NN, entr
 \textbf{\textit{Order bias}}: With each data set how data samples are distributed in training and testing set is completely random. Though there could be times when all good samples are binned into training and testing set. To mitigate this order bias, we run
 the experiment 25 times by randomly changing the order of the data samples each time.
 
-\section{Conclusion and Future Work}
+\section{Conclusion}
 \label{sect:conclusion}
 
 Based on the above, we offer a specific and general conclusion. Most specifically, we recommend.
 \bi
- \item Previous studies~\cite{ghotra2015revisiting,tantithamthavorn2016automated} have mostly reported on only 1 evaluation goal, but we reported on many.
- \item Any study~\cite{ghotra2015revisiting} that has reported AUC without studying the effects of class imbalance needs to be analyzed again by applying SMOTE. We say this since SMOTE1 showed big improvements in AUC.
- \item Whenever we want to maximise a certain evaluation goal, specifically AUC and recall, then it is recommended to tune the parameters of SMOTE1.
+ %\item Previous studies~\cite{ghotra2015revisiting,tantithamthavorn2016automated} have mostly reported on only 1 evaluation goal, but we reported on many.
+ \item Any study~\cite{ghotra2015revisiting} that has reported AUC without studying the effects of class imbalance needs to be analyzed again by applying SMOTE. We say this since SMOTE2 showed big improvements in AUC.
+% \item Whenever we want to maximise a certain evaluation goal, specifically AUC and recall, then it is recommended to tune the parameters of SMOTE1.
  \item Unlike the advise of Chawal et al.~\cite{chawla2002smote} of using $k=5$ for SMOTE, we should have automatic methods like DE to tune the parameters of SMOTE and find the best parameter settings.
  \item Do not use someone else's pre-tuned SMOTE, since, as shown here, the best tunings vary from data set to data set.
 \ei
+Based on our runtime results, we can say that list last
+recommendation (to tune before applying analytics) is not  a particular
+onerous demand. The additional cost of tuning
+is relatively minor while the benefits of the SMTOE2 tunings
+are very large (see the   AUC and recall results shown above),
 
-Our experience is that this recommendation is a justified demand since tuning adds less than a factor of five to the total run times for training but advantages achieved are heavy. In this work, we have shown that tuning significantly helps achieve higher AUC and recall.
-
-In the future, we plan to work on other similar issues like:
-\bi
- \item Tuning SMOTE and learners at the same time and comparing against the results of No SMOTE, SMOTE1, and SMOTE2.
- \item Predicting the quantities of defects which is regression based model rather having a binary based classification model with tuning.
-\ei
+% In the future, we plan to work on other similar issues like:
+% \bi
+%  \item Tuning SMOTE and learners at the same time and comparing against the results of No SMOTE, SMOTE1, and SMOTE2.
+%  \item Predicting the quantities of defects which is regression based model rather having a binary based classification model with tuning.
+% \ei
+\newpage
 
 \balance
 

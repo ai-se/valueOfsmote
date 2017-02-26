@@ -1,3 +1,4 @@
+\newcommand\fnote[1]{\captionsetup{font=small}\caption*{#1}}
 
 \begin{figure*}[!t]
 \begin{minipage}{.5\linewidth}
@@ -16,7 +17,24 @@
   {\bf Figure~\ref{fig:untuned}d:} False Alarm
     \end{minipage}%
     \caption{SMOTE1 improvement over No SMOTE. Legends represent the classifiers mentioned in \tion{classes}}
+    \vspace{-10pt}
+    \fnote{For subfigures (AUC, Recall and Precision): Larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner performs {\em worse}. And for false alarms, the plot must be interpreted differently: {\em Larger} y-values are {\em worse}, if the y-value goes {\em positive} then the corresponding leaner performs {\em worse}. The corresponding percentage of minority class (in this case, defective class) is written beside each data set.}
     \label{fig:untuned}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+\begin{minipage}{.5\linewidth}
+\centering
+        \includegraphics[width=.85\linewidth]{./fig/AUC_recall.png}
+            \end{minipage}%
+\begin{minipage}{.5\linewidth}
+        \centering
+        \includegraphics[width=.85\linewidth]{./fig/prec_pf.png}
+    \end{minipage}%
+    \caption{Scott Knott analysis of NO SMOTE, SMOTE1 and SMOTE2.}
+    \vspace{-10pt}
+    \fnote{From top left sub-figure, starting in clockwise direction, 1$^{st}$ Figure represents for AUC, and next subsequent figures represent for Precision, False Alarm and Recall respectively. In each cell of 1 sub-figure there are 3 color divisions, 1$^{st}$ division represents NO SMOTE, 2$^{nd}$ for SMOTE1 and 3$^{rd}$ for SMOTE2.}
+    \label{fig:stats}
 \end{figure*}
 
 \begin{figure*}[!t]
@@ -35,7 +53,10 @@
         \includegraphics[width=.95\linewidth]{./fig/pf_tuned.png}
   {\bf Figure~\ref{fig:tuned}d:} False Alarm
     \end{minipage}%
+    
     \caption{SMOTE2 improvement over SMOTE1. Legends represent the classifiers mentioned in \tion{classes}.}
+    \vspace{-10pt}
+    \fnote{For subfigures (AUC, Recall and Precision): Larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner performs {\em worse}. And for false alarms, the plot must be interpreted differently: {\em Larger} y-values are {\em worse}, if the y-value goes {\em positive} then the corresponding leaner performs {\em worse}. The corresponding percentage of minority class (in this case, defective class) is written beside each data set.}
     \label{fig:tuned}
 \end{figure*}
 
@@ -65,29 +86,26 @@ If the y-value goes {\em positive} then
 the corresponding leaner
 performs {\em worse}.
 \ei
-Note that, using SMOTE1 on KNN, SVM,
-LR (linear regression) often
-leads to much larger false alarm increases.
-On the other hand,   NB
-and RF have much smaller
-increase in false alarm.
-
 In these figures, the
-X-axis shows all 9 data sets in the decreasing percentage of defective classes from left to right. The corresponding percentage of minority class (in this case, defective class) is written beside each data set. Note that:
-\bi
-\item
+X-axis shows all 9 data sets in the decreasing percentage of defective classes from left to right. The corresponding percentage of minority class (in this case, defective class) is written beside each data set. 
 According to the proponents
 of SMOTE, SMOTE's improvements should
 {\em increase} as we move left to right
 across those plots.
-\item
-No such trend exists in our results for
-AUC, precision or false alarms.
-\item
-For recall, looking left-to-right across
-Figure~\ref{fig:untuned}c, we can see
+
+For many of the results in  Figure~\ref{fig:untuned}, the changes
+resulting from applying SMOTE1 are very modest. (often, less than 10\%).
+The two consistent exceptions to that pattern are:
+\bi
+\item 
+KNN seems to be effected by SMOTE1 more than any other learner.
+\item 
+Occasionally, SMOTE1 leads to dramatic drops in precision.
+\item 
+Looking left-to-right across
+Figure~\ref{fig:untuned}c, we can more
 large positive increases on the
-right-hand-side than the left.
+right-hand-side than the left.   
 \ei
 % Based on these results,  we can best recommend SMOTE1 when:
 % \bi
@@ -110,7 +128,8 @@ right-hand-side than the left.
 \noindent
 Summarizing the above:
 \begin{lesson1}
-We can recommend SMOTE1 for improving recall, and modest improvements in AUC. But  SMOTE1 adversely effect
+We can recommend SMOTE1 for improving recall in unbalanced data, but SMOTE1 can,
+sometimes, adversely effect
 precision.
 \end{lesson1}
 
@@ -131,10 +150,21 @@ shown in
 Figure~\ref{fig:tuned}b, and Figure~\ref{fig:tuned}d, SMOTE2 does
 not adversely effect false alarm and precision.
 
-SMOTE2's benefits for recall are not very
-strong (and seem to be strongest for the more balanced data sets on the left-hand-side of Figure~\ref{fig:tuned}c)
-but are rarely negative.
 
+At first glance, SMOTE2's effects on recall seem strange since they are
+{\em better} for the more balanced left-hand-side data sets of
+Figure~\ref{fig:tuned}c.  But recall from the above that SMOTE1 had less
+of an effect on those left-hand-side data sets. That is, what we are seeing
+here is that:
+\bi
+\item
+SMOTE2 works often as well as SMOTE1 for imbalanced data sets;
+\item
+SMOTE2 offers additional benefits for data sets that are not greatly
+imbalanced.
+\ei
+
+ 
 
 
 
@@ -149,38 +179,32 @@ In summary:
 \begin{lesson1}
     For defect data, SMOTE2  
  offers   some  improvements over SMOTE1 for recall
- and dramatic improvements for AUC (pf, recall) without damaging precision or false
- alarm.
+ and dramatic improvements for AUC (pf, recall).
+ The effects on precision and false alarm are mostly the same as SMOTE1.
 \end{lesson1}
 
-Overall, in  Figure~\ref{fig:tuned},
-there are very few negative results
-(except in precision, where the negatives
-are very small). That is, there
-seems little to be lost using SMOTE2
-but much to gain (e.g. the large AUC improvements).
 Based on these results, we strongly
-recommend SMOTE2 for handling unbalanced
-data sets.
+recommend SMOTE2 for handling not just unbalanced
+data sets but, in fact, for all data sets.
 
 \begin{figure*}[!t]
     \centering
     \begin{minipage}{.33\textwidth}
         \captionsetup{justification=centering,singlelinecheck=off}
         \includegraphics[width=.95\linewidth]{./fig/k.png}
-        \caption{Data sets vs Parameter ($k$) variation}
+        \caption{Tuned values for $k$.}
         \label{RQ3:k}
     \end{minipage}%
     \begin{minipage}{.33\textwidth}
         \captionsetup{labelsep=space,justification=centering,singlelinecheck=off}
         \includegraphics[width=.95\linewidth]{./fig/m.png}
-        \caption{Data sets vs Parameter ($m$) variation}
+        \caption{Tuned values for $m$.}
         \label{RQ3:a}
     \end{minipage}
     \begin{minipage}{.33\textwidth}
         \captionsetup{labelsep=space,justification=centering,singlelinecheck=off}
         \includegraphics[width=.95\linewidth]{./fig/r.png}
-        \caption{Data sets vs Parameter ($r$) variation}
+        \caption{Tuned values for $r$.}
         \label{RQ3:b}
     \end{minipage}
 \end{figure*}
@@ -230,12 +254,7 @@ lines. Hence, before recommending any
 search-based method, it is wise to consider the runtime cost of that
 recommendation.
 
-To understand our timing results, recall that SMOTE2 uses
-Algorithm~1. Based on the psuedocode
-shown above, our pre-experimental expectation is that
-tuning will be three to fives times slower than not tuning.  
-Figure~\ref{runtime} checks if that theoretical
-holds true in practice. Shown in circle and square markers are the
+ Figure~\ref{runtime} shows,  in circle and square markers, the
   runtimes required to run SMOTE1 and SMOTE2 respectively.  The
   longer runtimes (in square) include the times required for DE to find
   the tunings. Overall, tuning slows down the training by a factor of up to
