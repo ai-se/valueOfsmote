@@ -3,18 +3,11 @@
 \begin{figure*}[!t]
 \begin{minipage}{.5\linewidth}
 \centering
-        \includegraphics[width=.95\linewidth]{./fig/AUC_untuned.png}
-        
-  {\bf Figure~\ref{fig:untuned}a:} AUC (pf, recall)
-        \includegraphics[width=.95\linewidth]{./fig/Recall_untuned.png}
-  {\bf Figure~\ref{fig:untuned}c:} Recall
+        \includegraphics[width=.95\linewidth]{./fig/AUC_recall_untuned.png}
     \end{minipage}%
 \begin{minipage}{.5\linewidth}
         \centering
-        \includegraphics[width=.95\linewidth]{./fig/prec_untuned.png}
-  {\bf Figure~\ref{fig:untuned}b:} Precision
-        \includegraphics[width=.95\linewidth]{./fig/pf_untuned.png}
-  {\bf Figure~\ref{fig:untuned}d:} False Alarm
+        \includegraphics[width=.95\linewidth]{./fig/prec_pf_untuned.png}
     \end{minipage}%
     \caption{SMOTE1 improvement over No SMOTE. Legends represent the classifiers mentioned in \tion{classes}}
     \vspace{-10pt}
@@ -40,18 +33,11 @@
 \begin{figure*}[!t]
 \begin{minipage}{.5\linewidth}
 \centering
-        \includegraphics[width=.95\linewidth]{./fig/AUC_tuned.png}
-        
-  {\bf Figure~\ref{fig:tuned}a:} AUC (pf, recall)
-        \includegraphics[width=.95\linewidth]{./fig/Recall_tuned.png}
-  {\bf Figure~\ref{fig:tuned}c:} Recall
+        \includegraphics[width=.95\linewidth]{./fig/AUC_recall_tuned.png}
     \end{minipage}%
 \begin{minipage}{.5\linewidth}
         \centering
-        \includegraphics[width=.95\linewidth]{./fig/prec_tuned.png}
-  {\bf Figure~\ref{fig:tuned}b:} Precision
-        \includegraphics[width=.95\linewidth]{./fig/pf_tuned.png}
-  {\bf Figure~\ref{fig:tuned}d:} False Alarm
+        \includegraphics[width=.95\linewidth]{./fig/prec_pf_tuned.png}
     \end{minipage}%
     
     \caption{SMOTE2 improvement over SMOTE1. Legends represent the classifiers mentioned in \tion{classes}.}
@@ -235,6 +221,21 @@ Clearly:
  That is,  reusing tunings  suggested  by  any other  previous study  for any data set is \underline{{\em not}} recommended. Instead,  it is better to
       use  automatic  tuning  methods  to find the best tuning parameters for the current data set.
       
+\begin{figure*}[!t]
+\begin{minipage}{.5\linewidth}
+\centering
+        \includegraphics[width=.95\linewidth]{./fig/AUC_auc1.png}
+    \end{minipage}%
+\begin{minipage}{.5\linewidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{./fig/AUC_prec.png}
+    \end{minipage}%
+    
+    \caption{SMOTE2 improvement over SMOTE1. Legends represent the classifiers mentioned in \tion{classes}.}
+    \vspace{-10pt}
+    \fnote{For subfigures (AUC, Recall and Precision): Larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner performs {\em worse}. And for false alarms, the plot must be interpreted differently: {\em Larger} y-values are {\em worse}, if the y-value goes {\em positive} then the corresponding leaner performs {\em worse}. The corresponding percentage of minority class (in this case, defective class) is written beside each data set.}
+    \label{fig:auc}
+\end{figure*}
 
 \begin{figure}[!t]
   \captionsetup{justification=centering}
