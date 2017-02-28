@@ -1,5 +1,6 @@
 
-\documentclass[sigconf,review, anonymous]{acmart}
+%\documentclass[sigconf,review, anonymous]{acmart}
+\documentclass[conference]{IEEEtran}
 
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -9,8 +10,8 @@
 \usepackage{float}
 \usepackage{balance}
 \usepackage{listings}
-\renewcommand\thesection{\arabic{section}.}
-\renewcommand\thesubsection{\thesection\arabic{subsection}}
+\renewcommand\thesection{\arabic{section}}
+%\renewcommand\thesubsection{\thesection\arabic{subsection}}
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{comment}
@@ -70,7 +71,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	\noindent\begin{tikzpicture}%
 	\node [thmbox] (box){%
 		\begin{minipage}{.94\textwidth}%
-		\vspace{0mm}#1\vspace{0mm}%
+		\vspace{-2mm}#1\vspace{-3mm}%
 		\end{minipage}%
 	};%
 	\end{tikzpicture}}
@@ -85,35 +86,49 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 \newshadedtheorem{lesson1}{Result}
 \newcommand{\tion}[1]{{\S}\ref{sect:#1}}
 
-\setcopyright{rightsretained}
+%\setcopyright{rightsretained}
 
 
-\acmConference[FSE'2017]{ACM SIGSOFT SYMPOSIUM ON THE FOUNDATIONS OF SOFTWARE ENGINEERING}{September 2017}{PADERBORN, GERMANY} 
-\acmYear{2017}
-\copyrightyear{2017}
+%\acmConference[FSE'2017]{ACM SIGSOFT SYMPOSIUM ON THE FOUNDATIONS OF SOFTWARE ENGINEERING}{September 2017}{PADERBORN, GERMANY} 
+%\acmYear{2017}
+%\copyrightyear{2017}
 
-\acmPrice{15.00}
+%\acmPrice{15.00}
 
 
 \begin{document}
 
-%\pagestyle{plain}
+\pagestyle{plain}
 
 \title{Software Analytics
 without Tuning Considered Harmful:\\A
 Case Study with SMOTE}
 
-\author{Amritanshu Agrawal}
-\affiliation{%
-  \institution{North Carolina State University}  \city{Raleigh}
-  \state{North Carolina, USA}}
-\email{aagrawa8@ncsu.edu}
+\author{\IEEEauthorblockN{Amritanshu Agrawal}
+\IEEEauthorblockA{Department of Computer Science\\
+North Carolina State University\\
+Raleigh, NC, USA\\
+Email: aagrawa8@ncsu.edu}
+\and
+\IEEEauthorblockN{Tim Menzies}
+\IEEEauthorblockA{Department of Computer Science\\
+North Carolina State University\\
+Raleigh, NC, USA\\
+Email: tim@menzies.us}}
+\maketitle
 
-\author{Tim Menzies}
-\affiliation{%
-  \institution{North Carolina State University}  \city{Raleigh}
-  \state{North Carolina, USA}}
-\email{tim@menzies.us}
+
+% \author{Amritanshu Agrawal}
+% \affiliation{%
+%   \institution{North Carolina State University}  \city{Raleigh}
+%   \state{North Carolina, USA}}
+% \email{aagrawa8@ncsu.edu}
+
+% \author{Tim Menzies}
+% \affiliation{%
+%   \institution{North Carolina State University}  \city{Raleigh}
+%   \state{North Carolina, USA}}
+% \email{tim@menzies.us}
 
 
 
@@ -148,12 +163,21 @@ trusting the results they generate.
 
 %\keywords{
 %Performance Prediction, SBSE, Sampling, Rank-based method}
-\keywords{Software repository mining, 
+\begin{IEEEkeywords}
+Software repository mining, 
 search based software engineering,
 defect prediction, classification, 
-data analytics for software engineering, SMOTE,  imbalanced data, preprocessing}
+data analytics for software engineering, SMOTE,  imbalanced data, preprocessing
+\end{IEEEkeywords}
 
-\maketitle
+\IEEEpeerreviewmaketitle
+
+% \keywords{Software repository mining, 
+% search based software engineering,
+% defect prediction, classification, 
+% data analytics for software engineering, SMOTE,  imbalanced data, preprocessing}
+
+% \maketitle
 
 %\category{H.4}{Software Engineering}{Defect Prediction}
 %A category including the fourth, optional field follows...
@@ -166,7 +190,7 @@ data analytics for software engineering, SMOTE,  imbalanced data, preprocessing}
 
 Since time and manpower are finite resources, it
 makes sense to assign personnel and/or resources to areas of
-a software system with a higher probable quantity of defects. Currently researchers worked nn defect prediction focusing on (i) estimating the number of defects remaining in software systems, (ii) discovering defect associations, and (iii) classifying the defect-proneness of software components, typically into two classes defect-prone and not defect-prone. 
+a software system with a higher probable quantity of defects. Currently researchers working in defect prediction focuses on (i) estimating the number of defects remaining in software systems, (ii) discovering defect associations, and (iii) classifying the defect-proneness of software components, typically into two classes defect-prone and not defect-prone. 
 
 This paper deals with the third type of problem for code metrics (especially, the 
 CK object-oriented metrics~\cite{chidamber1994metrics}).
@@ -206,7 +230,7 @@ explore  the following  questions:
  precision, modest improvements for AUC (pf, recall) and large improvements in recall.
  \end{lesson}
 
- \textbf{RQ2}: \textbf{Can tuned SMOTE2 achieve better results?} 
+ \textbf{RQ2}: \textbf{Can SMOTE2 achieve better results?} 
  
  \begin{lesson}For defect data, SMOTE2  
  offered    improvements over SMOTE1 for recall
@@ -316,6 +340,7 @@ defects present? & Boolean: if {\em nDefects} $>0$ then {\em true} else {\em fal
 \caption{OO code metrics used for all studies in this paper.
 Last line, shown in \textcolor{gray} denote the dependent variable.}
 \label{fig:ck}
+\vspace{-0.7cm}
 \end{figure*}
 
 
@@ -511,7 +536,7 @@ Fu et al.~\cite{fu2016tuning} showed that using DE to tune the parameters of sof
 
 All the data, source code and results can be found online\footnote{Blinded for peer review}.
 %\footnote{https://github.com/ai-se/Smote\_tune}.
-We have 3 techniques which we have named as, (a) Baseline learner results without SMOTE (No-SMOTE), (b) Standard SMOTE with default parameters (SMOTE1) and (c) SMOTE1 tuned using DE (SMOTE2).  Our implementation currently uses 5 nearest neighbors for SMOTE1 method and for SMOTE2, DE finds the best $k$. Synthetic samples
+We employ 3 techniques which we have named as, (a) Baseline learner results without SMOTE (No-SMOTE), (b) Standard SMOTE with default parameters (SMOTE1) and (c) SMOTE1 tuned using DE (SMOTE2).  Our implementation currently uses 5 nearest neighbors for SMOTE1 method and for SMOTE2, DE finds the best $k$. Synthetic samples
 are generated in the following way:
 \bi
 \item
@@ -529,7 +554,7 @@ To reduce the variation, each of the above techniques is performed with a 5-fold
 \bi
 \item We randomized the order of the training set five times;
 \item Each time, we divided the data into five bins;
-\item For each bin (test), we trained on the rest (4 bins) then tested
+\item For each bin (test), we trained on 4 bins (rest) and then tested
 on the test bin as follows:
 \bi
 \item
@@ -587,6 +612,7 @@ i.e. we only SMOTE the training samples
 \end{center}
 \caption{Dataset Statistics}
 \label{tb:dataset}
+\vspace{-0.7cm}
 \end{table}
 
 \subsection{\textbf{Preprocessing}}
@@ -635,9 +661,10 @@ Table~\ref{tb:tuned}. Most of these parameters are explained below.
 \end{center}
 \caption{List of parameters tuned by this paper}
 \label{tb:tuned}
+\vspace{-0.4cm}
 \end{table}
  
-In Table~\ref{tb:tuned}, $k$ controls how many neighbors to choose in minority target class such that synthetic examples can be created between them. It is important to select how many synthetic examples to create ($m$) and how much undersampling ($m$) of majority class needs to be done. In this case number of oversampling and undersampling are the same. To select neighbors, power ($r$) of Minkowski distance metric is also tunable.
+In Table~\ref{tb:tuned}, $k$ controls how many neighbors to choose in minority target class such that synthetic examples can be created between them. It is important to select the number of synthetic examples to create ($m$) and how much undersampling ($m$) of majority class needs to be done. In this case number of oversampling and undersampling are the same. To select neighbors, power ($r$) of Minkowski distance metric is also tunable.
 
 Algorithm 1 is a pseudocode of generic DE. In the following description,
 superscript numbers denote lines in the pseudocode. DE evolves a \textit{NewGeneration} of
@@ -731,6 +758,8 @@ Since, this is a binary classification problem, we represent the predictions usi
 \caption{Confusion Matrix}
 \label{fig:cmatrix}
 \end{center}
+\vspace{-0.8cm}
+
 \end{figure}
 
 %\begin{figure}[!htpb]
@@ -740,7 +769,7 @@ Since, this is a binary classification problem, we represent the predictions usi
 
 %    \label{fig:cmatrix}
 %\end{figure}
-
+\noindent
 We define the measures as
 \begin{itemize}
 \item \textbf{Area Under Curve} is the area covered by an ROC curve~\cite{swets1988measuring, duda2012pattern} in which the X-axis represents:
@@ -757,14 +786,6 @@ and the Y-axis represents:
 
 \input{result}
 
-\begin{figure}[!htbp]
-\begin{minipage}{\linewidth}
-\centering
-        \includegraphics[width=.95\linewidth]{./fig/acc_f_tuned.png}
-    \end{minipage}%
-    \caption{SMOTE2 improvement over SMOTE1. Legends represent the classifiers mentioned in \tion{classes}}
-    \label{fig:threats}
-\end{figure}
 
 \section{Threats to Validity}
 \label{sect:validity}
@@ -779,6 +800,16 @@ Though we have used 9 open-source datasets for Software Defect prediction (Table
 study, we selected each learner with default parameters like k=8 in $k$-NN, entropy as split criteria in RF, and DT. The above predefined parameters have been used in the conclusions made by other studies~\cite{ghotra2015revisiting,tantithamthavorn2016automated}. But classification is a large and active field and any single study can only use a small subset of the known classification algorithms.
 
 \textbf{\textit{Evaluation bias}}: Most highly cited papers~\cite{ghotra2015revisiting,tantithamthavorn2016automated} have only concluded using $AUC\ (pf, recall)$ whereas we went ahead and are reporting 3 other measures. There are other measures used in software engineering which includes Accuracy, Fscore. But we still performed SMOTE2 on Fscore and Accuracy and did not find any improvement (Figure~\ref{fig:threats}). Anyway, accuracy is not the best measure to report for defect prediction as we do not want any true negative numbers included. Fscore is the harmonic mean of precision and recall and if you recall our SMOTE2 results, we see  increment in recall as well as  decrement in precision making Fscore negligible.
+
+\begin{figure}[!htbp]
+\begin{minipage}{\linewidth}
+\centering
+        \includegraphics[width=.95\linewidth]{./fig/acc_f_tuned.png}
+    \end{minipage}%
+    \caption{SMOTE2 improvement over SMOTE1. Legends represent the classifiers mentioned in \tion{classes}}
+    \label{fig:threats}
+\vspace{-0.5cm}
+\end{figure}
 
 \textbf{\textit{Order bias}}: With each dataset how data samples are distributed in training and testing set is completely random. Though there could be times when all good samples are binned into training and testing set. To mitigate this order bias, we run
 the experiment 25 times by randomly changing the order of the data samples each time.
@@ -809,7 +840,9 @@ are very large (see the   AUC and recall results shown above).
 
 \balance
 
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{abbrv}
+
+%\bibliographystyle{ACM-Reference-Format}
 \medskip
 \bibliography{main}
 
