@@ -1,6 +1,6 @@
 
 %\documentclass[sigconf,review, anonymous]{acmart}
-\documentclass[conference]{IEEEtran}
+\documentclass[10pt,conference]{IEEEtran}
 
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -153,8 +153,8 @@ uses parameters  found by an optimization technique
 called Differential Evolution (DE). 
 
  In studies with SMOTE1 and SMOTE2, performed on
- 9 defect datasets, we observe that SMOTE1 may or may not be useful depending on the evaluation goal. We observed mixed results for precision (sometimes better sometimes worse).
-On the other hand, SMOTE2 lead to dramatic improvements in  AUC (pf, recall) and modest improvements were seen in recall and these were much better than SMOTE1.
+ 9 imbalanced defect datasets, we observe that SMOTE1 may or may not be useful depending on the evaluation goal. We observed mixed results for precision (sometimes better sometimes worse).
+On the other hand, SMOTE2 lead to dramatic improvements in  AUC (pf, recall) and good improvements were seen in recall and these were much better than SMOTE1.
 
 We conclude that (a)~SMOTE
 is useful but (b)~it is best {\em not} to use the default parameters of standard SMOTE1. More generally, we caution all researchers to tune their analytics tools before
@@ -188,18 +188,19 @@ data analytics for software engineering, SMOTE,  imbalanced data, preprocessing
 
 \section{Introduction}
 
+
 Since time and manpower are finite resources, it
 makes sense to assign personnel and/or resources to areas of
-a software system with a higher probable quantity of defects. Currently researchers working in defect prediction focuses on (i) estimating the number of defects remaining in software systems, (ii) discovering defect associations, and (iii) classifying the defect-proneness of software components, typically into two classes defect-prone and not defect-prone. 
+a software system with a higher probable quantity of defects~\cite{d2010extensive}. Currently researchers~\cite{song2011general} working in defect prediction focuses on (i) estimating the number of defects remaining in software systems, (ii) discovering defect associations, and (iii) classifying the defect-proneness of software components, typically into two classes defect-prone and not defect-prone. 
 
 This paper deals with the third type of problem for code metrics (especially, the 
 CK object-oriented metrics~\cite{chidamber1994metrics}).
-Our task is to classify the defect-proneness of software components, typically into two classes, defective and not defective.
+Our task is to classify the defect-proneness of software components, typically into two classes, defective and not defective. 
 
 One issue with this kind of research is deciding
 which data mining algorithm is best for a particular
 dataset. In a comparative study of numerous
-learners for defect prediction, Ghotra et al.~\cite{ghotra2015revisiting} recommended six learners: Naive Bayes, Logistic regression, Support Vector Machines, Nearest Neighbor, decision trees and Random forest. One of the limitations of their
+learners for defect prediction, Ghotra et al.~\cite{ghotra2015revisiting} recommended six learners: Naive Bayes, Logistic regression, Support Vector Machines, Nearest Neighbor, decision trees and Random forest. One of the limitation of their
 analysis was the effects of class imbalance for such models was not explored.
 This is an important property
 since most software systems have less percentage of defective classes compared to non-defective class. Accordingly, this paper
@@ -213,7 +214,7 @@ since it is known to adversely affect
 many machine learning algorithms such as decision tress,
 neural networks or support vectors machines \cite{japkowicz2002class}. 
 
-Accordingly,   we evaluate the performance of learners with imbalanced data using a class balancing technique.
+Accordingly, we evaluate the performance of learners with imbalanced data using a class balancing technique.
 We examine a standard off-the-shelf SMOTE, called SMOTE1, which uses
 the default parameters for that algorithm. 
 The results were not promising,
@@ -257,7 +258,7 @@ explore  the following  questions:
    impractically
    slow?} 
  
- \begin{lesson}Tuning using DE makes training runtimes four to five times slower, but given
+ \begin{lesson}Tuning using DE makes training runtimes about twenty times slower, but given
  the large performance improvements,
  the extra effort is justifiable. \end{lesson}
  
@@ -534,8 +535,8 @@ Fu et al.~\cite{fu2016tuning} showed that using DE to tune the parameters of sof
 \section{Experimental Setup}
 \label{sect:experiment}
 
-All the data, source code and results can be found online\footnote{Blinded for peer review}.
-%\footnote{https://github.com/ai-se/Smote\_tune}.
+All the data, source code and results can be found online%\footnote{Blinded for peer review}.
+\footnote{https://github.com/ai-se/Smote\_tune}.
 We employ 3 techniques which we have named as, (a) Baseline learner results without SMOTE (No-SMOTE), (b) Standard SMOTE with default parameters (SMOTE1) and (c) SMOTE1 tuned using DE (SMOTE2).  Our implementation currently uses 5 nearest neighbors for SMOTE1 method and for SMOTE2, DE finds the best $k$. Synthetic samples
 are generated in the following way:
 \bi
