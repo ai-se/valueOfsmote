@@ -76,7 +76,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	\noindent\begin{tikzpicture}%
 	\node [thmbox] (box){%
 		\begin{minipage}{.94\textwidth}%
-		\vspace{-2mm}#1\vspace{-3mm}%
+		\vspace{-2mm}#1\vspace{-1mm}%
 		\end{minipage}%
 	};%
 	\end{tikzpicture}}
@@ -230,8 +230,8 @@ For examples of this kind of analysis, see~\cite{lessmann2008benchmarking,hall20
 \ei
 These ranking studies conclude that some subset of the classifiers
 are  ``best'' if they generate  better quality scores.
-The standard conclusions from such studies is that it
-is the success of defect prediction is critically
+The standard conclusions from such studies is that 
+ the success of defect predictorsis critically
 effected by the choice of classifier. As Ghotra et al. conclusions:
 
 \begin{quote}{\em The  used classification
@@ -375,7 +375,7 @@ This  result calls into question any prior ranking studies that  only considered
   Finally, we need to ask
    \bi
   \item
-  \textbf{RQ3}:  In terms of runtimes, is the cost of running SMOTUNED worth the performance improvement?
+  \textbf{RQ3}: {\em  In terms of runtimes, is the cost of running SMOTUNED worth the performance improvement?}
   \ei
   This is important since if the cost
   of tuning is impractically high, then
@@ -1120,7 +1120,9 @@ i.e. to check if succeeding according to more performance criteria results in da
         \includegraphics[width=.95\linewidth]{./fig/r.png}
         {\bf Figure~\ref{fig:para}c:} Tuned values for $r$ (default:  $r=2$).
     \end{minipage}
-    \caption{Datasets vs Parameter Variation}
+    \caption{Datasets vs Parameter Variation.
+    ``Median'' denotes 50th percentile values seen in the 5*5 cross-validations and ``IQR'' shows the intra-quartile
+    range; i.e. (75-25)th percentiles.}
     \label{fig:para}
 \vspace{-0.4cm}
 \end{figure*}
@@ -1280,7 +1282,7 @@ Our results are organized around the three
 research questions introducted in the introduction
 to this paper.
 
- \subsection{RQ1: Are the default ``off-the-shelf'' parameters for SMOTE appropriate for all
+ \subsection{{\bf RQ1}: Are the default ``off-the-shelf'' parameters for SMOTE appropriate for all
  data sets?}
  
  
@@ -1306,9 +1308,13 @@ to this paper.
  \ei
  Hence,  our answer to {\bf RQ1} is ``no'': the use of off-the-shelf SMOTE should be deprecated. 
    
-Before moving on to other research questions, we note that many of the settings in Figure~\ref{fig:para} are very similar; for example, $k=13,r=3$ seems to be a common
-result.  That said, we would not recommend using these as new defaults for SMOTE. Before making that recommendation, it would be prudent to   apply
-our tools    on many more data sets than just the nine explored here. In the meanwhile, when addressing class imbalance on new data sets, we recommend adjusting the parameters on a dataset-by-datset basis, using SMOTUMED.
+Before moving on to other research questions, we note that many of the settings in Figure~\ref{fig:para} are very similar; for example, median values of $k=13,r=3$ seems to be a common
+result.  Nevertheless, we do {\em not} recommend replacing
+the defaults on regular SMOTE with the median values
+of Figure~\ref{figLpara}. In that figure, many of the  IQR bars are
+very large (IQR=intra-quartile range = denotes the
+75th-25th percentile). Clearly, SMOTUNED  decisions vary dramatically
+depending on what data  is being processed.   
 
 \begin{figure*}[!t]
 \begin{minipage}{.5\linewidth}
@@ -1320,9 +1326,7 @@ our tools    on many more data sets than just the nine explored here. In the mea
         \includegraphics[width=.95\linewidth]{./fig/prec_pf_tuned.png}
     \end{minipage}%
     
-    \caption{SMOTUNED improvement over SMOTE. Legends represent the classifiers mentioned in \tion{classes}.}
-    \vspace{-10pt}
-    \fnote{For subfigures (AUC, Recall and Precision): larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. For false alarms, the plot must be interpreted differently: larger y-values are {\em worse}, if the y-value goes {\em positive}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. The corresponding percentage of minority class (in this case, defective class) is written beside each dataset.}
+    \caption{SMOTUNED improvement over SMOTE. Legends represent the classifiers mentioned in \tion{classes}. For subfigures (AUC, Recall and Precision): larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. For false alarms, the plot must be interpreted differently: larger y-values are {\em worse}, if the y-value goes {\em positive}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. The corresponding percentage of minority class (in this case, defective class) is written beside each dataset.}
     \label{fig:tuned}
 \end{figure*}
 \begin{figure*}[!t]
@@ -1339,7 +1343,7 @@ our tools    on many more data sets than just the nine explored here. In the mea
 \vspace{-0.2cm}
 \end{figure*}
 
-\subsection {RQ2: What are the benefits in tuning the default parameters of SMOTE for each new data set?}
+\subsection {{\bf RQ2}: What are the benefits in tuning the default parameters of SMOTE for each new data set?}
 
 Figure~\ref{fig:tuned} shows the performance delta of the {\em within-measure assessment rig}.
 Recall that when this rig applies SMOTUNED, it optimizes for performance measure
@@ -1392,16 +1396,6 @@ and these come at the cost of much smaller false alarm increase of +0.07 to +0.1
 
 
 
-\begin{figure}[!htbp]
-  \captionsetup{justification=centering}
-  \includegraphics[width=\linewidth]{./fig/runtimes.png}
-  \caption{Datasets vs Runtimes. Note that the numbers
-  shown here at the total times for running six learners through a 5*5cross-validation. Hence, for mean
-  runtimes for one learner, {\em divide} these numbers by 6*5*5=150.}
-  \label{runtime}
-\vspace{-0.7cm}
-\end{figure}
-
 \begin{figure*}[!htbp]
 \begin{minipage}{.5\linewidth}
 \centering
@@ -1419,13 +1413,52 @@ and these come at the cost of much smaller false alarm increase of +0.07 to +0.1
 \vspace{-0.6cm}
 \end{figure*} 
 
-Another way to explore the trade-off between false alarms and recall is to check how the recall changes as false
-alarms increase. This is evident in our AUC results where S2=SMOTUNED always does best 
-and the performance delta is very large; i.e. +0.38 to +0.60 (median to max).
+
 
  
+In summary, the precisions and false alarm rates
+do not negate the value of SMOTUNED while the AUC and recall results are strongly
+positive about  use of SMOTUNED.
 
 
+\begin{figure}[!htbp]
+  \captionsetup{justification=centering}
+                                                   \includegraphics[width=\linewidth]{./fig/runtimes.png}
+  \caption{Datasets vs Runtimes. Note that the numbers
+  shown here at the total times for running six learners through a 5*5cross-validation. Hence, for mean
+  runtimes for one learner, {\em divide} these numbers by 6*5*5=150.}
+  \label{runtime}
+\vspace{-0.7cm}
+\end{figure}
+
+
+\subsection{{\bf RQ3:} In  terms  of  runtimes,  is  the  cost  of  running  SMO-TUNED worth the performance improvement?}
+
+Figure \ref{runtime} show the total runtimes
+for running a 5*5 cross-validation study for six learners for each data set.  
+SMOTUNED has to evaluate
+dozens of different settings for SMOTE
+so, as might be expected,  SMOTUNED is an order of magnitude slower than SMOTE. 
+
+That said, in absolute term, running SMOTUNED once is not particularly onnerous . Dividing the numbers of
+Figure~\ref{runtime} by 5*5*6=150, we see that even for our slowest data sets (tomcat), one run
+of SMOTUNED terminated in 34284/150=228 seconds (on average), which is less than three minutes. In our opinion, the increased performance details of Figure~\ref{fig:auc} more than compensate for having the few minutes needed to run SMOTUNED.
+
+
+\begin{figure*}[!htbp]
+\begin{minipage}{.5\linewidth}
+\centering
+        \includegraphics[width=.95\linewidth]{./fig/AUC_auc1.png}
+    \end{minipage}%
+\begin{minipage}{.5\linewidth}
+        \centering
+        \includegraphics[width=.95\linewidth]{./fig/AUC_prec.png}
+    \end{minipage}%
+    
+    \caption{SMOTUNED improvement over SMOTE when tuning goal is to maximize AUC. For subfigures (AUC, Recall and Precision): larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. For false alarms, the plot must be interpreted differently: larger y-values are {\em worse}, if the y-value goes {\em positive}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. The corresponding percentage of minority class (in this case, defective class) is written beside each dataset.}
+    \label{fig:auc}
+\vspace{-0.6cm}
+\end{figure*} 
 \section{Threats to Validity}
 \label{sect:validity}
 
@@ -1490,13 +1523,14 @@ are very large (see the   AUC and recall results shown above).
 % \ei
 
 
+
 \balance
 
 \bibliographystyle{abbrv}
 
 %\bibliographystyle{ACM-Reference-Format}
 \medskip
-\bibliography{main}
+ \bibliography{main}
 
 
 To tackle the variations available among classifiers, some studies suggested to tune the learners to find the best parameter settings~\cite{tantithamthavorn2016automated, fu2016tuning}.  Both the studies report how performance of a defect predictor is dependent on the parameter settings of the predictors and recommends to use automated ways to tune the predictors.
@@ -2002,22 +2036,6 @@ Clearly:
 \vspace{-0.7cm}
 \end{figure}
 
-\begin{figure*}[!htbp]
-\begin{minipage}{.5\linewidth}
-\centering
-        \includegraphics[width=.95\linewidth]{./fig/AUC_auc1.png}
-    \end{minipage}%
-\begin{minipage}{.5\linewidth}
-        \centering
-        \includegraphics[width=.95\linewidth]{./fig/AUC_prec.png}
-    \end{minipage}%
-    
-    \caption{SMOTUNED improvement over SMOTE when tuning goal is to maximize AUC.}
-    \vspace{-10pt}
-    \fnote{For subfigures (AUC, Recall and Precision): larger y-values are {\em better}, if the y-value goes {\em negative}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. For false alarms, the plot must be interpreted differently: larger y-values are {\em worse}, if the y-value goes {\em positive}, then the corresponding learner trained on SMOTUNED data performs {\em worse} than learner learnt on SMOTE data. The corresponding percentage of minority class (in this case, defective class) is written beside each dataset.}
-    \label{fig:auc}
-\vspace{-0.6cm}
-\end{figure*} 
 
 \subsection{\textbf{RQ4: Is tuning impractically slow?}}
 
