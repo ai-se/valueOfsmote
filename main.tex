@@ -131,18 +131,18 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 % }
 
 
-\author{Author name(s) blinded for review.}
-% \author{Amritanshu Agrawal}
-% \affiliation{%
-%   \institution{North Carolina State University}  \city{Raleigh}
-%   \state{North Carolina, USA}}
-% \email{aagrawa8@ncsu.edu}
-
-% \author{Tim Menzies}
-% \affiliation{%
-%   \institution{North Carolina State University}  \city{Raleigh}
-%   \state{North Carolina, USA}}
-% \email{tim@menzies.us}
+%\author{Author name(s) blinded for review.}
+\author{\IEEEauthorblockN{Amritanshu Agrawal}
+\IEEEauthorblockA{Department of Computer Science\\
+North Carolina State University\\
+Raleigh, NC, USA\\
+Email: aagrawa8@ncsu.edu}
+\and
+\IEEEauthorblockN{Tim Menzies}
+\IEEEauthorblockA{Department of Computer Science\\
+North Carolina State University\\
+Raleigh, NC, USA\\
+Email: tim@menzies.us}}
 
 \maketitle
 
@@ -349,7 +349,6 @@ than the subsequent choice of a classifier.  To say that another way: ``better d
  \end{lesson}
 
 
-\newpage
 \noindent
 In summary, the  contributions of this paper are:
 \bi
@@ -359,7 +358,7 @@ In summary, the  contributions of this paper are:
 \item Dramatically large improvements in  defect predictors;
 \item Potentially, for any other software analytics task that uses classifiers, a way to improve those learners as well;
 \item A methodology for assessing the value of pre-processing data sets in software analytics;
-\item A reproduction package to reproduce our results then (perhaps) to improve or refute  our results\footnote{Available to download from http://XXXblinded4review},
+\item A reproduction package to reproduce our results then (perhaps) to improve or refute  our results\footnote{Available to download from https://github.com/ai-se/Smote\_tune},
 \ei
 The rest of this paper is structured as follows:
 \tion{review} gives an overview on software defect prediction.
@@ -551,33 +550,26 @@ We note that
 many researchers in this area  (Wang, Yu et al, Gray et al.~\cite{gray2009using,yuperformance,wang2013using} refer to the {\sma} method explored in this paper,  but only in the context of future work. 
 Also, 
 in this sample, no researcher has  applied auto-tuning to learn best {\sma} control parameters. 
+ 
 
- \begin{table*}[!b]
- \begin{tabular}{l|l|p{5in}}
-{\bf RANK} & {\bf LEARNER} & {\bf NOTES}\\\hline
- 1 ``best'' & RF= random forest & 
- Random forest of entropy-based decision trees.\\\cline{2-3}
- &  LR=Logistic regression &
- A generalized linear regression
-model.\\\hline
- 2 & KNN= K-means &  Classify a new instance by finding ``k'' examples of similar old instances.
- Following the advice of Ghortra et al, we use
- $K=8$.\\\cline{2-3}
- & NB= Naive Bayes &  Classify a new instance by (a)~collecting mean and standard deviations of attributes in old instances of  different classes; (b)~return the class whose attributes are statistically most similar to the new instance.\\\hline
- 3 & DT= decision trees & Recursively
- divide data by selecting attribute splits
- that reduce the entropy of the class distribution.\\\hline
+\subsection{Ranking Studies}
+\label{sect:rank}
 
- 4 ``worst'' & SVM= support vector machines &
- Map the raw data into a higher-dimensional space where it is easier to distinguish the examples.
- \\\hline
- \end{tabular}
- \caption{Classifiers used in this study.
- Rankings
- from~\cite{ghotra2015revisiting}.}\label{tbl:learners}
- \end{table*}
+A constant problem in defect predictions is what  classifier should be applied to  build  the  defect  predictors?
+To address this problem, many researchers run {\em ranking studies} where  performance scores 
+are collected from  many classifiers  executed on  many software defect data sets~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying,radjenovic2013software,jiang2008techniques,wang2013using,mende2009revisiting,li2012sample,khoshgoftaar2010attribute,jiang2009variance,ghotra2015revisiting,jiang2008can,tantithamthavorn2016automated,fu2016tuning}.
+This section assesses those ranking studies. We will say a ranking study is ``good'' if it compares multiple learners using multiple data sets and multiple evaluation criteria
+while at the same time doing something to address the data imbalance problem.
 
-\begin{table}[!t]
+ In February  2017,  we searched
+scholar.google.com for the conjunction of ``software'' and ``defect prediction'' and ``oo'' and ``ck'' published in the last decade. This returned 231 results.
+From that list, we selected ``highly-cited'' papers, which we defined as having more than 10 citations per year.  This reduced our population of papers down to 107.
+After reading the titles and abstracts of those papers, and skimming the contents of the potentially interesting papers, we found 22 papers of Table~\ref{tbl:survey2} that either performed ranking studies
+(as defined above) or studied the effects of class imbalance on defect prediction. In the column ``evaluated using
+multiple criteria'',
+papers scored more than ``1'' if they used multiple performance scores  of the kind listed at the end of \tion{performance}. 
+
+ \begin{table}[!htbp]
 \scriptsize
 \centering
     \begin{tabular}{c@{~}|c@{~}|c@{~}|c@{~}|c@{~}|c@{~}}
@@ -610,22 +602,30 @@ model.\\\hline
 \vspace{-0.5cm}
 \end{table}
 
-\subsection{Ranking Studies}
-\label{sect:rank}
+ \begin{table*}[!htbp]
+ \begin{tabular}{l|l|p{5in}}
+{\bf RANK} & {\bf LEARNER} & {\bf NOTES}\\\hline
+ 1 ``best'' & RF= random forest & 
+ Random forest of entropy-based decision trees.\\\cline{2-3}
+ &  LR=Logistic regression &
+ A generalized linear regression
+model.\\\hline
+ 2 & KNN= K-means &  Classify a new instance by finding ``k'' examples of similar old instances.
+ Following the advice of Ghortra et al, we use
+ $K=8$.\\\cline{2-3}
+ & NB= Naive Bayes &  Classify a new instance by (a)~collecting mean and standard deviations of attributes in old instances of  different classes; (b)~return the class whose attributes are statistically most similar to the new instance.\\\hline
+ 3 & DT= decision trees & Recursively
+ divide data by selecting attribute splits
+ that reduce the entropy of the class distribution.\\\hline
 
-A constant problem in defect predictions is what  classifier should be applied to  build  the  defect  predictors?
-To address this problem, many researchers run {\em ranking studies} where  performance scores 
-are collected from  many classifiers  executed on  many software defect data sets~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying,radjenovic2013software,jiang2008techniques,wang2013using,mende2009revisiting,li2012sample,khoshgoftaar2010attribute,jiang2009variance,ghotra2015revisiting,jiang2008can,tantithamthavorn2016automated,fu2016tuning}.
-This section assesses those ranking studies. We will say a ranking study is ``good'' if it compares multiple learners using multiple data sets and multiple evaluation criteria
-while at the same time doing something to address the data imbalance problem.
-
- In February  2017,  we searched
-scholar.google.com for the conjunction of ``software'' and ``defect prediction'' and ``oo'' and ``ck'' published in the last decade. This returned 231 results.
-From that list, we selected ``highly-cited'' papers, which we defined as having more than 10 citations per year.  This reduced our population of papers down to 107.
-After reading the titles and abstracts of those papers, and skimming the contents of the potentially interesting papers, we found 22 papers of Table~\ref{tbl:survey2} that either performed ranking studies
-(as defined above) or studied the effects of class imbalance on defect prediction. In the column ``evaluated using
-multiple criteria'',
-papers scored more than ``1'' if they used multiple performance scores  of the kind listed at the end of \tion{performance}. 
+ 4 ``worst'' & SVM= support vector machines &
+ Map the raw data into a higher-dimensional space where it is easier to distinguish the examples.
+ \\\hline
+ \end{tabular}
+ \caption{Classifiers used in this study.
+ Rankings
+ from~\cite{ghotra2015revisiting}.}\label{tbl:learners}
+ \end{table*}
 
 We find that, in those 22 papers,
 numerous classifiers have used AUC software defect
@@ -679,34 +679,6 @@ the minority class is usually the  defective class.
 
 
 
-\begin{figure}[!htbp]
-\scriptsize
-\begin{lstlisting}[mathescape,linewidth=8.2cm,frame=r,numbers=right]
-  def SMOTE(k=2, m=50%, r=2):  # default settings
-    while Majority > m do
-      delete any majority item
-    while Minority < m do
-      add something_like(any minority item)
-      
-  def something_like(X0): 
-    relevant = emptySet
-    k1 = 0
-    while(k1++ < 20 and size(found) < k)  {
-       all = k1 nearest neighbors
-       relevant += members of "all" of same class as X0 }
-    Z = any of found
-    Y = interpolate (X0, Z)
-    return Y
-    
-  def minkowski_distance(a,b,r): 
-    return $( \Sigma_i\ abs(a_i - b_i)^r)^{1/r}$
-\end{lstlisting}
-\caption{Pseudocode of SMOTE}
-\label{fig:pseudocode}  
-\end{figure}
-
-
-
 Figure~\ref{fig:pseudocode} shows how SMOTE works. During super-sampling,
 a member of the minority class finds $k$ nearest neighbors. It builds a fake member
 of the minority class at some point in-between itself and one of its nearest
@@ -749,6 +721,32 @@ Further, some researchers report that some learners respond better than others t
 (linear discriminant analysis, logistic regression, neural network and classification tree) by
 using two module sets of industry legacy software. They reported that SMOTE improved the prediction performance of the linear and logistic models, but not neural network and classification tree models. Similar results, that the value of SMOTE was dependent on the learner,
 was also reported by Van et al.~\cite{van2007experimental}.
+
+\begin{figure}[!h]
+\scriptsize
+\begin{lstlisting}[mathescape,linewidth=8.2cm,frame=r,numbers=right]
+  def SMOTE(k=2, m=50%, r=2):  # default settings
+    while Majority > m do
+      delete any majority item
+    while Minority < m do
+      add something_like(any minority item)
+      
+  def something_like(X0): 
+    relevant = emptySet
+    k1 = 0
+    while(k1++ < 20 and size(found) < k)  {
+       all = k1 nearest neighbors
+       relevant += members of "all" of same class as X0 }
+    Z = any of found
+    Y = interpolate (X0, Z)
+    return Y
+    
+  def minkowski_distance(a,b,r): 
+    return $( \Sigma_i\ abs(a_i - b_i)^r)^{1/r}$
+\end{lstlisting}
+\caption{Pseudocode of SMOTE}
+\label{fig:pseudocode}  
+\end{figure}
 
 \subsection{SMOTUNED = auto-tuning SMOTE}
 \label{sect:smotuned}
@@ -1238,7 +1236,7 @@ we strongly recommend that {\smb} be applied to each new data set.
     \end{minipage}%
     \caption{Scott Knott analysis of No-SMOTE, SMOTE and SMOTUNED. The column headers are denoted as No for No-SMOTE, S1 for SMOTE and S2 for SMOTUNED. $(\ast)$ Mark represents the best learner combined with its techniques.}
     \label{fig:stats}
-\vspace{-0.2cm}
+\vspace{-0.5cm}
 \end{figure*}
 
 
@@ -1537,7 +1535,6 @@ The work is partially funded by
 %NSF awards \#1506586  and \#1302169.
 funding source (blinded for review).
 
- \newpage
 \balance
 
 \bibliographystyle{abbrv}

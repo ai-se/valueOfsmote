@@ -4706,7 +4706,7 @@ Use \@IEEEbackslash #2 instead.}}
 
 
 % provide for legacy IED commands/lengths when possible
-\let\labelindent\IEEElabelindent
+%\let\labelindent\IEEElabelindent
 \def\calcleftmargin{\@IEEElegacywarn{calcleftmargin}{IEEEcalcleftmargin}\IEEEcalcleftmargin}
 \def\setlabelwidth{\@IEEElegacywarn{setlabelwidth}{IEEEsetlabelwidth}\IEEEsetlabelwidth}
 \def\usemathlabelsep{\@IEEElegacywarn{usemathlabelsep}{IEEEusemathlabelsep}\IEEEusemathlabelsep}
