@@ -1,4 +1,4 @@
-\documentclass[sigconf,review, anonymous]{acmart}
+\documentclass[sigconf]{acmart}
 %\documentclass[sigconf,review, anonymous,preprint]{acmart}
 %\documentclass[10pt,conference]{IEEEtran}
 \usepackage{booktabs} % For formal tables
@@ -299,8 +299,8 @@ In summary, the  contributions of this paper are:
 \item Dramatically large improvements in  defect predictors.
 \item Potentially, for any other software analytics task that uses classifiers, a way to improve those learners as well.
 \item A methodology for assessing the value of pre-processing data sets in software analytics.
-\item A reproduction package to reproduce our results then (perhaps) to improve or refute  our results (Blinded for Review).
-%\footnote{Available to download from https://github.com/ai-se/Smote\_tune},
+\item A reproduction package to reproduce our results then (perhaps) to improve or refute  our results %(Blinded for Review).
+(Available to download from https://github.com/ai-se/Smote\_tune).
 
 \ei
 The rest of this paper is structured as follows:
@@ -500,8 +500,6 @@ a fault or non-fault module. Hence, Table~\ref{fig:cmatrix} has four quadrants c
 
 From this matrix, we can define performance measures like: 
 \bi
-
-
 \item \textbf{Recall} $=$ $pd$  $=$ $\mathit{TP}/(\mathit{TP} + \mathit{FN})$
 
 
@@ -516,6 +514,13 @@ represents recall.
 \ei
 
 
+As shown in Figure~\ref{fig:trade},
+a typical predictor must ``trade-off''
+between false alarm and recall.
+This is because the  more sensitive the detector, the more often it triggers and the higher its recall. On the other hand,  if a detector triggers more often, it can also raise more false alarm.
+Hence, when increasing recall, we  should  expect
+the false alarm rate to  increase
+(ideally, not by very much).
 
  \begin{wrapfigure}{r}{2.0in}
 \begin{center}
@@ -525,14 +530,6 @@ represents recall.
 \caption{Trade-offs false alarm vs
 recall (probability of detection).  }\label{fig:trade}
  \end{wrapfigure}
-As shown in Figure~\ref{fig:trade},
-a typical predictor must ``trade-off''
-between false alarm and recall.
-This is because the  more sensitive the detector, the more often it triggers and the higher its recall. On the other hand,  if a detector triggers more often, it can also raise more false alarm.
-Hence, when increasing recall, we  should  expect
-the false alarm rate to  increase
-(ideally, not by very much).
-
 There are many more ways to evaluate defect predictors besides the four listed above.
 Previously we have catalogued dozens of them (see Table 23.2 of~\cite{menzies2014sharing}) and even several novel ones were proposed
 (balance, G-measure~\cite{menzies2007data}).  
@@ -546,8 +543,6 @@ with safety-critical applications, management may be
  Similarly, 
 when rushing some non-safety critical application to market, management may be ``cost adverse''
 and elect to {\em minimize false alarm} since this avoids distractions to the developers. 
-
-
 
 In summary, there are  numerous evaluation criteria and  numerous more business contexts
 where different criteria might be preferred by different local business users. In response to
@@ -581,6 +576,7 @@ class imbalances of 1:7; 1:9; 1:10; 1:13; 1:16; 1:249.
  \begin{table}[!b]
 \centering
 \footnotesize
+\vspace{-0.4cm}
 \caption{22 highly cited Software Defect prediction studies.}
 \vspace{-0.2cm}
 \label{tbl:survey2}
@@ -747,7 +743,36 @@ until
 all classes have the same frequency.  In the case of software defect data,
 the minority class is usually the  defective class.
 
+Figure~\ref{fig:pseudocode} shows how {\sma} works. During super-sampling,
+a member of the minority class finds $k$ nearest neighbors. It builds a fake member
+of the minority class at some point in-between itself and one of its nearest
+neighbors.  During that process, some distance function is required which is the {\em minkowski\_distance} function. 
 
+{\sma}'s control parameters are (a) $k$ that selects how many neighbors to use  (defaults to $k=5$), (b) $m$ is how many examples of each class to generated (defaults to $m=50\%$ of the total training samples), and (3) $r$ which selects  the distance function (default is $r=2$,
+i.e., use    
+  Euclidean distance).
+
+% Different data preprocessing has been proved
+% to improve the performance of defect prediction models by
+% Menzies et al.~\cite{menzies2007data}. Jiang et al.~\cite{jiang2008can} evaluate the impact of
+% log transformation and discretization on the performance
+% of defect prediction models, and report different modeling
+% techniques ``prefer'' different transformation techniques. For
+% instance, Naive Bayes achieves better performance on discretized
+% data, while logistic regression achieves better performance
+% for both. Peters et al.~\cite{peters2013better} propose different filters; and Li et al.~\cite{li2012sample} propose
+% to use sampling. Nam et al.~\cite{nam2013transfer} transformed both
+% training and testing data to the same latent feature space,
+% and build models on the latent feature space. 
+% %Too many variables in the datacan result in the ``curse of dimensionality''~\cite{friedman1997bias}.
+% Feature Selection is a common method that can
+% reduce features and sampling can balance the diversity of
+% class instance numbers~\cite{yin2015empirical}, in turn improving the performance of defect prediction. In this paper we only tackle the class imbalance problem.
+
+
+In the software analytics literature, there are contradictory findings on
+the value of applying {\sma} for software defect prediction.
+Van et al.~\cite{van2007experimental}, Pears et al.~\cite{pears2014synthetic} and Tan et al.~\cite{tan2015online} found {\sma} to be advantageous, while others, such as Pelayo et al.~\cite{pelayo2007applying} did not. 
 
  \begin{wrapfigure}{r}{2in}\small
 \begin{lstlisting}[mathescape,linewidth=2in,frame=n,numbers=none]
@@ -775,38 +800,6 @@ the minority class is usually the  defective class.
 \label{fig:pseudocode} 
 \vspace{-0.3cm}
 \end{wrapfigure}
-Figure~\ref{fig:pseudocode} shows how {\sma} works. During super-sampling,
-a member of the minority class finds $k$ nearest neighbors. It builds a fake member
-of the minority class at some point in-between itself and one of its nearest
-neighbors.  During that process, some distance function is required which is the {\em minkowski\_distance} function. 
-
-{\sma}'s control parameters are (a) $k$ that selects how many neighbors to use  (defaults to $k=5$), (b) $m$ is how many examples of each class to generated (defaults to $m=50\%$ of the total training samples), and (3) $r$ which selects  the distance function (default is $r=2$,
-i.e., use    
-  Euclidean distance).
-
-
-
-% Different data preprocessing has been proved
-% to improve the performance of defect prediction models by
-% Menzies et al.~\cite{menzies2007data}. Jiang et al.~\cite{jiang2008can} evaluate the impact of
-% log transformation and discretization on the performance
-% of defect prediction models, and report different modeling
-% techniques ``prefer'' different transformation techniques. For
-% instance, Naive Bayes achieves better performance on discretized
-% data, while logistic regression achieves better performance
-% for both. Peters et al.~\cite{peters2013better} propose different filters; and Li et al.~\cite{li2012sample} propose
-% to use sampling. Nam et al.~\cite{nam2013transfer} transformed both
-% training and testing data to the same latent feature space,
-% and build models on the latent feature space. 
-% %Too many variables in the datacan result in the ``curse of dimensionality''~\cite{friedman1997bias}.
-% Feature Selection is a common method that can
-% reduce features and sampling can balance the diversity of
-% class instance numbers~\cite{yin2015empirical}, in turn improving the performance of defect prediction. In this paper we only tackle the class imbalance problem.
-
-
-In the software analytics literature, there are contradictory findings on
-the value of applying {\sma} for software defect prediction.
-Van et al.~\cite{van2007experimental}, Pears et al.~\cite{pears2014synthetic} and Tan et al.~\cite{tan2015online} found {\sma} to be advantageous, while others, such as Pelayo et al.~\cite{pelayo2007applying} did not. 
 
 Further, some researchers report that some learners respond better than others to {\sma}. Kamei et al.~\cite{kamei2007effects} evaluated the effects of {\sma} applied to  four fault-proneness models
 (linear discriminant analysis, logistic regression, neural network, and decision tree) by
@@ -1323,7 +1316,8 @@ Our reading
 of the literature is that the MAHAKIL algorithm  of Bennin et al. in TSE 2017~\cite{bennin2017mahakil} represents the most recent work in  SE on handling  
 class imbalance.  
 At the time of writing of this paper (early August 2017), there was no reproduction package available for MAHAKIL so we wrote our own version
-based on the description in that paper (Reproduction Package blinded for review). %\footnote{Available to download from https://github.com/ai-se/MAHAKIL_imbalance}
+based on the description in that paper %(Reproduction Package blinded for review). 
+(Available to download from https://github.com/ai-se/MAHAKIL\_imbalance).
 
 Figure~\ref{fig:s2_mahakil} compares   results from MAHAKIL with those from {\smb}. These results
 were generated using the same experimental methods as used for   Figure~\ref{fig:tuned} (those methods were described in  Section~\ref{sect:wcm}).
