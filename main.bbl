@@ -1,0 +1,897 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{{\tt DOI:}\penalty0{#1}\ }
+  \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       #1{#1}          \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Aggarwal, Hinneburg, and Keim}{Aggarwal
+  et~al\mbox{.}}{2001}]%
+        {aggarwal2001surprising}
+\bibfield{author}{\bibinfo{person}{Charu~C Aggarwal},
+  \bibinfo{person}{Alexander Hinneburg}, {and} \bibinfo{person}{Daniel~A
+  Keim}.} \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{On the surprising behavior of distance metrics in
+  high dimensional space}. In \bibinfo{booktitle}{{\em International Conference
+  on Database Theory}}. Springer, \bibinfo{pages}{420--434}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Agrawal, Fu, and Menzies}{Agrawal
+  et~al\mbox{.}}{2016}]%
+        {agrawal2016wrong}
+\bibfield{author}{\bibinfo{person}{Amritanshu Agrawal}, \bibinfo{person}{Wei
+  Fu}, {and} \bibinfo{person}{Tim Menzies}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{What is wrong with topic modeling?(and how to fix
+  it using search-based se)}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1608.08176\/}}
+  (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Arcuri and Briand}{Arcuri and Briand}{2011}]%
+        {arcuri2011practical}
+\bibfield{author}{\bibinfo{person}{Andrea Arcuri} {and} \bibinfo{person}{Lionel
+  Briand}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{A practical guide for using statistical tests to
+  assess randomized algorithms in software engineering}. In
+  \bibinfo{booktitle}{{\em Software Engineering (ICSE), 2011 33rd International
+  Conference on}}. IEEE, \bibinfo{pages}{1--10}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bennin, Keung, Phannachitta, Monden, and
+  Mensah}{Bennin et~al\mbox{.}}{2017}]%
+        {bennin2017mahakil}
+\bibfield{author}{\bibinfo{person}{Kwabena~Ebo Bennin}, \bibinfo{person}{Jacky
+  Keung}, \bibinfo{person}{Passakorn Phannachitta}, \bibinfo{person}{Akito
+  Monden}, {and} \bibinfo{person}{Solomon Mensah}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{MAHAKIL: Diversity based Oversampling Approach to
+  Alleviate the Class Imbalance Issue in Software Defect Prediction}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Software Engineering\/}}
+  (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bird, Nagappan, Gall, Murphy, and
+  Devanbu}{Bird et~al\mbox{.}}{2009}]%
+        {bird2009putting}
+\bibfield{author}{\bibinfo{person}{Christian Bird}, \bibinfo{person}{Nachiappan
+  Nagappan}, \bibinfo{person}{Harald Gall}, \bibinfo{person}{Brendan Murphy},
+  {and} \bibinfo{person}{Premkumar Devanbu}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Putting it all together: Using socio-technical
+  networks to predict failures}. In \bibinfo{booktitle}{{\em 2009 20th ISSRE}}.
+  IEEE, \bibinfo{pages}{109--119}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Catal and Diri}{Catal and Diri}{2009}]%
+        {catal2009systematic}
+\bibfield{author}{\bibinfo{person}{Cagatay Catal} {and} \bibinfo{person}{Banu
+  Diri}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{A systematic review of software fault prediction
+  studies}.
+\newblock \bibinfo{journal}{{\em Expert systems with applications\/}}
+  \bibinfo{volume}{36}, \bibinfo{number}{4} (\bibinfo{year}{2009}),
+  \bibinfo{pages}{7346--7354}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chawla, Bowyer, Hall, and Kegelmeyer}{Chawla
+  et~al\mbox{.}}{2002}]%
+        {chawla2002smote}
+\bibfield{author}{\bibinfo{person}{Nitesh~V. Chawla}, \bibinfo{person}{Kevin~W.
+  Bowyer}, \bibinfo{person}{Lawrence~O. Hall}, {and} \bibinfo{person}{W.~Philip
+  Kegelmeyer}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{SMOTE: synthetic minority over-sampling technique}.
+\newblock \bibinfo{journal}{{\em Journal of artificial intelligence
+  research\/}}  \bibinfo{volume}{16} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{321--357}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chidamber and Kemerer}{Chidamber and
+  Kemerer}{1994}]%
+        {chidamber1994metrics}
+\bibfield{author}{\bibinfo{person}{Shyam~R Chidamber} {and}
+  \bibinfo{person}{Chris~F Kemerer}.} \bibinfo{year}{1994}\natexlab{}.
+\newblock \showarticletitle{A metrics suite for object oriented design}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on software engineering\/}}
+  \bibinfo{volume}{20}, \bibinfo{number}{6} (\bibinfo{year}{1994}),
+  \bibinfo{pages}{476--493}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chiha, Ghabi, and Liouane}{Chiha
+  et~al\mbox{.}}{2012}]%
+        {chiha2012tuning}
+\bibfield{author}{\bibinfo{person}{I. Chiha}, \bibinfo{person}{J. Ghabi}, {and}
+  \bibinfo{person}{N. Liouane}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Tuning PID controller with multi-objective
+  differential evolution}. In \bibinfo{booktitle}{{\em ISCCSP '12}}. IEEE,
+  \bibinfo{pages}{1--4}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{D'Ambros, Lanza, and Robbes}{D'Ambros
+  et~al\mbox{.}}{2010}]%
+        {d2010extensive}
+\bibfield{author}{\bibinfo{person}{Marco D'Ambros}, \bibinfo{person}{Michele
+  Lanza}, {and} \bibinfo{person}{Romain Robbes}.}
+  \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{An extensive comparison of bug prediction
+  approaches}. In \bibinfo{booktitle}{{\em 2010 7th IEEE MSR)}}. IEEE,
+  \bibinfo{pages}{31--41}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Duda, Hart, and Stork}{Duda
+  et~al\mbox{.}}{2012}]%
+        {duda2012pattern}
+\bibfield{author}{\bibinfo{person}{Richard~O Duda}, \bibinfo{person}{Peter~E
+  Hart}, {and} \bibinfo{person}{David~G Stork}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Pattern classification}}.
+\newblock \bibinfo{publisher}{John Wiley \& Sons}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Efron and Tibshirani}{Efron and
+  Tibshirani}{1994}]%
+        {efron94}
+\bibfield{author}{\bibinfo{person}{Bradley Efron} {and}
+  \bibinfo{person}{Robert~J Tibshirani}.} \bibinfo{year}{1994}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em An introduction to the bootstrap}}.
+\newblock \bibinfo{publisher}{Chapman and Hall}, \bibinfo{address}{London}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Elish and Elish}{Elish and Elish}{2008}]%
+        {elish2008predicting}
+\bibfield{author}{\bibinfo{person}{Karim~O Elish} {and}
+  \bibinfo{person}{Mahmoud~O Elish}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Predicting defect-prone software modules using
+  support vector machines}.
+\newblock \bibinfo{journal}{{\em JSS\/}} \bibinfo{volume}{81},
+  \bibinfo{number}{5} (\bibinfo{year}{2008}), \bibinfo{pages}{649--660}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fu and Menzies}{Fu and Menzies}{2017}]%
+        {fu2017easy}
+\bibfield{author}{\bibinfo{person}{Wei Fu} {and} \bibinfo{person}{Tim
+  Menzies}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Easy over Hard: A Case Study on Deep Learning}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1703.00133\/}}
+  (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fu, Menzies, and Shen}{Fu
+  et~al\mbox{.}}{2016}]%
+        {fu2016tuning}
+\bibfield{author}{\bibinfo{person}{Wei Fu}, \bibinfo{person}{Tim Menzies},
+  {and} \bibinfo{person}{Xipeng Shen}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Tuning for software analytics: Is it really
+  necessary?}
+\newblock \bibinfo{journal}{{\em IST\/}}  \bibinfo{volume}{76}
+  (\bibinfo{year}{2016}), \bibinfo{pages}{135--146}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ghotra, McIntosh, and Hassan}{Ghotra
+  et~al\mbox{.}}{2015}]%
+        {ghotra2015revisiting}
+\bibfield{author}{\bibinfo{person}{Baljinder Ghotra}, \bibinfo{person}{Shane
+  McIntosh}, {and} \bibinfo{person}{Ahmed~E Hassan}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Revisiting the impact of classification techniques
+  on the performance of defect prediction models}. In \bibinfo{booktitle}{{\em
+  37th ICSE-Volume 1}}. IEEE Press, \bibinfo{pages}{789--800}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gondra}{Gondra}{2008}]%
+        {gondra2008applying}
+\bibfield{author}{\bibinfo{person}{Iker Gondra}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Applying machine learning to software
+  fault-proneness prediction}.
+\newblock \bibinfo{journal}{{\em Journal of Systems and Software\/}}
+  \bibinfo{volume}{81}, \bibinfo{number}{2} (\bibinfo{year}{2008}),
+  \bibinfo{pages}{186--195}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gray, Bowes, Davey, Sun, and
+  Christianson}{Gray et~al\mbox{.}}{2009}]%
+        {gray2009using}
+\bibfield{author}{\bibinfo{person}{David Gray}, \bibinfo{person}{David Bowes},
+  \bibinfo{person}{Neil Davey}, \bibinfo{person}{Yi Sun}, {and}
+  \bibinfo{person}{Bruce Christianson}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Using the support vector machine as a
+  classification method for software defect prediction with static code
+  metrics}. In \bibinfo{booktitle}{{\em International Conference on Engineering
+  Applications of Neural Networks}}. Springer, \bibinfo{pages}{223--234}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hall, Beecham, Bowes, Gray, and Counsell}{Hall
+  et~al\mbox{.}}{2012}]%
+        {hall2012systematic}
+\bibfield{author}{\bibinfo{person}{Tracy Hall}, \bibinfo{person}{Sarah
+  Beecham}, \bibinfo{person}{David Bowes}, \bibinfo{person}{David Gray}, {and}
+  \bibinfo{person}{Steve Counsell}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{A systematic literature review on fault prediction
+  performance in software engineering}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} \bibinfo{volume}{38},
+  \bibinfo{number}{6} (\bibinfo{year}{2012}), \bibinfo{pages}{1276--1304}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hassan}{Hassan}{2009}]%
+        {hassan2009predicting}
+\bibfield{author}{\bibinfo{person}{Ahmed~E Hassan}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Predicting faults using the complexity of code
+  changes}. In \bibinfo{booktitle}{{\em 31st ICSE}}. IEEE Computer Society,
+  \bibinfo{pages}{78--88}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{He and Garcia}{He and Garcia}{2009}]%
+        {he2009learning}
+\bibfield{author}{\bibinfo{person}{Haibo He} {and} \bibinfo{person}{Edwardo~A
+  Garcia}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Learning from imbalanced data}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on knowledge and data
+  engineering\/}} \bibinfo{volume}{21}, \bibinfo{number}{9}
+  (\bibinfo{year}{2009}), \bibinfo{pages}{1263--1284}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{He, Shu, Yang, Li, and Wang}{He
+  et~al\mbox{.}}{2012}]%
+        {he2012investigation}
+\bibfield{author}{\bibinfo{person}{Zhimin He}, \bibinfo{person}{Fengdi Shu},
+  \bibinfo{person}{Ye Yang}, \bibinfo{person}{Mingshu Li}, {and}
+  \bibinfo{person}{Qing Wang}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{An investigation on the feasibility of
+  cross-project defect prediction}.
+\newblock \bibinfo{journal}{{\em Automated Software Engineering\/}}
+  \bibinfo{volume}{19}, \bibinfo{number}{2} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{167--199}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jiang, Cukic, and Ma}{Jiang
+  et~al\mbox{.}}{2008a}]%
+        {jiang2008techniques}
+\bibfield{author}{\bibinfo{person}{Yue Jiang}, \bibinfo{person}{Bojan Cukic},
+  {and} \bibinfo{person}{Yan Ma}.} \bibinfo{year}{2008}\natexlab{a}.
+\newblock \showarticletitle{Techniques for evaluating fault prediction models}.
+\newblock \bibinfo{journal}{{\em Empirical Software Engineering\/}}
+  \bibinfo{volume}{13}, \bibinfo{number}{5} (\bibinfo{year}{2008}),
+  \bibinfo{pages}{561--595}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jiang, Cukic, and Menzies}{Jiang
+  et~al\mbox{.}}{2008b}]%
+        {jiang2008can}
+\bibfield{author}{\bibinfo{person}{Yue Jiang}, \bibinfo{person}{Bojan Cukic},
+  {and} \bibinfo{person}{Tim Menzies}.} \bibinfo{year}{2008}\natexlab{b}.
+\newblock \showarticletitle{Can data transformation help in the detection of
+  fault-prone modules?}. In \bibinfo{booktitle}{{\em Proceedings of the 2008
+  workshop on Defects in large software systems}}. ACM,
+  \bibinfo{pages}{16--20}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jiang, Lin, Cukic, and Menzies}{Jiang
+  et~al\mbox{.}}{2009}]%
+        {jiang2009variance}
+\bibfield{author}{\bibinfo{person}{Yue Jiang}, \bibinfo{person}{Jie Lin},
+  \bibinfo{person}{Bojan Cukic}, {and} \bibinfo{person}{Tim Menzies}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Variance analysis in software fault prediction
+  models}. In \bibinfo{booktitle}{{\em Software Reliability Engineering, 2009.
+  ISSRE'09. 20th International Symposium on}}. IEEE, \bibinfo{pages}{99--108}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kamei, Monden, Matsumoto, Kakimoto, and
+  Matsumoto}{Kamei et~al\mbox{.}}{2007}]%
+        {kamei2007effects}
+\bibfield{author}{\bibinfo{person}{Yasutaka Kamei}, \bibinfo{person}{Akito
+  Monden}, \bibinfo{person}{Shinsuke Matsumoto}, \bibinfo{person}{Takeshi
+  Kakimoto}, {and} \bibinfo{person}{Ken-ichi Matsumoto}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{The effects of over and under sampling on
+  fault-prone module detection}. In \bibinfo{booktitle}{{\em ESEM 2007}}. IEEE,
+  \bibinfo{pages}{196--204}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Khoshgoftaar, Gao, and Seliya}{Khoshgoftaar
+  et~al\mbox{.}}{2010}]%
+        {khoshgoftaar2010attribute}
+\bibfield{author}{\bibinfo{person}{Taghi~M Khoshgoftaar},
+  \bibinfo{person}{Kehan Gao}, {and} \bibinfo{person}{Naeem Seliya}.}
+  \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Attribute selection and imbalanced data: Problems
+  in software defect prediction}. In \bibinfo{booktitle}{{\em Tools with
+  Artificial Intelligence (ICTAI), 2010 22nd IEEE International Conference
+  on}}, Vol.~\bibinfo{volume}{1}. IEEE, \bibinfo{pages}{137--144}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kim, Zhang, Wu, and Gong}{Kim
+  et~al\mbox{.}}{2011}]%
+        {kim2011dealing}
+\bibfield{author}{\bibinfo{person}{Sunghun Kim}, \bibinfo{person}{Hongyu
+  Zhang}, \bibinfo{person}{Rongxin Wu}, {and} \bibinfo{person}{Liang Gong}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Dealing with noise in defect prediction}. In
+  \bibinfo{booktitle}{{\em Software Engineering (ICSE), 2011 33rd International
+  Conference on}}. IEEE, \bibinfo{pages}{481--490}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Krishna, Menzies, and Layman}{Krishna
+  et~al\mbox{.}}{2017}]%
+        {krishna2017less}
+\bibfield{author}{\bibinfo{person}{Rahul Krishna}, \bibinfo{person}{Tim
+  Menzies}, {and} \bibinfo{person}{Lucas Layman}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Less is More: Minimizing Code Reorganization using
+  XTREE}.
+\newblock \bibinfo{journal}{{\em Information and Software Technology\/}}
+  (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lessmann, Baesens, Mues, and Pietsch}{Lessmann
+  et~al\mbox{.}}{2008}]%
+        {lessmann2008benchmarking}
+\bibfield{author}{\bibinfo{person}{Stefan Lessmann}, \bibinfo{person}{Bart
+  Baesens}, \bibinfo{person}{Christophe Mues}, {and} \bibinfo{person}{Swantje
+  Pietsch}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Benchmarking classification models for software
+  defect prediction: A proposed framework and novel findings}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} \bibinfo{volume}{34},
+  \bibinfo{number}{4} (\bibinfo{year}{2008}), \bibinfo{pages}{485--496}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Li, Zhang, Wu, and Zhou}{Li
+  et~al\mbox{.}}{2012}]%
+        {li2012sample}
+\bibfield{author}{\bibinfo{person}{Ming Li}, \bibinfo{person}{Hongyu Zhang},
+  \bibinfo{person}{Rongxin Wu}, {and} \bibinfo{person}{Zhi-Hua Zhou}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Sample-based software defect prediction with active
+  and semi-supervised learning}.
+\newblock \bibinfo{journal}{{\em Automated Software Engineering\/}}
+  \bibinfo{volume}{19}, \bibinfo{number}{2} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{201--230}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lowry, Boyd, and Kulkami}{Lowry
+  et~al\mbox{.}}{1998}]%
+        {lowry1998towards}
+\bibfield{author}{\bibinfo{person}{Michael Lowry}, \bibinfo{person}{Mark Boyd},
+  {and} \bibinfo{person}{Deepak Kulkami}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Towards a theory for integration of mathematical
+  verification and empirical testing}. In \bibinfo{booktitle}{{\em Automated
+  Software Engineering, 1998. Proceedings. 13th IEEE International Conference
+  on}}. IEEE, \bibinfo{pages}{322--331}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mende and Koschke}{Mende and Koschke}{2009}]%
+        {mende2009revisiting}
+\bibfield{author}{\bibinfo{person}{Thilo Mende} {and} \bibinfo{person}{Rainer
+  Koschke}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Revisiting the evaluation of defect prediction
+  models}. In \bibinfo{booktitle}{{\em Proceedings of the 5th International
+  Conference on Predictor Models in Software Engineering}}. ACM,
+  \bibinfo{pages}{7}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Dekhtyar, Distefano, and
+  Greenwald}{Menzies et~al\mbox{.}}{2007a}]%
+        {menzies2007problems}
+\bibfield{author}{\bibinfo{person}{Tim Menzies}, \bibinfo{person}{Alex
+  Dekhtyar}, \bibinfo{person}{Justin Distefano}, {and} \bibinfo{person}{Jeremy
+  Greenwald}.} \bibinfo{year}{2007}\natexlab{a}.
+\newblock \showarticletitle{Problems with Precision: A Response to" comments
+  on'data mining static code attributes to learn defect predictors'"}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} \bibinfo{volume}{33},
+  \bibinfo{number}{9} (\bibinfo{year}{2007}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies and Di~Stefano}{Menzies and
+  Di~Stefano}{2004}]%
+        {Menzies04}
+\bibfield{author}{\bibinfo{person}{Tim Menzies} {and}
+  \bibinfo{person}{Justin~S. Di~Stefano}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{How Good is Your Blind Spot Sampling Policy}. In
+  \bibinfo{booktitle}{{\em Proceedings of the Eighth IEEE International
+  Conference on High Assurance Systems Engineering}} {\em
+  (\bibinfo{series}{HASE'04})}. \bibinfo{publisher}{IEEE Computer Society},
+  \bibinfo{address}{Washington, DC, USA}, \bibinfo{pages}{129--138}.
+\newblock
+\showISBNx{0-7695-2094-4}
+\showURL{%
+\url{http://dl.acm.org/citation.cfm?id=1890580.1890593}}
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Greenwald, and Frank}{Menzies
+  et~al\mbox{.}}{2007b}]%
+        {menzies2007data}
+\bibfield{author}{\bibinfo{person}{Tim Menzies}, \bibinfo{person}{Jeremy
+  Greenwald}, {and} \bibinfo{person}{Art Frank}.}
+  \bibinfo{year}{2007}\natexlab{b}.
+\newblock \showarticletitle{Data mining static code attributes to learn defect
+  predictors}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} \bibinfo{volume}{33},
+  \bibinfo{number}{1} (\bibinfo{year}{2007}), \bibinfo{pages}{2--13}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Kocaguneli, Turhan, Minku, and
+  Peters}{Menzies et~al\mbox{.}}{2014}]%
+        {menzies2014sharing}
+\bibfield{author}{\bibinfo{person}{Tim Menzies}, \bibinfo{person}{Ekrem
+  Kocaguneli}, \bibinfo{person}{Burak Turhan}, \bibinfo{person}{Leandro Minku},
+  {and} \bibinfo{person}{Fayola Peters}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Sharing data and models in software
+  engineering}}.
+\newblock \bibinfo{publisher}{Morgan Kaufmann}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Milton, Turhan, Cukic, Jiang, and
+  Bener}{Menzies et~al\mbox{.}}{2010}]%
+        {menzies2010defect}
+\bibfield{author}{\bibinfo{person}{Tim Menzies}, \bibinfo{person}{Zach Milton},
+  \bibinfo{person}{Burak Turhan}, \bibinfo{person}{Bojan Cukic},
+  \bibinfo{person}{Yue Jiang}, {and} \bibinfo{person}{Ay{\c{s}}e Bener}.}
+  \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Defect prediction from static code features:
+  current results, limitations, new approaches}.
+\newblock \bibinfo{journal}{{\em Automated Software Engineering\/}}
+  \bibinfo{volume}{17}, \bibinfo{number}{4} (\bibinfo{year}{2010}),
+  \bibinfo{pages}{375--407}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies and Sinsel}{Menzies and
+  Sinsel}{2000}]%
+        {menzies2000practical}
+\bibfield{author}{\bibinfo{person}{Tim Menzies} {and} \bibinfo{person}{Erik
+  Sinsel}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{Practical large scale what-if queries: Case studies
+  with software risk assessment}. In \bibinfo{booktitle}{{\em Automated
+  Software Engineering, 2000. Proceedings ASE 2000. The Fifteenth IEEE
+  International Conference on}}. IEEE, \bibinfo{pages}{165--173}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Turhan, Bener, Gay, Cukic, and
+  Jiang}{Menzies et~al\mbox{.}}{2008}]%
+        {menzies2008implications}
+\bibfield{author}{\bibinfo{person}{Tim Menzies}, \bibinfo{person}{Burak
+  Turhan}, \bibinfo{person}{Ayse Bener}, \bibinfo{person}{Gregory Gay},
+  \bibinfo{person}{Bojan Cukic}, {and} \bibinfo{person}{Yue Jiang}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Implications of ceiling effects in defect
+  predictors}. In \bibinfo{booktitle}{{\em Proceedings of the 4th international
+  workshop on Predictor models in software engineering}}. ACM,
+  \bibinfo{pages}{47--54}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mittas and Angelis}{Mittas and
+  Angelis}{2013}]%
+        {mittas2013ranking}
+\bibfield{author}{\bibinfo{person}{Nikolaos Mittas} {and}
+  \bibinfo{person}{Lefteris Angelis}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Ranking and clustering software cost estimation
+  models through a multiple comparisons algorithm}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on software engineering\/}}
+  \bibinfo{volume}{39}, \bibinfo{number}{4} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{537--551}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nagappan and Ball}{Nagappan and Ball}{2005}]%
+        {nagappan2005static}
+\bibfield{author}{\bibinfo{person}{Nachiappan Nagappan} {and}
+  \bibinfo{person}{Thomas Ball}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Static analysis tools as early indicators of
+  pre-release defect density}. In \bibinfo{booktitle}{{\em Proceedings of the
+  27th international conference on Software engineering}}. ACM,
+  \bibinfo{pages}{580--586}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nagappan, Ball, and Zeller}{Nagappan
+  et~al\mbox{.}}{2006}]%
+        {nagappan2006mining}
+\bibfield{author}{\bibinfo{person}{Nachiappan Nagappan},
+  \bibinfo{person}{Thomas Ball}, {and} \bibinfo{person}{Andreas Zeller}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Mining metrics to predict component failures}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 28th international conference on
+  Software engineering}}. ACM, \bibinfo{pages}{452--461}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Omran, Engelbrecht, and Salman}{Omran
+  et~al\mbox{.}}{2005}]%
+        {omran2005differential}
+\bibfield{author}{\bibinfo{person}{M. Omran}, \bibinfo{person}{A.~P.
+  Engelbrecht}, {and} \bibinfo{person}{A. Salman}.}
+  \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Differential evolution methods for unsupervised
+  image classification}. In \bibinfo{booktitle}{{\em IEEE Congress on
+  Evolutionary Computation '05}}, Vol.~\bibinfo{volume}{2}.
+  \bibinfo{pages}{966--973}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pears, Finlay, and Connor}{Pears
+  et~al\mbox{.}}{2014}]%
+        {pears2014synthetic}
+\bibfield{author}{\bibinfo{person}{Russel Pears}, \bibinfo{person}{Jacqui
+  Finlay}, {and} \bibinfo{person}{Andy~M Connor}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Synthetic Minority over-sampling technique (SMOTE)
+  for predicting software build outcomes}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1407.2330\/}}
+  (\bibinfo{year}{2014}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pedregosa, Varoquaux, Gramfort, Michel,
+  Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg,
+  et~al\mbox{.}}{Pedregosa et~al\mbox{.}}{2011}]%
+        {pedregosa2011scikit}
+\bibfield{author}{\bibinfo{person}{Fabian Pedregosa}, \bibinfo{person}{Ga{\"e}l
+  Varoquaux}, \bibinfo{person}{Alexandre Gramfort}, \bibinfo{person}{Vincent
+  Michel}, \bibinfo{person}{Bertrand Thirion}, \bibinfo{person}{Olivier
+  Grisel}, \bibinfo{person}{Mathieu Blondel}, \bibinfo{person}{Peter
+  Prettenhofer}, \bibinfo{person}{Ron Weiss}, \bibinfo{person}{Vincent
+  Dubourg}, {and} \bibinfo{person}{others}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Scikit-learn: Machine learning in Python}.
+\newblock \bibinfo{journal}{{\em Journal of Machine Learning Research\/}}
+  \bibinfo{volume}{12}, \bibinfo{number}{Oct} (\bibinfo{year}{2011}),
+  \bibinfo{pages}{2825--2830}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pelayo and Dick}{Pelayo and Dick}{2007}]%
+        {pelayo2007applying}
+\bibfield{author}{\bibinfo{person}{Lourdes Pelayo} {and} \bibinfo{person}{Scott
+  Dick}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Applying novel resampling strategies to software
+  defect prediction}. In \bibinfo{booktitle}{{\em NAFIPS 2007-2007 Annual
+  Meeting of the North American Fuzzy Information Processing Society}}. IEEE,
+  \bibinfo{pages}{69--72}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pelayo and Dick}{Pelayo and Dick}{2012}]%
+        {pelayo2012evaluating}
+\bibfield{author}{\bibinfo{person}{Lourdes Pelayo} {and} \bibinfo{person}{Scott
+  Dick}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Evaluating stratification alternatives to improve
+  software defect prediction}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Reliability\/}}
+  \bibinfo{volume}{61}, \bibinfo{number}{2} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{516--525}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Peters, Menzies, Gong, and Zhang}{Peters
+  et~al\mbox{.}}{2013b}]%
+        {peters2013balancing}
+\bibfield{author}{\bibinfo{person}{Fayola Peters}, \bibinfo{person}{Tim
+  Menzies}, \bibinfo{person}{Liang Gong}, {and} \bibinfo{person}{Hongyu
+  Zhang}.} \bibinfo{year}{2013}\natexlab{b}.
+\newblock \showarticletitle{Balancing privacy and utility in cross-company
+  defect prediction}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Software Engineering\/}}
+  \bibinfo{volume}{39}, \bibinfo{number}{8} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{1054--1068}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Peters, Menzies, and Marcus}{Peters
+  et~al\mbox{.}}{2013a}]%
+        {peters2013better}
+\bibfield{author}{\bibinfo{person}{Fayola Peters}, \bibinfo{person}{Tim
+  Menzies}, {and} \bibinfo{person}{Andrian Marcus}.}
+  \bibinfo{year}{2013}\natexlab{a}.
+\newblock \showarticletitle{Better cross company defect prediction}. In
+  \bibinfo{booktitle}{{\em Mining Software Repositories (MSR), 2013 10th IEEE
+  Working Conference on}}. IEEE, \bibinfo{pages}{409--418}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Radjenovi{\'c}, Heri{\v{c}}ko, Torkar, and
+  {\v{Z}}ivkovi{\v{c}}}{Radjenovi{\'c} et~al\mbox{.}}{2013}]%
+        {radjenovic2013software}
+\bibfield{author}{\bibinfo{person}{Danijel Radjenovi{\'c}},
+  \bibinfo{person}{Marjan Heri{\v{c}}ko}, \bibinfo{person}{Richard Torkar},
+  {and} \bibinfo{person}{Ale{\v{s}} {\v{Z}}ivkovi{\v{c}}}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Software fault prediction metrics: A systematic
+  literature review}.
+\newblock \bibinfo{journal}{{\em Information and Software Technology\/}}
+  \bibinfo{volume}{55}, \bibinfo{number}{8} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{1397--1418}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Rahman, Khatri, Barr, and Devanbu}{Rahman
+  et~al\mbox{.}}{2014}]%
+        {Rahman14}
+\bibfield{author}{\bibinfo{person}{Foyzur Rahman}, \bibinfo{person}{Sameer
+  Khatri}, \bibinfo{person}{Earl~T. Barr}, {and} \bibinfo{person}{Premkumar
+  Devanbu}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Comparing Static Bug Finders and Statistical
+  Prediction} {\em (\bibinfo{series}{ICSE})}. \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{424--434}.
+\newblock
+\showISBNx{978-1-4503-2756-5}
+\showDOI{%
+\url{http://dx.doi.org/10.1145/2568225.2568269}}
+
+
+\bibitem[\protect\citeauthoryear{Rees{-}Jones, Martin, and
+  Menzies}{Rees{-}Jones et~al\mbox{.}}{2017}]%
+        {jones17}
+\bibfield{author}{\bibinfo{person}{Mitch Rees{-}Jones},
+  \bibinfo{person}{Matthew Martin}, {and} \bibinfo{person}{Tim Menzies}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Better Predictors for Issue Lifetime}.
+\newblock \bibinfo{journal}{{\em CoRR\/}}  \bibinfo{volume}{abs/1702.07735}
+  (\bibinfo{year}{2017}).
+\newblock
+\showURL{%
+\url{http://arxiv.org/abs/1702.07735}}
+
+
+\bibitem[\protect\citeauthoryear{Refaeilzadeh, Tang, and Liu}{Refaeilzadeh
+  et~al\mbox{.}}{2009}]%
+        {refaeilzadeh2009cross}
+\bibfield{author}{\bibinfo{person}{Payam Refaeilzadeh}, \bibinfo{person}{Lei
+  Tang}, {and} \bibinfo{person}{Huan Liu}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Cross-validation}.
+\newblock In \bibinfo{booktitle}{{\em Encyclopedia of database systems}}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{532--538}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Riquelme, Ruiz, Rodr{\'\i}guez, and
+  Moreno}{Riquelme et~al\mbox{.}}{2008}]%
+        {riquelme2008finding}
+\bibfield{author}{\bibinfo{person}{JC Riquelme}, \bibinfo{person}{R Ruiz},
+  \bibinfo{person}{D Rodr{\'\i}guez}, {and} \bibinfo{person}{J Moreno}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Finding defective modules from highly unbalanced
+  datasets}.
+\newblock \bibinfo{journal}{{\em Actas de los Talleres de las Jornadas de
+  Ingenier{\'\i}a del Software y Bases de Datos\/}} \bibinfo{volume}{2},
+  \bibinfo{number}{1} (\bibinfo{year}{2008}), \bibinfo{pages}{67--74}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Shepperd, Bowes, and Hall}{Shepperd
+  et~al\mbox{.}}{2014}]%
+        {shepperd2014researcher}
+\bibfield{author}{\bibinfo{person}{Martin Shepperd}, \bibinfo{person}{David
+  Bowes}, {and} \bibinfo{person}{Tracy Hall}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Researcher bias: The use of machine learning in
+  software defect prediction}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Software Engineering\/}}
+  \bibinfo{volume}{40}, \bibinfo{number}{6} (\bibinfo{year}{2014}),
+  \bibinfo{pages}{603--616}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Storn and Price}{Storn and Price}{1997}]%
+        {storn1997differential}
+\bibfield{author}{\bibinfo{person}{Rainer Storn} {and} \bibinfo{person}{Kenneth
+  Price}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{Differential evolution--a simple and efficient
+  heuristic for global optimization over continuous spaces}.
+\newblock \bibinfo{journal}{{\em Journal of global optimization\/}}
+  \bibinfo{volume}{11}, \bibinfo{number}{4} (\bibinfo{year}{1997}),
+  \bibinfo{pages}{341--359}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Swets}{Swets}{1988}]%
+        {swets1988measuring}
+\bibfield{author}{\bibinfo{person}{John~A Swets}.}
+  \bibinfo{year}{1988}\natexlab{}.
+\newblock \showarticletitle{Measuring the accuracy of diagnostic systems}.
+\newblock \bibinfo{journal}{{\em Science\/}} \bibinfo{volume}{240},
+  \bibinfo{number}{4857} (\bibinfo{year}{1988}), \bibinfo{pages}{1285}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Tan, Tan, Dara, and Mayeux}{Tan
+  et~al\mbox{.}}{2015}]%
+        {tan2015online}
+\bibfield{author}{\bibinfo{person}{Ming Tan}, \bibinfo{person}{Lin Tan},
+  \bibinfo{person}{Sashank Dara}, {and} \bibinfo{person}{Caleb Mayeux}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Online defect prediction for imbalanced data}. In
+  \bibinfo{booktitle}{{\em ICSE-Volume 2}}. IEEE Press,
+  \bibinfo{pages}{99--108}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Tantithamthavorn, McIntosh, Hassan, and
+  Matsumoto}{Tantithamthavorn et~al\mbox{.}}{2016}]%
+        {tantithamthavorn2016automated}
+\bibfield{author}{\bibinfo{person}{Chakkrit Tantithamthavorn},
+  \bibinfo{person}{Shane McIntosh}, \bibinfo{person}{Ahmed~E Hassan}, {and}
+  \bibinfo{person}{Kenichi Matsumoto}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Automated parameter optimization of classification
+  techniques for defect prediction models}. In \bibinfo{booktitle}{{\em ICSE
+  2016}}. ACM, \bibinfo{pages}{321--332}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Turhan, M{\i}s{\i}rl{\i}, and Bener}{Turhan
+  et~al\mbox{.}}{2013}]%
+        {turhan2013empirical}
+\bibfield{author}{\bibinfo{person}{Burak Turhan},
+  \bibinfo{person}{Ay{\c{s}}e~Tosun M{\i}s{\i}rl{\i}}, {and}
+  \bibinfo{person}{Ay{\c{s}}e Bener}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Empirical evaluation of the effects of mixed
+  project data on learning defect predictors}.
+\newblock \bibinfo{journal}{{\em Information and Software Technology\/}}
+  \bibinfo{volume}{55}, \bibinfo{number}{6} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{1101--1118}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Van~Hulse, Khoshgoftaar, and
+  Napolitano}{Van~Hulse et~al\mbox{.}}{2007}]%
+        {van2007experimental}
+\bibfield{author}{\bibinfo{person}{Jason Van~Hulse}, \bibinfo{person}{Taghi~M
+  Khoshgoftaar}, {and} \bibinfo{person}{Amri Napolitano}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Experimental perspectives on learning from
+  imbalanced data}. In \bibinfo{booktitle}{{\em Proceedings of the 24th
+  international conference on Machine learning}}. ACM,
+  \bibinfo{pages}{935--942}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Vesterstrom and Thomsen}{Vesterstrom and
+  Thomsen}{2004}]%
+        {vesterstrom2004comparative}
+\bibfield{author}{\bibinfo{person}{Jakob Vesterstrom} {and}
+  \bibinfo{person}{Rene Thomsen}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{A comparative study of differential evolution,
+  particle swarm optimization, and evolutionary algorithms on numerical
+  benchmark problems}. In \bibinfo{booktitle}{{\em Evolutionary Computation,
+  2004. CEC2004. Congress on}}, Vol.~\bibinfo{volume}{2}. IEEE,
+  \bibinfo{pages}{1980--1987}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Voas and Miller}{Voas and Miller}{1995}]%
+        {voas1995software}
+\bibfield{author}{\bibinfo{person}{Jeffrey~M. Voas} {and}
+  \bibinfo{person}{Keith~W Miller}.} \bibinfo{year}{1995}\natexlab{}.
+\newblock \showarticletitle{Software testability: The new verification}.
+\newblock \bibinfo{journal}{{\em IEEE software\/}} \bibinfo{volume}{12},
+  \bibinfo{number}{3} (\bibinfo{year}{1995}), \bibinfo{pages}{17--28}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Wang and Yao}{Wang and Yao}{2013}]%
+        {wang2013using}
+\bibfield{author}{\bibinfo{person}{Shuo Wang} {and} \bibinfo{person}{Xin Yao}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Using class imbalance learning for software defect
+  prediction}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Reliability\/}}
+  \bibinfo{volume}{62}, \bibinfo{number}{2} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{434--443}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Yan, Chen, and Guo}{Yan et~al\mbox{.}}{2010}]%
+        {yan2010software}
+\bibfield{author}{\bibinfo{person}{Zhen Yan}, \bibinfo{person}{Xinyu Chen},
+  {and} \bibinfo{person}{Ping Guo}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Software defect prediction using fuzzy support
+  vector regression}. In \bibinfo{booktitle}{{\em International Symposium on
+  Neural Networks}}. Springer, \bibinfo{pages}{17--24}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Yu, Jiang, and Zhang}{Yu
+  et~al\mbox{.}}{2017}]%
+        {yu2017performance}
+\bibfield{author}{\bibinfo{person}{Qiao Yu}, \bibinfo{person}{Shujuan Jiang},
+  {and} \bibinfo{person}{Yanmei Zhang}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{The Performance Stability of Defect Prediction
+  Models with Class Imbalance: An Empirical Study}.
+\newblock \bibinfo{journal}{{\em IEICE TRANSACTIONS on Information and
+  Systems\/}} \bibinfo{volume}{100}, \bibinfo{number}{2}
+  (\bibinfo{year}{2017}), \bibinfo{pages}{265--272}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zhang and Zhang}{Zhang and Zhang}{2007}]%
+        {zhang2007comments}
+\bibfield{author}{\bibinfo{person}{Hongyu Zhang} {and} \bibinfo{person}{Xiuzhen
+  Zhang}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Comments on Data Mining Static Code Attributes to
+  Learn Defect Predictors}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Software Engineering\/}}
+  \bibinfo{volume}{33}, \bibinfo{number}{9} (\bibinfo{year}{2007}),
+  \bibinfo{pages}{635--637}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zimmermann and Nagappan}{Zimmermann and
+  Nagappan}{2008}]%
+        {zimmermann2008predicting}
+\bibfield{author}{\bibinfo{person}{Thomas Zimmermann} {and}
+  \bibinfo{person}{Nachiappan Nagappan}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Predicting defects using network analysis on
+  dependency graphs}. In \bibinfo{booktitle}{{\em ICSE}}. ACM,
+  \bibinfo{pages}{531--540}.
+\newblock
+
+
+\end{thebibliography}

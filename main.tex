@@ -1,6 +1,7 @@
 \documentclass[sigconf]{acmart}
 %\documentclass[sigconf,review, anonymous,preprint]{acmart}
 %\documentclass[10pt,conference]{IEEEtran}
+\pdfoutput=1
 \usepackage{booktabs} % For formal tables
 \usepackage{pbox}
 \usepackage{csvsimple}
@@ -12,8 +13,9 @@
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{blindtext, graphicx}
-\usepackage{hyperref}
 \usepackage{caption}
+\usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage{float}
 \usepackage{balance}
 \usepackage{listings}
@@ -61,6 +63,10 @@
 %%% graph
 \newcommand{\crule}[3][darkgray]{\textcolor{#1}{\rule{#2}{#3}}}
 
+\makeatletter
+\let\th@plain\relax
+\makeatother
+
 \newcommand{\quart}[4]{\begin{picture}(80,4)%1
 	{\color{black}\put(#3,2){\circle*{4}}\put(#1,2){\line(1,0){#2}}}\end{picture}}
 
@@ -72,6 +78,7 @@
 \definecolor{Gray}{gray}{0.85}
 \usepackage[framed]{ntheorem}
 \usetikzlibrary{shadows}
+
 \theoremclass{Lesson}
 \theoremstyle{break}
 
@@ -90,11 +97,6 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 \let\theoremframecommand\thmbox
 \newshadedtheorem{lesson}{Result}
 
-\theoremclass{Lesson1}
-\theoremstyle{break}
-
-\let\theoremframecommand\thmbox
-\newshadedtheorem{lesson1}{Result}
 \newcommand{\tion}[1]{{Section }\ref{sect:#1}}
 
 \usepackage{listings}
@@ -145,7 +147,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 
 \begin{document}
 
-%\pagestyle{plain}
+% \pagestyle{plain}
 
 \title{Is ``Better Data'' Better Than ``Better Data Miners''?}
 \subtitle{On the Benefits of Tuning SMOTE for Defect Prediction }
@@ -247,7 +249,7 @@ When assessed on  defect data from 3,681	 classes (over a million lines of code)
 taken from open source JAVA systems,  {\smb} out-performed
 both the original SMOTE~\cite{chawla2002smote} as well as state-of-the-art methods~\cite{bennin2017mahakil}.
 
-To assess {\emb}, we ask four questions: 
+To assess, we ask four questions: 
  \bi\item
   \textbf{RQ1}:  {\em Are the default ``off-the-shelf'' parameters for {\sma} appropriate for
   all data sets?} 
@@ -1324,16 +1326,15 @@ were generated using the same experimental methods as used for   Figure~\ref{fig
 The following table repeats   the statistical analysis of Figure \ref{fig:stats} to report how often
   {\sma}, {\smb}, or MAHAKIL achieves best results across nine data sets.   Note that, in this following table, {\em larger} values are {\em better}:
 
- 
-\[ {\small\[\begin{array}{*{20}{c|c|c|c|c}}
+{\small\[\begin{array}{*{20}{c|c|c|c|c}}
   & \multicolumn{4}{c}{\text{number of wins}}\\ 
     {\text{Treatments}} & {\text{AUC}} & {\text{Recall}} & {\text{Precision}}& {\text{False Alarm}}\\
     \hline
    {\text{MAHAKIL}} & 1/9 & 0/9 & \textbf{6/9} & \textbf{9/9}  \\
    {\text{SMOTE}}& 0/9 & 1/9 & 0/9 & 0/9 \\
    {\text{SMOTUNED}}& \textbf{8/9} & \textbf{8/9} & 3/9  & 0/9  \\
- 
-\end{array} \]
+ \end{array} \]}
+
 These statistical tests tell us that the differences seen in Figure~\ref{fig:s2_mahakil}  are large enough to be significant.  
 \bi
 \item
@@ -1526,7 +1527,7 @@ order to find the best parameters for that data set. {\smb} is one of the exampl
 
 \bibliographystyle{ACM-Reference-Format}
 %\medskip
- \bibliography{main}
+ \input{main.bbl}
 
 
 \end{document}

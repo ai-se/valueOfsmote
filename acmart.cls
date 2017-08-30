@@ -401,54 +401,54 @@ Computing Machinery]
 \def\l@subsubsection{\@tocline{2}{0pt}{1pc}{5pc}{}}
 \let\@footnotemark@nolink\@footnotemark
 \let\@footnotetext@nolink\@footnotetext
-\RequirePackage[bookmarksnumbered,unicode]{hyperref}
-\pdfstringdefDisableCommands{%
-  \def\unskip{}%
-  \def\textbullet{- }%
-  \def\textrightarrow{ -> }%
-  \def\footnotemark{}%
-}
-\urlstyle{rm}
-\ifcase\ACM@format@nr
-\relax % manuscript
-\or % acmsmall
-\or % acmlarge
-\or % acmtog
-\or % sigconf
-\or % siggraph
-\or % sigplan
-  \urlstyle{sf}
-\or % sigchi
-\or % sigchi-a
-  \urlstyle{sf}
-\fi
-\if@ACM@screen
-  \hypersetup{colorlinks,
-    linkcolor=ACMRed,
-    citecolor=ACMPurple,
-    urlcolor=ACMDarkBlue,
-    filecolor=ACMDarkBlue}
-\else
-  \hypersetup{hidelinks}
-\fi
-\RequirePackage{cleveref}
-\if@ACM@natbib
-  \let\citeN\cite
-  \let\cite\citep
-  \let\citeANP\citeauthor
-  \let\citeNN\citeyearpar
-  \let\citeyearNP\citeyear
-  \let\citeyear\citeyearpar
-  \let\citeNP\citealt
-  \DeclareRobustCommand\citeA
-     {\begingroup\NAT@swafalse
-       \let\NAT@ctype\@ne\NAT@partrue\NAT@fullfalse\NAT@open\NAT@citetp}%
-  \providecommand\newblock{}%
-\else
-  \AtBeginDocument{%
-    \let\shortcite\cite%
-    \providecommand\citename[1]{#1}}
-\fi
+% \RequirePackage{cleveref}
+% \pdfstringdefDisableCommands{%
+%   \def\unskip{}%
+%   \def\textbullet{- }%
+%   \def\textrightarrow{ -> }%
+%   \def\footnotemark{}%
+% }
+% \urlstyle{rm}
+% \ifcase\ACM@format@nr
+% \relax % manuscript
+% \or % acmsmall
+% \or % acmlarge
+% \or % acmtog
+% \or % sigconf
+% \or % siggraph
+% \or % sigplan
+%   \urlstyle{sf}
+% \or % sigchi
+% \or % sigchi-a
+%   \urlstyle{sf}
+% \fi
+% \if@ACM@screen
+%   \hypersetup{colorlinks,
+%     linkcolor=ACMRed,
+%     citecolor=ACMPurple,
+%     urlcolor=ACMDarkBlue,
+%     filecolor=ACMDarkBlue}
+% \else
+%   \hypersetup{hidelinks}
+% \fi
+% \RequirePackage{hyperref}
+% \if@ACM@natbib
+%   \let\citeN\cite
+%   \let\cite\citep
+%   \let\citeANP\citeauthor
+%   \let\citeNN\citeyearpar
+%   \let\citeyearNP\citeyear
+%   \let\citeyear\citeyearpar
+%   \let\citeNP\citealt
+%   \DeclareRobustCommand\citeA
+%      {\begingroup\NAT@swafalse
+%       \let\NAT@ctype\@ne\NAT@partrue\NAT@fullfalse\NAT@open\NAT@citetp}%
+%   \providecommand\newblock{}%
+% \else
+%   \AtBeginDocument{%
+%     \let\shortcite\cite%
+%     \providecommand\citename[1]{#1}}
+% \fi
 \newcommand\shortcite[2][]{%
   \ifNAT@numbers\cite[#1]{#2}\else\citeyear[#1]{#2}\fi}
 \def\bibliographystyle#1{%
@@ -2388,16 +2388,16 @@ Computing Machinery]
   {.}% punctuation after head
   {.5em}% spacing after head
   {\thmname{#1}\thmnumber{ #2}\thmnote{ {\@acmdefinitionnotefont(#3)}}}% head spec
-\theoremstyle{acmplain}
+%\theoremstyle{acmplain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
-\theoremstyle{acmdefinition}
+%\theoremstyle{acmdefinition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{definition}[theorem]{Definition}
-\theoremstyle{acmplain}
+%\theoremstyle{acmplain}
 \def\@proofnamefont{\scshape}
 \def\@proofindent{\indent}
 \ifcase\ACM@format@nr
