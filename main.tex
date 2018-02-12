@@ -1,45 +1,45 @@
+ %\documentclass[sigconf]{acmart}
 \documentclass[sigconf]{acmart}
-%\documentclass[sigconf,review, anonymous,preprint]{acmart}
 %\documentclass[10pt,conference]{IEEEtran}
 \pdfoutput=1
-\usepackage{booktabs} % For formal tables
-\usepackage{pbox}
-\usepackage{csvsimple}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{rotating}
+
 \usepackage{wrapfig}
 \usepackage{dblfloatfix}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{blindtext, graphicx}
-\usepackage{caption}
+%\usepackage{caption}
 \usepackage{hyperref}
-\usepackage{cleveref}
-\usepackage{float}
 \usepackage{balance}
-\usepackage{listings}
-\renewcommand\thesection{\arabic{section}}
-%\renewcommand\thesubsection{\thesection\arabic{subsection}}
-\usepackage{amsmath}
-\usepackage{tikz}
-\usepackage{comment}
-\usepackage{framed}
-\usepackage{multirow}
-\usepackage{rotating}
-\usepackage{bigstrut}
-\usepackage{color}
-\usepackage{eqparbox}
-\usepackage{graphics}
 \usepackage{colortbl}
-\usepackage{paralist}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-\usepackage{mathptmx} 
-\usepackage{picture}
+
+%\usepackage{graphicx}
+%\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage{blindtext, graphicx}
+\usepackage{cleveref}
+%\usepackage{float}
+%\usepackage{booktabs} % For formal tables
+%\usepackage{pbox}
+%\usepackage{csvsimple}
+%\usepackage{amssymb}
+%\usepackage{rotating}
+%\renewcommand\thesection{\arabic{section}}
+%\renewcommand\thesubsection{\thesection\arabic{subsection}}
+
+% \usepackage{comment}
+% \usepackage{amsmath}
+% \usepackage{multirow}
+% \usepackage{rotating}
+% \usepackage{bigstrut}
+% \usepackage{color}
+% \usepackage{eqparbox}
+% \usepackage{graphics}
+
+% \usepackage{paralist}
+% \usepackage{algorithm}
+% \usepackage{algorithmicx}
+% \usepackage{algpseudocode}
+% \usepackage{mathptmx} 
+% \usepackage{picture}
 \usepackage[shortlabels]{enumitem}
-\usepackage{url}
+
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 
 \newcommand{\cmark}{\ding{51}}%
@@ -47,35 +47,18 @@
 
 \newcommand{\bi}{\begin{itemize}[leftmargin=0.4cm]}
 	\newcommand{\ei}{\end{itemize}}
-\newcommand{\be}{\begin{enumerate}}
+\newcommand{\be}{\begin{enumerate}[leftmargin=0.4cm]}
 	\newcommand{\ee}{\end{enumerate}}
 
-\usepackage{tabularx}
-\usepackage{colortbl}
-\usepackage{hhline}
-\usepackage[export]{adjustbox}
-\definecolor{lightgray}{gray}{0.8}
-\definecolor{darkgray}{gray}{0.6}
-\definecolor{lavenderpink}{rgb}{0.98, 0.68, 0.82}
-\definecolor{celadon}{rgb}{0.67, 0.88, 0.69}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
-%%% graph
-\newcommand{\crule}[3][darkgray]{\textcolor{#1}{\rule{#2}{#3}}}
 
 \makeatletter
 \let\th@plain\relax
 \makeatother
 
-\newcommand{\quart}[4]{\begin{picture}(80,4)%1
-	{\color{black}\put(#3,2){\circle*{4}}\put(#1,2){\line(1,0){#2}}}\end{picture}}
 
-\definecolor{Gray}{gray}{0.95}
-\definecolor{LightGray}{gray}{0.975}
-
-\definecolor{steel}{rgb}{.11, .11, .7}
-\definecolor{Gray}{rgb}{0.88,1,1}
 \definecolor{Gray}{gray}{0.85}
+\usepackage{tikz}
+\usepackage{framed}
 \usepackage[framed]{ntheorem}
 \usetikzlibrary{shadows}
 
@@ -84,12 +67,12 @@
 
 % inner sep=10pt,
 \tikzstyle{thmbox} = [rectangle, rounded corners, draw=black,
-fill=Gray!40,  drop shadow={fill=black, opacity=1}]
+fill=Gray!40]
 \newcommand\thmbox[1]{%
 	\noindent\begin{tikzpicture}%
 	\node [thmbox] (box){%
 		\begin{minipage}{.94\textwidth}%
-		\vspace{-0.5mm}#1\vspace{-0.5mm}%
+		\vspace{-0.1cm}#1\vspace{-0.1cm}%
 		\end{minipage}%
 	};%
 	\end{tikzpicture}}
@@ -121,20 +104,14 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
     escapeinside={\%*}{*)}
 }
 
-\DeclareMathOperator\caret{\raisebox{0.4ex}{$\scriptstyle\wedge$}}
-%\setcopyright{none}
-%\setcopyright{acmcopyright}
-%\setcopyright{acmlicensed}
-\setcopyright{rightsretained}
-
-\acmDOI{10.475/123_4}
-% ISBN
-\acmISBN{123-4567-24-567/17/08}
-\acmConference[ICSE'18]{International Conference on Software Engineering}{May 2018}{Gothenburg, Sweden} 
-\acmYear{2018}
-\copyrightyear{2018}
-
-\acmPrice{00.00}
+\copyrightyear{2018} 
+\acmYear{2018} 
+\setcopyright{acmcopyright}
+\acmConference[ICSE '18]{ICSE '18: 40th International Conference on Software Engineering }{May 27-June 3, 2018}{Gothenburg, Sweden}
+\acmBooktitle{ICSE '18: ICSE '18: 40th International Conference on Software Engineering , May 27-June 3, 2018, Gothenburg, Sweden}
+\acmPrice{15.00}
+\acmDOI{10.1145/3180155.3180197}
+\acmISBN{978-1-4503-5638-1/18/05}
 
 \newcommand{\sma}{{\sc SMOTE}}
 \newcommand{\smb}{{\sc SMOTUNED}}
@@ -147,7 +124,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 
 \begin{document}
 
-% \pagestyle{plain}
+%\pagestyle{plain}
 
 \title{Is ``Better Data'' Better Than ``Better Data Miners''?}
 \subtitle{On the Benefits of Tuning SMOTE for Defect Prediction }
@@ -178,15 +155,14 @@ Those studies  did  not (a)~assess classifiers on multiple   criteria
 and they did not 
 (b)~study  how variations in the  data affect the results. 
 Hence, 
-this paper applies (a)  multi-criteria tests while (b)~fixing the weaker regions of the training
- data (using {\smb}, which is a self-tuning version of {\sma}).
+this paper applies (a)  multi-performance criteria while (b)~fixing the weaker regions of the training
+ data (using {\smb}, which is an auto-tuning version of {\sma}).
 This approach
-leads to dramatically large increases in software defect predictions.
-When applied in a 5*5 cross-validation study for  3,681	JAVA classes (containing over a million lines of code) from open source  systems,
+leads to dramatically large increases in software defect predictions when applied in a 5*5 cross-validation study for  3,681	JAVA classes (containing over a million lines of code) from open source  systems,
 {\smb} increased
 AUC and recall by 60\% and 20\% respectively. 
 These improvements are independent of the classifier used to
-predict for quality. Same kind of pattern (improvement) was observed when a comparative analysis of {\sma} and {\smb} was done against the most recent class imbalance technique.
+predict for defects. Same kind of pattern (improvement) was observed when a comparative analysis of {\sma} and {\smb} was done against the most recent class imbalance technique.
 
 In conclusion, for software analytic tasks like defect prediction, (1)~data
 pre-processing can be more important than  classifier
@@ -224,7 +200,7 @@ Classification algorithms are then applied to learn what static code attributes
 distinguish 
 between sections with few/many issues.
 Such static code measures can be automatically extracted from
-the code base with very little effort even for very large software
+the code base with little effort even for very large software
 systems \cite{nagappan2005static}.  
 
 
@@ -233,7 +209,7 @@ systems \cite{nagappan2005static}.
 One perennial problem   is what classifier should be used to build     predictors?
 Many papers report {\em ranking studies} where
 a quality measure  is collected from    classifiers when they are 
- applied to data sets~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying,radjenovic2013software,jiang2008techniques,wang2013using,mende2009revisiting,li2012sample,khoshgoftaar2010attribute,jiang2009variance,ghotra2015revisiting,jiang2008can,tantithamthavorn2016automated,fu2016tuning}.
+ applied to data sets~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying,radjenovic2013software,jiang2008techniques,wang2013using,mende2009revisiting,li2012sample,khoshgoftaar2010attribute,jiang2009variance,ghotra2015revisiting,jiang2008can,tantithamthavorn2016automated,fu2016tuning,fu2017revisiting}.
 These ranking studies report which   classifiers
  generate  best predictors.
  
@@ -241,20 +217,19 @@ Research of this paper began with the question {\em would the use of
 data pre-processor change the rankings of classifiers?}
 SE data
 sets are often imbalanced, i.e., the data in the target class is overwhelmed by an over-abundance of information about everything else except the target~\cite{menzies2007problems}.
-As shown in the literature review of this paper, in the overwhelming majority of papers (85\%), SE research uses {\sma} to fix data imbalance~\cite{chawla2002smote}. Since, {\sma} is controlled by numerous parameters which
+As shown in the literature review of this paper, in the overwhelming majority of papers (85\%), SE research uses {\sma} to fix data imbalance~\cite{chawla2002smote} but {\sma} is controlled by numerous parameters which
 usually are tuned using engineering expertise or left at their default
 values. This paper proposes 
-{\smb} an automatic method for setting those parameters.
-When assessed on  defect data from 3,681	 classes (over a million lines of code) 
+{\smb}, an automatic method for setting those parameters which when assessed on  defect data from 3,681	 classes (over a million lines of code) 
 taken from open source JAVA systems,  {\smb} out-performed
-both the original SMOTE~\cite{chawla2002smote} as well as state-of-the-art methods~\cite{bennin2017mahakil}.
+both the original SMOTE~\cite{chawla2002smote} as well as state-of-the-art method~\cite{bennin2017mahakil}.
 
 To assess, we ask four questions: 
  \bi\item
   \textbf{RQ1}:  {\em Are the default ``off-the-shelf'' parameters for {\sma} appropriate for
   all data sets?} 
   \ei
- \begin{lesson}{\smb} learned different parameters for each data set, all of which  were very different to default {\sma}.
+ \begin{lesson}{\smb} learned different parameters for each data set, all of which  were very different from default {\sma}.
  \end{lesson}
   \bi
   \item
@@ -284,10 +259,10 @@ than the subsequent choice of classifiers.
 
    \bi
   \item
-  \textbf{RQ4}: {\em  How does {\smb} performed against the recent class imbalance technique?}
+  \textbf{RQ4}: {\em  How does {\smb} perform against the recent class imbalance technique?}
   \ei
   
-   \begin{lesson}{\smb} performs better than a very recent  imbalance handling technique proposed by Bennin et al.\cite{bennin2017mahakil} at TSE'17.
+   \begin{lesson}{\smb} performs better than a very recent  imbalance handling technique proposed by Bennin et al.~\cite{bennin2017mahakil}.
  \end{lesson}
  \noindent
 %  \textcolor{red}{Bennin et al. proposed a new method based on the chromosomal theory of inheritance. They found that {\sma} to be performing similar as their method but much better than all the other class balancing techniques in terms of Recall. But they showed their method to be performing better than {\sma} in terms of false alarm. This makes it questionable as we know from Zhang's equation~\cite{zhang2007comments} that if recall is improved then false alarm would increase too. They also did not consider the parameter tuning of any imbalanced technique, and thus we also  introduced {\smb}, providing the comparative analysis in Section \ref{sect:results}.}
@@ -296,13 +271,13 @@ than the subsequent choice of classifiers.
 In summary, the  contributions of this paper are:
 \bi
 \item The discovery of an important systematic error in  many prior ranking studies, i.e., all of
-~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying,radjenovic2013software,jiang2008techniques,wang2013using,mende2009revisiting,li2012sample,khoshgoftaar2010attribute,jiang2009variance,ghotra2015revisiting,jiang2008can,tantithamthavorn2016automated,fu2016tuning}.
+~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying,radjenovic2013software,jiang2008techniques,wang2013using,mende2009revisiting,li2012sample,khoshgoftaar2010attribute,jiang2009variance,ghotra2015revisiting,jiang2008can,tantithamthavorn2016automated,fu2016tuning, fu2017revisiting}.
 \item A novel application of search-based SE ({\smb}) to handle class imbalance that out-performs the prior state-of-the-art.
 \item Dramatically large improvements in  defect predictors.
 \item Potentially, for any other software analytics task that uses classifiers, a way to improve those learners as well.
 \item A methodology for assessing the value of pre-processing data sets in software analytics.
-\item A reproduction package to reproduce our results then (perhaps) to improve or refute  our results %(Blinded for Review).
-(Available to download from https://github.com/ai-se/Smote\_tune).
+\item A reproduction package to reproduce our results then (perhaps) to improve or refute  our results (Available to download from \url{http://tiny.cc/smotuned}). %(Blinded for Review).
+%(Available to download from https://github.com/ai-se/Smote\_tune).
 
 \ei
 The rest of this paper is structured as follows:
@@ -337,7 +312,7 @@ to predict Github issue close time~\cite{jones17}, and many more. That is, poten
 \label{sect:review}
 
 Software programmers are intelligent, but busy people. Such busy people often introduce  defects into 
-the code they write.  Testing software for defects
+the code they write~\cite{guo2011not}.  Testing software for defects
 is expensive and most software assessment budgets are finite. Meanwhile,  assessment effectiveness increases exponentially with assessment effort~\cite{fu2016tuning}. Such exponential costs  exhaust finite resources so software developers
 must carefully decide what parts of their code need most testing.
 
@@ -345,7 +320,7 @@ must carefully decide what parts of their code need most testing.
 A variety of approaches have been proposed to recognize
  defect-prone  software components using code metrics (lines of code, complexity)~\cite{d2010extensive,menzies2007data, nagappan2006mining,shepperd2014researcher,menzies2010defect} or process metrics (number of changes, recent activity)~\cite{hassan2009predicting}.
 Other work, such as that of 
-Bird et al.~\cite{bird2009putting}, indicated that it is possible to predict which components (for example modules) are likely locations of
+Bird et al.~\cite{bird2009putting}, indicated that it is possible to predict which components (for e.g., modules) are likely locations of
 defect occurrence using a component's development history
 and dependency structure. 
 % Two key properties of software components
@@ -431,14 +406,14 @@ a message to the object.\\
 \hline
 wmc & weighted methods per class &\\
 \hline
- 
+\rowcolor{lightgray}
 nDefects & raw defect counts & numeric: number of defects found in post-release bug-tracking systems.\\
 \rowcolor{lightgray}
 defects present? & boolean& if {\em nDefects} $>0$ then {\em true} else {\em false}
 \end{tabular}
 }
 \end{center}
-\vspace{-0.2cm}
+\vspace{-0.3cm}
 \end{table*}
 
 
@@ -450,7 +425,7 @@ static code metrics such as
 McCabes  cyclomatic  complexity, Briands coupling metrics, dependencies between  binaries, or
 the  CK  metrics~\cite{chidamber1994metrics} (which is described in  Table~\ref{fig:ck}). 
 One advantage with CK metrics is that they are  simple  to  compute and hence,
-they are widely used. Radjenovi{\'c} et al.~\cite{radjenovic2013software} report that in
+they are widely used. Radjenovi{\'c} et al.~\cite{radjenovic2013software} reported that in
 the static code defect prediction, the CK metrics are
 used  twice as much (49\%) 
 as more traditional source code metrics such as McCabes (27\%) or process metrics (24\%).
@@ -461,8 +436,8 @@ like manual code reviews, are far slower and far more labor intensive.
 
 Static code defect predictors are remarkably fast and effective.
 Given the current generation of data mining tools, it can be a matter
-of just a few seconds to learn a defect predictor (see the runtimes in Table~9 of reference~\cite{fu2016tuning}). Further, in a recent study at ICSE'14, Rahman et
-al.~\cite{Rahman14} found no significant differences in the cost-effectiveness
+of just a few seconds to learn a defect predictor (see the runtimes in Table~9 of reference~\cite{fu2016tuning}). Further, in a recent study by Rahman et
+al.~\cite{Rahman14}, found no significant differences in the cost-effectiveness
 of
 (a) static code analysis tools FindBugs and Jlint, and (b) static code defect predictors.
 This is an interesting result since it is  much slower to adapt static code
@@ -478,12 +453,14 @@ static code metrics extractors).
 
 Formally, defect prediction is a binary classification problem.
 The performance of a defect predictor can be assessed via a  confusion matrix like Table~\ref{fig:cmatrix}
-where a ``positive'' output is the defective class
+where a ``positive'' output is the defective class  under study and a ``negative'' output is the non-defective one.
+
 \begin{wraptable}{r}{1.5in}
 \small
 \begin{center}
-\vspace{-0.3cm}
+\vspace{-0.5cm}
 \caption{Results Matrix} 
+\vspace{-0.3cm}
 \label{fig:cmatrix}
 \begin{tabular} {@{}cc|c|c|l@{}}
 \cline{3-4}
@@ -495,8 +472,9 @@ where a ``positive'' output is the defective class
 \cline{2-4}
 \end{tabular}
 \end{center} 
+\vspace{-0.3cm}
 \end{wraptable}
- under study and a ``negative'' output is the non-defective one.
+
 Further, ``false'' means the learner got it wrong and ``true'' means the learner correctly identified
 a fault or non-fault module. Hence, Table~\ref{fig:cmatrix} has four quadrants containing, e.g., $\mathit{FP}$ which denotes ``false positive''.
 
@@ -511,31 +489,33 @@ From this matrix, we can define performance measures like:
 \item \textbf{False Alarm}  $=$ $pf$ $=$ $\mathit{FP}/(\mathit{FP} + \mathit{TN})$
 
 \item \textbf{Area Under Curve (AUC)}, which 
-is the area covered by an ROC curve~\cite{swets1988measuring, duda2012pattern} in which the X-axis represents, false alarm and the Y-axis
-represents recall.
+is the area covered by an ROC curve~\cite{swets1988measuring, duda2012pattern} in which the X-axis represents, false positive rate and the Y-axis
+represents true positive rate.
 \ei
-
-
+ 
 As shown in Figure~\ref{fig:trade},
 a typical predictor must ``trade-off''
 between false alarm and recall.
-This is because the  more sensitive the detector, the more often it triggers and the higher its recall. On the other hand,  if a detector triggers more often, it can also raise more false alarm.
+This is because the  more sensitive the detector, the more often it triggers and the higher its recall. If a detector triggers more often, it also raises more false alarms.
 Hence, when increasing recall, we  should  expect
 the false alarm rate to  increase
 (ideally, not by very much).
-
- \begin{wrapfigure}{r}{2.0in}
+ 
+  \begin{wrapfigure}{r}{2.0in}
+ \vspace{-0.4cm}
 \begin{center}
 \includegraphics[width=2.0in]{roc.png}
 \end{center}
-\vspace{-0.2cm}
+\vspace{-0.5cm}
 \caption{Trade-offs false alarm vs
 recall (probability of detection).  }\label{fig:trade}
+\vspace{-0.3cm}
  \end{wrapfigure}
+ 
 There are many more ways to evaluate defect predictors besides the four listed above.
-Previously we have catalogued dozens of them (see Table 23.2 of~\cite{menzies2014sharing}) and even several novel ones were proposed
+Previously, Menzies et al. catalogued dozens of them (see Table 23.2 of~\cite{menzies2014sharing}) and even several novel ones were proposed
 (balance, G-measure~\cite{menzies2007data}).  
-No evaluation criteria is ``best'' since different  criteria are appropriate in different business contexts. For example, as shown
+But no evaluation criteria is ``best'' since different  criteria are appropriate in different business contexts. For e.g., as shown
 in 
 Figure~\ref{fig:trade},
 when dealing
@@ -546,7 +526,7 @@ with safety-critical applications, management may be
 when rushing some non-safety critical application to market, management may be ``cost adverse''
 and elect to {\em minimize false alarm} since this avoids distractions to the developers. 
 
-In summary, there are  numerous evaluation criteria and  numerous more business contexts
+In summary, there are  numerous evaluation criteria and  numerous business contexts
 where different criteria might be preferred by different local business users. In response to
 the cornucopia of evaluation criteria, we make the following recommendations: a) do evaluate learners on more than one criteria, b) do not evaluate learners on  all criteria (there are too many), and instead, apply the criteria widely seen in the literature. Applying this advice, this paper  evaluates the defect predictors using the four criteria
 mentioned above (since these are widely reported in the literature~\cite{ghotra2015revisiting,fu2016tuning})) but not other 
@@ -575,10 +555,39 @@ when the ratio of minority class to majority {\em increases}, that is,
 class imbalances of 1:7; 1:9; 1:10; 1:13; 1:16; 1:249. 
 
 
- \begin{table}[!b]
+ \begin{table*}[!t]
+ \caption{Classifiers used in this study.
+ Rankings
+ from Ghotra et al.~\cite{ghotra2015revisiting}.}
+ \vspace{-0.2cm}
+ \label{tbl:learners}
+ \footnotesize
+ \begin{tabular}{l|l|p{4.5in}}
+{\bf RANK} & {\bf LEARNER} & {\bf NOTES}\\\hline
+ 1 ``best'' & RF= random forest & 
+ Random forest of entropy-based decision trees.\\\cline{2-3}
+ &  LR=Logistic regression &
+ A generalized linear regression
+model.\\\hline
+ 2 & KNN= K-means &  Classify a new instance by finding ``k'' examples of similar instances.
+ Ghortra et al. suggested
+ $K=8$.\\\cline{2-3}
+ & NB= Naive Bayes &  Classify a new instance by (a)~collecting mean and standard deviations of attributes in old instances of  different classes; (b)~return the class whose attributes are statistically most similar to the new instance.\\\hline
+ 3 & DT= decision trees & Recursively
+ divide data by selecting attribute splits
+ that reduce the entropy of the class distribution.\\\hline
+
+ 4 ``worst'' & SVM= support vector machines &
+ Map the raw data into a higher-dimensional space where it is easier to distinguish the examples.
+ \\\hline
+ \end{tabular}
+ \vspace{-0.2cm}
+ \end{table*}
+ 
+  \begin{table}[!t]
 \centering
 \footnotesize
-\vspace{-0.4cm}
+%\vspace{-0.4cm}
 \caption{22 highly cited Software Defect prediction studies.}
 \vspace{-0.2cm}
 \label{tbl:survey2}
@@ -610,36 +619,6 @@ class imbalances of 1:7; 1:9; 1:10; 1:13; 1:16; 1:249.
 \end{tabular}
 \vspace{-0.3cm}
 \end{table}
-
- \begin{table*}[!t]
- \caption{Classifiers used in this study.
- Rankings
- from Ghotra et al.~\cite{ghotra2015revisiting}.}
- \vspace{-0.2cm}
- \label{tbl:learners}
- \footnotesize
- \begin{tabular}{l|l|p{4.5in}}
-{\bf RANK} & {\bf LEARNER} & {\bf NOTES}\\\hline
- 1 ``best'' & RF= random forest & 
- Random forest of entropy-based decision trees.\\\cline{2-3}
- &  LR=Logistic regression &
- A generalized linear regression
-model.\\\hline
- 2 & KNN= K-means &  Classify a new instance by finding ``k'' examples of similar instances.
- Ghortra et al. suggested
- $K=8$.\\\cline{2-3}
- & NB= Naive Bayes &  Classify a new instance by (a)~collecting mean and standard deviations of attributes in old instances of  different classes; (b)~return the class whose attributes are statistically most similar to the new instance.\\\hline
- 3 & DT= decision trees & Recursively
- divide data by selecting attribute splits
- that reduce the entropy of the class distribution.\\\hline
-
- 4 ``worst'' & SVM= support vector machines &
- Map the raw data into a higher-dimensional space where it is easier to distinguish the examples.
- \\\hline
- \end{tabular}
- \vspace{-0.2cm}
- \end{table*}
- 
  
 The problem of class imbalance is sometimes discussed in the software analytics community.
 Hall et al.~\cite{hall2012systematic} found that models based on C4.5 under-perform if they have imbalanced data while Naive Bayes and Logistic regression perform relatively better. 
@@ -655,8 +634,8 @@ Pelayo et al.~\cite{pelayo2007applying} studied the effects of the percentage of
 data and reported how little information was required to learn a defect predictor. They found that throwing away data does not degrade the performance of Naive Bayes and C4.5 decision trees. Other papers~\cite{pelayo2007applying, pelayo2012evaluating, riquelme2008finding} have shown the usefulness of resampling based on different learners.
 
 We note that  
-many researchers in this area  (Wang, Yu et al., Gray et al.~\cite{gray2009using,yu2017performance,wang2013using}) refer to the {\sma} method explored in this paper,  but only in the context of future work.
- One rare exception to this general pattern is the recent TSE'17 paper by   Bennin et al.\cite{bennin2017mahakil}, which we explored as part of
+many researchers in this area~\cite{gray2009using,yu2017performance,wang2013using} refer to the {\sma} method explored in this paper,  but only in the context of future work.
+ One rare exception to this general pattern is the recent paper by   Bennin et al.~\cite{bennin2017mahakil}, which we explored as part of
 RQ4.
 
 % who compared many learners, with different class imbalance techniques evaluated against recall and false alarm. He selected the similar datasets which we have studied in this paper. He showed that among all the mentioned class imbalance techniques, their method and {\sma} outperform them in both the evaluation measures. Their method and {\sma} did perform same in terms of recall but their method faired on false alarm. But in this sample, no researcher has  applied auto-tuning to learn best {\sma} control parameters. We believe it to be an important factor and that is why we have provided the comparison between {\smb} and Bennin et al. method.}
@@ -684,8 +663,8 @@ while at the same time doing something to address the data imbalance problem.
 \vspace{-0.4cm}
 \end{wrapfigure}
 In July 2017,  we searched
-scholar.google.com for the conjunction of ``software'' and ``defect prediction'' and ``oo'' and ``ck'' published in the last decade. This returned 231 results.
-We only selected oo and ck keywords since ck metrics are more popular and better than process metrics for software defect prediction~\cite{radjenovic2013software}.
+scholar.google.com for the conjunction of ``software'' and ``defect prediction'' and ``OO'' and ``CK'' published in the last decade. This returned 231 results.
+We only selected OO and CK keywords since CK metrics are more popular and better than process metrics for software defect prediction~\cite{radjenovic2013software}.
 From that list, we selected ``highly-cited'' papers, which we defined as having more than 10 citations per year. This reduced our population of papers down to 107.
 After reading the titles and abstracts of those papers, and skimming the contents of the potentially interesting papers, we found 22 papers of Table~\ref{tbl:survey2} that either performed ranking studies
 (as defined above) or studied the effects of class imbalance on defect prediction. In the column ``evaluated using
@@ -695,7 +674,7 @@ papers scored more than ``1'' if they used multiple performance scores  of the k
 
 We find that, in those 22 papers from Table~\ref{tbl:survey2},
 numerous classifiers have used AUC as the measure to evaluate the software defect
-predictor studies. We also found that majority of papers (from third column of Table~\ref{tbl:survey2}, 6/7=85\%) in SE community has used SMOTE to fix the data imbalance~\cite{wang2013using,kamei2007effects,pelayo2007applying,tan2015online,pelayo2012evaluating,bennin2017mahakil}. This also made us to propose {\smb}. As
+predictor studies. We also found that majority of papers (from last column of Table~\ref{tbl:survey2}, 6/7=85\%) in SE community has used SMOTE to fix the data imbalance~\cite{wang2013using,kamei2007effects,pelayo2007applying,tan2015online,pelayo2012evaluating,bennin2017mahakil}. This also made us to propose {\smb}. As
  noted in~\cite{lessmann2008benchmarking, ghotra2015revisiting},  no single classification technique always dominates.  
 That said, Table~IX of a recent study by Ghotra et al.~\cite{ghotra2015revisiting} ranks
  numerous classifiers  using data similar
@@ -730,7 +709,7 @@ survey is that, as shown in Figure~\ref{fig:s2}, the overwhelming majority of
 prior papers in our sample {\em do not satisfy}  our definition of a ``good'' project
 (the sole exception is the  recent   Bennin et al.~\cite{bennin2017mahakil} which we explore in RQ4).
 Accordingly, the rest of this
-paper defines and executes a ``good'' ranking  study, with the added additional
+paper defines and executes a ``good'' ranking  study, with an additional
 unique feature of   an auto-tuning version of {\sma}.
 
 \subsection{Handling Data Imbalance with SMOTE}
@@ -745,12 +724,39 @@ until
 all classes have the same frequency.  In the case of software defect data,
 the minority class is usually the  defective class.
 
+ \begin{wrapfigure}{r}{2in}\small
+\begin{lstlisting}[mathescape,linewidth=2in,frame=n,numbers=none]
+  def SMOTE(k=2, m=50%, r=2):  # defaults
+    while Majority > m do
+      delete any majority item # random
+    while Minority < m do
+      add something_like(any minority item)
+      
+  def something_like(X0): 
+    relevant = emptySet
+    k1 = 0
+    while(k1++ < 20 and size(found) < k)  {
+       all = k1 nearest neighbors
+       relevant += items in "all" of X0 class}
+    Z = any of found
+    Y = interpolate (X0, Z)
+    return Y
+    
+  def minkowski_distance(a,b,r): 
+    return $( \Sigma_i\ abs(a_i - b_i)^r)^{1/r}$
+\end{lstlisting} 
+\vspace{-0.2cm}
+\caption{Pseudocode of SMOTE}
+\label{fig:pseudocode} 
+\vspace{-0.4cm}
+\end{wrapfigure}
+
 Figure~\ref{fig:pseudocode} shows how {\sma} works. During super-sampling,
-a member of the minority class finds $k$ nearest neighbors. It builds a fake member
-of the minority class at some point in-between itself and one of its nearest
+a member of the minority class finds $k$ nearest neighbors. It builds an artificial member
+of the minority class at some point in-between itself and one of its random nearest
 neighbors.  During that process, some distance function is required which is the {\em minkowski\_distance} function. 
 
-{\sma}'s control parameters are (a) $k$ that selects how many neighbors to use  (defaults to $k=5$), (b) $m$ is how many examples of each class to generated (defaults to $m=50\%$ of the total training samples), and (3) $r$ which selects  the distance function (default is $r=2$,
+{\sma}'s control parameters are (a) $k$ that selects how many neighbors to use  (defaults to $k=5$), (b) $m$ is how many examples of each class which need to be generated (defaults to $m=50\%$ of the total training samples), and (3) $r$ which selects  the distance function (default is $r=2$,
 i.e., use    
   Euclidean distance).
 
@@ -776,44 +782,19 @@ In the software analytics literature, there are contradictory findings on
 the value of applying {\sma} for software defect prediction.
 Van et al.~\cite{van2007experimental}, Pears et al.~\cite{pears2014synthetic} and Tan et al.~\cite{tan2015online} found {\sma} to be advantageous, while others, such as Pelayo et al.~\cite{pelayo2007applying} did not. 
 
- \begin{wrapfigure}{r}{2in}\small
-\begin{lstlisting}[mathescape,linewidth=2in,frame=n,numbers=none]
-  def SMOTE(k=2, m=50%, r=2):  # defaults
-    while Majority > m do
-      delete any majority item
-    while Minority < m do
-      add something_like(any minority item)
-      
-  def something_like(X0): 
-    relevant = emptySet
-    k1 = 0
-    while(k1++ < 20 and size(found) < k)  {
-       all = k1 nearest neighbors
-       relevant += items in "all" of X0 class}
-    Z = any of found
-    Y = interpolate (X0, Z)
-    return Y
-    
-  def minkowski_distance(a,b,r): 
-    return $( \Sigma_i\ abs(a_i - b_i)^r)^{1/r}$
-\end{lstlisting} 
-\vspace{-0.2cm}
-\caption{Pseudocode of SMOTE}
-\label{fig:pseudocode} 
-\vspace{-0.3cm}
-\end{wrapfigure}
 
 Further, some researchers report that some learners respond better than others to {\sma}. Kamei et al.~\cite{kamei2007effects} evaluated the effects of {\sma} applied to  four fault-proneness models
 (linear discriminant analysis, logistic regression, neural network, and decision tree) by
 using two module sets of industry legacy software. They reported that {\sma} improved the prediction performance of the linear and logistic models, but not neural network and decision tree models. Similar results, that the value of {\sma} was dependent on the learner,
 was also reported by Van et al.~\cite{van2007experimental}.
 
-Recently in TSE'17, Bennin et al.~\cite{bennin2017mahakil}  proposed a new method based on the chromosomal theory of inheritance. 
+Recently, Bennin et al.~\cite{bennin2017mahakil}  proposed a new method based on the chromosomal theory of inheritance. 
 Their MAHAKIL algorithm interprets two distinct sub-classes as parents and generates a new synthetic instance that inherits different traits from each parent and contributes to the diversity within the data distribution.
 They report that MAHAKIL usually performs as well as  {\sma}, but
 does much better than all   other class balancing techniques in terms of recall.
-Not that, that work did not  consider the impact of parameter tuning of a preprocessor so in our RQ4 we will compare {\smb} to MAHAKIL.
+Please note, that work did not  consider the impact of parameter tuning of a preprocessor so in our RQ4 we will compare {\smb} to MAHAKIL.
 
+\vspace{-0.2cm}
 \subsection{SMOTUNED = auto-tuning {\sma}}
 \label{sect:smotuned}
 
@@ -828,8 +809,25 @@ uses different control parameters for different data sets.
 Table~\ref{tb:tuned}.  DE is an
 optimizer useful for functions that may not be smooth or linear.  Vesterstrom et al.~\cite{vesterstrom2004comparative} find   DE's optimizations to be  competitive with other optimizers like 
    particle swarm optimization or genetic algorithms.
-   DEs have been used before for   parameter tuning~\cite{omran2005differential, chiha2012tuning,fu2016tuning,fu2017easy, agrawal2016wrong}) but this paper is  the first attempt to do
-   DE-based class re-balancing.
+   DEs have been used before for   parameter tuning~\cite{omran2005differential, chiha2012tuning,fu2016tuning,fu2017easy, agrawal2016wrong}) but this paper is the first attempt to do
+   DE-based class re-balancing for SE data by studying multiple learners for multiple evaluation criteria.
+
+In Figure~\ref{fig:pseudo_DE}, DE evolves a \textit{frontier} of
+candidates from an initial population which is driven by a goal (like maximizing recall) evaluated using a fitness function (shown in line 17). In the case of {\smb},
+each  candidate is a randomly selected value for {\sma}'s $k, m$ and $r$ parameters.
+ To evolve the frontier, within each generation,
+ DE compares each item to a {\em new} candidate generated
+ by combining three other frontier items (and better {\em new} candidates replace
+ older items). 
+ To compare them, the {\em better} function (line 17) calls $SMOTE$ function (from Figure~\ref{fig:pseudocode}) using the proposed {\em new} parameter settings. This pre-processed training data is then fed into a classifier to find a particular measure (like recall).
+ When our DE  terminates, it returns the best candidate ever seen in the entire run.
+ 
+Table~\ref{tb:algo2} provides important terms of {\smb} when exploring SMOTE's
+  parameter ranges,  shown  in  Table~\ref{tb:tuned}. To define
+the parameters, we found the range of used settings for {\sma} and distance functions
+in the   SE and machine learning  literature. To avoid introducing noise by overpopulating the minority samples we are not using $m$ as percentage rather than number of examples to create. Aggarawal et al.~\cite{aggarwal2001surprising}
+argue that with data being highly dimensional, $r$ should shrink to some fraction less than one
+(hence the bound of $r=0.1$ in Table~\ref{tb:tuned}). 
 
 \begin{figure}[!t]
 \small 
@@ -864,25 +862,6 @@ optimizer useful for functions that may not be smooth or linear.  Vesterstrom et
 \vspace{-0.3cm}
 \end{figure}
 
-
-In Figure~\ref{fig:pseudo_DE}, DE evolves a \textit{frontier} of
-candidates from an initial population which is driven by a goal (like maximizing recall) evaluated using a fitness function (shown in line 17). In the case of {\smb},
-each  candidate is a randomly selected value for {\sma}'s $k, m$ and $r$ parameters.
- To evolve the frontier, within each generation,
- DE compares each item to a {\em new} candidate generated
- by combining three other frontier items (and better {\em new} candidates replace
- older items). 
- To compare them, the {\em better} function (line 17) calls $SMOTE$ function (from Figure~\ref{fig:pseudocode}) using the proposed {\em new} parameter settings. This pre-processed training data is then fed into a classifier to find a particular measure (like recall).
- When our DE  terminates, it returns the best candidate ever seen in the entire run.
- 
-Table~\ref{tb:algo2} provides an overview of {\smb} when exploring SMOTE's
-  parameter ranges,  shown  in  Table~\ref{tb:tuned}. To define
-the parameters, we found the range of used settings for {\sma} and distance functions
-in the   SE and machine learning  literature.  Aggarawal et al.~\cite{aggarwal2001surprising}
-argue that with data being highly dimensional, $r$ should shrink to some fraction less than one
-(hence the bound of $r=0.1$ in Table~\ref{tb:tuned}. 
-
-
 \begin{table}[!t]
     \begin{center}
     \footnotesize
@@ -896,18 +875,19 @@ argue that with data being highly dimensional, $r$ should shrink to some fractio
         \hline
         $k$ & 5 & [1,20] & Number of neighbors \\ 
         \hline
-       $m$ & 50\% & {50, 100, 200, 400} & Number of synthetic examples to create. Expressed as a percent  of final training data. \\ 
+       $m$ & 50\% & \{50, 100, 200, 400\} & Number of synthetic examples to create. Expressed as a percent  of final training data. \\ 
         \hline
         $r$ & 2 & [0.1,5] & Power parameter for the Minkowski distance metric.\\
  
 \end{tabular}
 \end{center}
+\vspace{-0.3cm}
 \end{table}
 
 \begin{table}[!t]
 \begin{center}
 \footnotesize
-\caption{SMOTUNED parameters}
+\caption{Important Terms of SMOTUNED Algorithm}
 \label{tb:algo2}
 \begin{tabular}{|c@{~}|p{4.0cm}|}
         \hline 
@@ -930,16 +910,55 @@ argue that with data being highly dimensional, $r$ should shrink to some fractio
         \hline
 \end{tabular}
 \end{center}
+\vspace{-0.3cm}
 \end{table}
- 
-
 
 \section{Experimental Design}
 \label{sect:experiment}
  
 This experiment  reports the effects on   defect prediction
-after using MAHAKIL or {\smb} or {\sma}. 
- 
+after using MAHAKIL or {\smb} or {\sma}. Using some data $D_i \in D$, performance measure $M_i \in M$, and classifier $C_i \in C$,
+this experiment conducts the 5*5 cross-validation study, defined below.
+Our data sets  $D$ are shown in  Table~\ref{tb:dataset}. These are all open source
+JAVA OO systems described in terms of the CK metrics. 
+Since, we are comparing these results for imbalanced class, only imbalanced class data sets were selected from SEACRAFT (\url{http://tiny.cc/seacraft}). 
+
+
+Our performance measures $M$ were introduced in \tion{performance}
+which includes   AUC, precision, recall, and the  false alarm. 
+Our classifiers
+ $C$  come from a  recent study~\cite{ghotra2015revisiting}
+and were listed in  Table~\ref{tbl:learners}.
+For  implementations 
+of these learners,
+we used  the open source tool
+Scikit-Learn~\cite{pedregosa2011scikit}.
+Our  cross-validation study~\cite{refaeilzadeh2009cross} is defined as follows:
+\be
+\item We randomized the order of the data set $D_i$  five times. This reduces the probability
+that some random ordering of examples in the data will conflate our results.
+\item Each time, we divided the data $D_i$ into five bins;
+\item For each bin (the test), we trained on four bins (the rest) and then tested
+on the test bin as follows.
+\be
+\item
+The  training set is pre-filtered using either No-SMOTE (i.e., do nothing) or  {\sma} or {\smb}.  
+\item
+When using {\smb}, we further divide those four bins of training data. 3 bins are used for training the model, and 1 bin is used for validation in DE. DE is  run to  improve
+the performance measure $M_i$ seen when the classifier $C_i$ was applied to the training data.
+Important point: {\em we only used {\sma} on the training data,  leaving
+the  testing data unchanged}.
+\item
+After pre-filtering, a classifier $C_i$  learns a predictor.
+\item
+The model is applied to the test data to collect performance measure $M_i$. 
+\item 
+We print the {\em relative performance delta} between this $M_i$ and another  $M_i$
+generated from applying $C_i$ to the raw data $D_i$ (i.e., compare the learner
+without any filtering). We finally report median on the 25 repeats.
+\ee
+\ee
+
  \begin{table}[!b]
 \begin{center}
 \small
@@ -948,27 +967,25 @@ Data comes from the SEACRAFT repository: http://tiny.cc/seacraft}.
 \vspace{-0.2cm}
 \label{tb:dataset}
 
-\begin{tabular}{r@{~}|r@{~}|r@{~}|r@{~}|r@{~}|r@{~}}
+\begin{tabular}{r@{~}|r@{~}|r@{~}|r@{~}|r@{~}}
 \footnotesize
-        \begin{tabular}[c]{@{}c@{}}\textbf{Version}\end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{Dat aset} \\ \textbf{Name}\end{tabular} & \textbf{Defect \%} & \textbf{Non-Defect \%} &\begin{tabular}[c]{@{}c@{}} \textbf{No. of} \\ \textbf{classes}\end{tabular}&\begin{tabular}[c]{@{}c@{}} \textbf{lines of} \\ \textbf{code} \end{tabular}\\ \hline
-4.3 & jEdit & 2 & 98 & 492 & 202,363 \\ 
-1.0 &   Camel & 4 & 96 & 339 & 33,721 \\  
-6.0.3 &   Tomcat & 9 & 91 & 858 & 300,674\\ 
-2.0 &   Ivy & 11 & 89 & 352 & 87,769 \\  
-1.0 & Arcilook & 11.5 & 88.5 & 234 & 31,342\\ 
-1.0 & Redaktor & 15 & 85 & 176 & 59,280 \\ 
-1.7 & Apache Ant & 22 & 78 & 745 & 208,653 \\  
-1.2 &   Synapse & 33.5 & 66.5 & 256 & 53,500 \\ 
-1.6.1 &   Velocity & 34 & 66 & 229 & 57,012 \\\hline
-  \multicolumn{4}{r|}{ total:} &    3,681&	1,034,314\\ 
+        \begin{tabular}[c]{@{}c@{}}\textbf{Version}\end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{Dataset Name}\end{tabular} & \textbf{Defect \%} & \begin{tabular}[c]{@{}c@{}} \textbf{No. of classes}\end{tabular}&\begin{tabular}[c]{@{}c@{}} \textbf{lines of code} \end{tabular}\\ \hline
+4.3 & jEdit & 2  & 492 & 202,363 \\ 
+1.0 &   Camel & 4  & 339 & 33,721 \\  
+6.0.3 &   Tomcat & 9  & 858 & 300,674\\ 
+2.0 &   Ivy & 11 & 352 & 87,769 \\  
+1.0 & Arcilook & 11.5  & 234 & 31,342\\ 
+1.0 & Redaktor & 15 & 176 & 59,280 \\ 
+1.7 & Apache Ant & 22 & 745 & 208,653 \\  
+1.2 &   Synapse & 33.5 & 256 & 53,500 \\ 
+1.6.1 &   Velocity & 34 & 229 & 57,012 \\\hline
+  \multicolumn{3}{r|}{ total:} &    3,681&	1,034,314\\ 
 
 \end{tabular}
 \end{center} 
 \end{table}
 
-\newcommand\fnote[1]{\captionsetup{font=small}\caption*{#1}}
-
-\begin{figure*}[!b]
+\begin{figure*}[!t]
     \centering
     \begin{minipage}{.33\textwidth}
     \centering
@@ -992,54 +1009,6 @@ Data comes from the SEACRAFT repository: http://tiny.cc/seacraft}.
     \label{fig:para}
 \end{figure*}
 
- 
-
-Using some data $D_i \in D$, performance measure $M_i \in M$, and classifier $C_i \in C$,
-this experiment conducts the 5*5 cross-validation study, defined below.
-Our data sets  $D$ are shown in  Table~\ref{tb:dataset}. These are all open source
-JAVA OO systems described in terms of the CK metrics described. 
-Since, we are comparing these results for imbalanced class, only imbalanced class data sets are selected. 
-
-
-
-Our performance measures $M$ were introduced in \tion{performance}
-which includes   AUC, precision, recall, and the  false alarm. 
-Our classifiers
- $C$  come from a  recent ICSE paper~\cite{ghotra2015revisiting}
-and were listed in  Table~\ref{tbl:learners}.
-For  implementations 
-of these learners,
-we used  the open source tool
-Scikit-Learn~\cite{pedregosa2011scikit}.
-Our  cross-validation study~\cite{refaeilzadeh2009cross} was defined as follows:
-\be
-\item We randomized the order of the data set $D_i$ set five times. This reduces the probability
-that some random ordering of examples in the data will conflate our results.
-\item Each time, we divided the data $D_i$ into five bins;
-\item For each bin (the test), we trained on four bins (the rest) and then tested
-on the test bin as follows.
-\be
-\item
-Important point: {\em we only {\sma} the training data,  leaving
-the  testing data unchanged}.
-\item
-The  training set is pre-filtered using either No-SMOTE (i.e., do nothing) or  {\sma} or {\smb}.  
-\item
-When using {\smb}, we further divide those four bins of training data. 3 bins are used for training the model, and 1 bin is used for validation in DE. DE is  run to  improve
-the performance measure $M_i$ seen when the classifier $C_i$ was applied to the training data.
-Important note: {\em when tuning {\sma}, this rig \underline{{\em never}} uses test data}.
-\item
-After pre-filtering, a classifier $C_i$  learns a predictor.
-\item
-The model is applied to the test data to collect performance measure $M_i$. 
-\item 
-We print the {\em performance delta} between this $M_i$ and another  $M_i$
-generated from applying $C_i$ to the raw data $D_i$ (i.e., compared to learning
-without any filtering).
-\ee
-\ee
-
-
 
 \begin{figure*}[!t]
 \begin{minipage}{.5\linewidth}
@@ -1059,6 +1028,7 @@ without any filtering).
     {\em larger} values are {\em better}, but for false alarm,
     {\em smaller} values are {\em better}. Note that the corresponding percentage of minority class (in this case, defective class) is written beside each data set.}
     \label{fig:tuned}
+    \vspace{-0.3cm}
 \end{figure*}
 
 
@@ -1079,13 +1049,13 @@ when {\smb} is optimized for (e.g.,) AUC, we do not explore the effects on (e.g.
 since it is known that our performance measures are inter-connected via the Zhang's equation~\cite{zhang2007comments}. Hence, increasing (e.g.,) recall might potentially have the adverse
 effect of  driving up (e.g) the false alarm rate. 
 To avoid this problem, we also apply the following {\em cross-measure assessment rig}.
-At the conclusion of the {\em within-measure assessment rig}, we will observe  that the AUC performance measure will show the largest improvements. Using that best performer, we will re-apply steps 1,2,3 abcdef (listed above) but this time:
+At the conclusion of the {\em within-measure assessment rig}, we will observe  that the AUC performance measure will show the largest improvements. Using that best performer, we will re-apply steps 1,2,3 abcde (listed above) but this time:
 \bi
-\item In step 3c, we will tell {\smb} to optimize for AUC;
-\item In step 3e, 3f we will collect the performance delta on AUC as well as precision, recall,
+\item In step 3b, we will tell {\smb} to optimize for AUC;
+\item In step 3d, 3e we will collect the performance delta on AUC as well as precision, recall,
 and false alarm.
 \ei
-In this approach, steps 3e and 3f collect the information required   to check if succeeding according to one performance criteria results in damage to another. We would also want to make sure that our model is not over-fitted based on one evaluation measure. And since {\smb} is a time expensive task, we do not want to tune for each measure which will quadruple the time. The results of within- vs cross-measure assessment is shown in Section \ref{sect:results}.
+In this approach, steps 3d and 3e collect the information required   to check if succeeding according to one performance criteria results in damage to another. We would also want to make sure that our model is not over-fitted based on one evaluation measure. And since {\smb} is a time expensive task, we do not want to tune for each measure which will quadruple the time. The results of within- vs cross-measure assessment is shown in Section \ref{sect:results}.
 
 
 \subsection{Statistical Analysis}
@@ -1098,8 +1068,8 @@ Significance test are useful for detecting if two populations
 differ merely by random noise. 
 Also, effect sizes are useful for checking that two populations differ by more than just a trivial amount.
 
-For the significance test,  we use the 
-     Scott-Knott procedure  recommended at TSE'13~\cite{mittas2013ranking} and ICSE'15~\cite{ghotra2015revisiting}. This
+For the significance test,  we used the 
+     Scott-Knott procedure~\cite{mittas2013ranking,ghotra2015revisiting}. This
      technique recursively bi-clusters a sorted
     set of numbers. If any two clusters are statistically indistinguishable, Scott-Knott
     reports them both as one group.
@@ -1112,19 +1082,6 @@ Scott-Knott then applies some statistical hypothesis test $H$ to check if $m$ an
     \cite{arcuri2011practical})  and non-parametric bootstrap sampling \cite{efron94}, i.e., our Scott-Knott divided the data if {\em both}
     bootstrapping and an effect size test agreed that the division was statistically significant (99\% confidence) and not a ``small'' effect ($A12 \ge 0.6$).
    
-
-\begin{figure*}[!t]
-\begin{minipage}{.49\linewidth}
-\centering
-        \includegraphics[width=\linewidth ]{./fig/AUC_recall.png}
-            \end{minipage}%
-\begin{minipage}{.49\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{./fig/prec_pf.png}
-    \end{minipage}%
-    \caption{Scott Knott analysis of No-SMOTE, SMOTE and SMOTUNED. The column headers are denoted as No for No-SMOTE, S1 for SMOTE and S2 for SMOTUNED. $(\ast)$ Mark represents the best learner combined with its techniques.}
-    \label{fig:stats}
-\end{figure*}
 
 \section{Results}
 \label{sect:results}
@@ -1142,25 +1099,31 @@ Scott-Knott then applies some statistical hypothesis test $H$ to check if $m$ an
  
  In  Figure~\ref{fig:para}, the {\em median} is the 50th percentile
  value and {\em IQR} is the (75-25)th percentile
- (IQR is a non-parametric analogue of variance).
- As can be seen in Figure~\ref{fig:para}, most of the learned parameter are far from the default values:
- \bi
- \item 
- Median $k$ value was never less than 11,
- \item
- Median $m$ value differs according to each data set and quite far from the actual,
- \item
- The $r$ value used in the distance function was never 2. Rather, it was usually 3.
- \ei
+ (variance).
+ As can be seen in Figure~\ref{fig:para}, most of the learned parameters are far from the default values: 1) Median $k$ is never less than 11; 2) Median $m$ differs according to each data set and quite far from the actual; 3) The $r$ used in the distance function was never 2, rather, it was usually 3.
  Hence,  our answer to {\bf RQ1} is ``no'': the use of off-the-shelf {\sma} should be deprecated. 
  
- Before moving on to {\bf RQ2}, we note that many of the settings in Figure~\ref{fig:para} are very similar; for example, median values of $k=13$ and $r=3$ seems to be a common
-result.  Nevertheless, we do {\em not} recommend replacing
-the defaults on regular {\sma} with the median values
-of Figure~\ref{fig:para}. In that figure, many of the  IQR bars are
+ We note that many of the settings in Figure~\ref{fig:para} are very similar; for e.g., median values of $k=13$ and $r=3$ seems to be a common
+result irrespective of data imbalance percentage among the datasets.  Nevertheless, we do {\em not} recommend replacing
+the defaults of {\sma} with the findings
+of Figure~\ref{fig:para}. Also, IQR bars are
 very large. Clearly, {\smb}'s decisions vary dramatically
-depending on what data  is being processed.  Accordingly,
+depending on what data  is being processed.  Hence,
 we strongly recommend that {\smb} be applied to each new data set.
+
+\begin{figure*}[!t]
+\begin{minipage}{.49\linewidth}
+\centering
+        \includegraphics[width=\linewidth ]{./fig/AUC_recall.png}
+            \end{minipage}%
+\begin{minipage}{.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{./fig/prec_pf.png}
+    \end{minipage}%
+    \caption{Scott Knott analysis of No-SMOTE, SMOTE and SMOTUNED. The column headers are denoted as No for No-SMOTE, S1 for SMOTE and S2 for SMOTUNED. $(\ast)$ Mark represents the best learner combined with its techniques.}
+    \label{fig:stats}
+\vspace{-0.4cm}
+\end{figure*}
 
 \noindent
 {\bf \\RQ2: Is there any benefit in tuning the default parameters of SMOTE for each new data set?}
@@ -1170,11 +1133,11 @@ Please recall that when this rig applies {\smb}, it optimizes for performance me
 after which it uses the {\em same} performance measure
 $M_i$ when evaluating the test data. In Figure~\ref{fig:tuned}, each subfigure shows that DE is optimized for each $M\_i$ and results are reported against the same $M\_i$.
 From the figure~\ref{fig:tuned}, it is observed that
-{\smb} achieves large AUC (about 60\%) and recall (about 20\%) improvements
+{\smb} achieves large AUC (about 60\%) and recall (about 20\%) improvements relatively
 without
  damaging precision and  with only minimal changes
- to false alarm. A special note should be taken of the AUC improvements, that these are the largest improvements
- we have yet seen, for any prior treatment of defect prediction data.
+ to false alarm. Another key observation here that can be made is that improvements in AUC with {\smb} is constant whether imbalance is of 34\% or 2\%. Another note should be taken of the AUC improvements, that these are the largest improvements
+ we have yet seen, for any prior treatment of defect prediction data. Also, for the raw AUC values, please see \url{http://tiny.cc/raw_auc}.
 
 Figure~\ref{fig:stats} offers a statistical analysis
 of different results achieved
@@ -1183,9 +1146,9 @@ For any learner, there are three such treatments and {\em darker} the cell, {\em
 In that figure, cells with the same color are
 either not statistically significantly different or
 are different only via a {\em small effect}
-(as judged by the statistical methods described above).
+(as judged by the statistical methods described in Section~\ref{sec:scott-knott}).
 
-As to what combination of pre-filter+learner works better for any data set, that is marked by a ``*''. Since we have three pre-filtering methods and six learners, there is one   ``*'' per 18 cells in Figure~\ref{fig:stats}.
+As to what combination of pre-filter+learner works better for any data set, that is marked by a `*'. Since we have three pre-filtering methods and six learners providing us with in-total 18 treatments, and `*' represents the best learner picked with highest median value.
 
 In the  AUC and recall results,  the best ``*'' cell always appears in the S2={\smb} column, i.e.,  
  {\smb} is always
@@ -1193,10 +1156,10 @@ used by the best combination of pre-filter+learner .
 
 As to precision  results,  at first glance, the  results in Figure~\ref{fig:stats} look bad for {\smb} since, less than half the times, 
 the best ``*''  happens  in S2={\smb} column.
- But recall from Figure~\ref{fig:tuned} that the absolute size of the precision deltas is very small.  Hence, even though {\smb} ``losses'' in this statistical analysis, the pragmatic impact of that result  is  negligible.
+ But recall from Figure~\ref{fig:tuned} that the absolute size of the precision deltas is very small.  Hence, even though {\smb} ``losses'' in this statistical analysis, the pragmatic impact of that result  is  negligible. But if we can get feedback from domain/expert, we can change between {\sma} and {\smb} dynamically based on the measures and data miners.
  
 As to the false alarm results from Figure~\ref{fig:stats}, as discussed above in \tion{performance}, the cost of increased recall is to also increase
-the false alarm rate. For example, the greatest \textit{increase} in the recall was 0.58 seen in the {\em jEdit} results. This increase comes at a cost
+the false alarm rate. For e.g., the greatest \textit{increase} in the recall was 0.58 seen in the {\em jEdit} results. This increase comes at a cost
 of \textit{increasing} the false alarm rate by 0.20. Apart from this one large outlier, the overall pattern is that the recall improvements range from +0.18 to +0.42 (median to max)
 and these come at the cost of much smaller false alarm \textit{increase} of 0.07 to 0.16 (median to max). 
  
@@ -1239,23 +1202,12 @@ that, as predicted by Ghotra et al., RF earns more ``stars'' than any other lear
 RF was only ``best'' 
 in   11/36 of those results, i.e., even our ``best'' learner (RF) fails over half the time.
 
-On the other hand, it is significant to note that
+It is significant to note that
   {\smb} was  consistently  used  by  whatever  learner  was  found  to  be ``best'' (in recall and AUC). 
 Hence, we conclude   prior ranking study results (that only assessed different learners) have missed a much more general effect; i.e.  
-it an be more useful to reflect on data pre-processors that algorithm selection.
+it can be more useful to reflect on data pre-processors than algorithm selection.
 To say that another way, at least for defect prediction,
 ``better data'' might be better than ``better data miners''.
-
-% As a last note about the {\bf RQ2} results, we note that they offer a new insight into
-% the true value of methods of {\sma}.
-% When we drew the plots of  Figure~\ref{fig:tuned}, we deliberately ordered
-% the x-axis data sets according to their imbalance, 1) The data sets with the {\em highest} ratio of defects (Velocity and Synapse) are shown on the left-hand side of each plot in Figure~\ref{fig:tuned}, and 2) While the data sets with the {\em lowest} ratio of defects (jEdit and Camel) are shown on the right-hand side.
-
-% Given that ordering of the x-axis, repairing class imbalance should improve the performance as we move from left to right hand side of the  Figure~\ref{fig:tuned} plots.
-% But this is not the case (and effect size tests confirm that visual impression).
-% Hence, we conjecture that the   real value of {\sma} (and {\smb}) is not fixing the class imbalance, rather, SMOTE's
-% value might be in {\em amplifying} the data's signal in sparse regions of the data (by filling
-% in those regions with synthetic examples extrapolated from the local region). 
 
 \noindent
 {\bf \\RQ3: In  terms  of  runtimes,  is  the  cost  of  running  SMOTUNED worth the performance improvement?}
@@ -1272,13 +1224,15 @@ Figure~\ref{fig:pseudocode},
 
  \begin{figure}[!htbp]
   \centering
-\includegraphics[width=3.0in,keepaspectratio]{./fig/runtimes.png}
+\includegraphics[width=3.3in,keepaspectratio]{./fig/runtimes.png}
+\vspace{-0.3cm}
   \caption{Data sets vs Runtimes. Note that the numbers
   shown here are the mean times seen across 25 repeats of a 5*5 cross-validation study.
   %running six learners through a 5*5 cross-validation. Hence, for mean
   %runtimes for one learner, {\em divide} these numbers by 6*5*5=150.
   }
   \label{runtime}
+  \vspace{-0.4cm}
 \end{figure}
 
 \begin{figure*}[!t]
@@ -1296,36 +1250,39 @@ Figure~\ref{fig:pseudocode},
     optimize for performance measure $M_i$, then test for
     performance measure $M_i$). Same format as  Figure~\ref{fig:tuned}.  }
     \label{fig:s2_mahakil}
+    \vspace{-0.3cm}
 \end{figure*}
 
 
 As expected,  {\smb} is an order of magnitude slower than {\sma} since
 it has to run {\sma} many times to assess different parameter settings.
 That said, those runtimes are not excessively slow.
-{\smb} usual terminates in under two minutes and never more than half an hour.
+{\smb} usually terminates in under two minutes and never more than half an hour.
 % Figure~\ref{runtime} by 5*5*6=150, we see that even for our slowest data sets (tomcat), one run
 % of SMOTUNED terminated in 34284/150=228 seconds (on an average), which is less than four minutes.
 Hence, in  our opinion, we answer {\bf RQ3} as ``yes'' since the   performance increment
 seen in Figure~\ref{fig:tuned} is more than to compensate for the extra CPU required for {\smb}.
 
 \noindent
-{\bf \\RQ4: How does SMOTUNED performed against more recent class imbalance technique?}
+{\bf \\RQ4: How does SMOTUNED perform against more recent class imbalance technique?}
 
 All the above work is based on tuning the original 2002 {\sma} paper~\cite{chawla2002smote}. While that
 version of {\sma} is widely used in the SE literature, 
 it is prudent to compare {\smb} with more recent work.
 Our reading
-of the literature is that the MAHAKIL algorithm  of Bennin et al. in TSE 2017~\cite{bennin2017mahakil} represents the most recent work in  SE on handling  
+of the literature is that the MAHAKIL algorithm  of Bennin et al.~\cite{bennin2017mahakil} represents the most recent work in  SE on handling  
 class imbalance.  
 At the time of writing of this paper (early August 2017), there was no reproduction package available for MAHAKIL so we wrote our own version
-based on the description in that paper %(Reproduction Package blinded for review). 
-(Available to download from https://github.com/ai-se/MAHAKIL\_imbalance).
+based on the description in that paper (Available on \url{http://tiny.cc/mahakil}). We verified our implementation on their datasets, and achieved close to their values $\pm$ 0.1. The difference could be due to different random seed. 
+%(Reproduction Package blinded for review). 
+%(Available to download from https://github.com/ai-se/MAHAKIL\_imbalance).
 
 Figure~\ref{fig:s2_mahakil} compares   results from MAHAKIL with those from {\smb}. These results
 were generated using the same experimental methods as used for   Figure~\ref{fig:tuned} (those methods were described in  Section~\ref{sect:wcm}).
 The following table repeats   the statistical analysis of Figure \ref{fig:stats} to report how often
   {\sma}, {\smb}, or MAHAKIL achieves best results across nine data sets.   Note that, in this following table, {\em larger} values are {\em better}:
-
+  
+\vspace{-0.4 cm}
 {\small\[\begin{array}{*{20}{c|c|c|c|c}}
   & \multicolumn{4}{c}{\text{number of wins}}\\ 
     {\text{Treatments}} & {\text{AUC}} & {\text{Recall}} & {\text{Precision}}& {\text{False Alarm}}\\
@@ -1334,107 +1291,22 @@ The following table repeats   the statistical analysis of Figure \ref{fig:stats}
    {\text{SMOTE}}& 0/9 & 1/9 & 0/9 & 0/9 \\
    {\text{SMOTUNED}}& \textbf{8/9} & \textbf{8/9} & 3/9  & 0/9  \\
  \end{array} \]}
+\vspace{-0.2 cm}
 
-These statistical tests tell us that the differences seen in Figure~\ref{fig:s2_mahakil}  are large enough to be significant.  
-\bi
-\item
-  Looking at Figure~\ref{fig:s2_mahakil}, the differences in precision
+These statistical tests tell us that the differences seen in Figure~\ref{fig:s2_mahakil}  are large enough to be significant. Looking at Figure~\ref{fig:s2_mahakil}, there are 9 datasets on x-axis, and the differences in precision
   are   so small
-in most data sets (7/9) that the pragmatic impact of those differences   is negligible.
-\item
-As to AUC and recall,  we see that 
-{\smb} generated   larger and better results than MAHAKIL (especially for recall).
-\item
-{\smb} generates slightly larger false alarms but, in 7/9 data sets,
-the increase in the false alarm rate is usually very small.
-\ei
+in 7 out of those 9 data sets that the pragmatic impact of those differences is small. As to AUC and recall,  we see that 
+{\smb} generated   larger and better results than MAHAKIL (especially for recall). {\smb} generates slightly larger false alarms but, in 7/9 data sets,
+the increase in the false alarm rate is very small.
+
 According to its authors~\cite{bennin2017mahakil},
 MAHAKIL was developed to reduce the false alarm rates on SMOTE and on that criteria it succeeds
  (as seen in  Figure~\ref{fig:s2_mahakil}, since {\smb} does lead to slightly higher false
-alarm rates).   But, as discussed above in \ref{sect:performance}, the downside on minimizing false alarms is also minimizing our ability to 
-find defects and, measured in terms of AUC and recall, {\smb} does best.
+alarm rates).   But, as discussed above in section \ref{sect:performance}, the downside on minimizing false alarms is also minimizing our ability to 
+find defects which is measured in terms of AUC and recall, {\smb} does best.
   Hence,  if this paper was a comparative assessment of  {\smb} vs MAHAKIL, we would conclude that
   by recommending {\smb}.
-
-However, the goal of this paper is to defend the claim that ``better data'' could be better than ``better
-data miners'', i.e., data pre-processing is more effective  than switching to another data miner.
-In this regard,   there is something insightful to conclude if we combine the results of {\em both}
-MAHAKIL and {\smb}.  
-In the MAHAKIL experiments, the researchers spent some time parameter
-tuning their learners. That is,  Figure~\ref{fig:s2_mahakil} is really a comparison
-of two treatments: tuned data miners+adjust data against just using {\smb} to adjust the data.
-Note that {\smb} still achieves better results  even though the MAHAKIL treatment {\em adjusted both
-data and data miners}. Since {\smb} performed so well without tuning the data miners,
-we can conclude from the conjunction of these experiments that  ``better data'' is better than using   ``better
-data miners''.
-
-Of course, there needs to be further studies done in other SE applications to make the above claim. There is also one more treatment {\em not} discussed in the paper: tuning {\em both}
-the data pre-processor {\em and} the data miners. This is a very, very large search space
-so while we have experiments running to explore this task, at this time we have not definitive
-conclusions to report.
-
-% \begin{figure*}[!t]
-% \begin{minipage}{.49\linewidth}
-% \centering
-%         \includegraphics[width=0.9\linewidth,height=4.5cm ]{./fig/auc_maha.png}
-%             \end{minipage}%
-% \begin{minipage}{.49\linewidth}
-%         \centering
-%         \includegraphics[width=0.9\linewidth,height=4.5cm]{./fig/prec_maha.png}
-%     \end{minipage}%
-%     \caption{Scott Knott analysis of MAHAKIL, SMOTE and SMOTUNED. The column headers are denoted as MA for MAHAKIL, S1 for SMOTE and S2 for SMOTUNED. $(\ast)$ Mark represents the best learner combined with its techniques}
-%     \label{fig:s2_mahakil}
-% \end{figure*}
-
-
-
-% {\small \begin{center}
-% AUC=8\%, \mathit{Recall}=+33; False Alarms= +18, precision=-6\%\%
-% \end{center}
-% }
-
-% From the Scott-knott analysis as shown in Figure~\ref{fig:stats}, we selected out the best treatment in which a learner performed the best (represented with ``*'' in Figure~\ref{fig:stats}). We observed that:
-
-% {\small\[\begin{array}{*{20}{c|c|c|c|c}}
-%  & \multicolumn{4}{c}{\text{number of wins}}\\ 
-%   {\text{Treatments}} & {\text{AUC}} & {\text{Recall}} & {\text{Precision}}& {\text{False Alarm}}\\
-%   \hline
-%   {\text{No-SMOTE}} & 0/9 & 0/9 & \textbf{5/9} & \textbf{9/9}  \\
-%   {\text{SMOTE}}& 0/9 & 0/9 & 0/9 & 0/9 \\
-%   {\text{SMOTUNED}}& \textbf{9/9} & \textbf{9/9} & 4/9  & 0/9 
-% \end{array} \]}
-
-% \noindent
-% Similarly, we performed a Scott-knott analysis as described in Section \ref{sec:scott-knott} to compare MAHAKIL against {\sma} and {\smb}.  We found that:
-% \[\begin{array}{*{20}{|c|c|c|c|c|}}
-% \hline
-%   {\text{Treatments}} & {\text{AUC}} & {\text{Recall}} & {\text{Precision}}& {\text{False Alarm}}\\
-%   \hline
-%   {\text{MAHAKIL}} & 1/9 & 0/9 & \textbf{6/9} & \textbf{9/9}  \\
-%   {\text{SMOTE}}& 0/9 & 1/9 & 0/9 & 0/9 \\
-%   {\text{SMOTUNED}}& \textbf{8/9} & \textbf{8/9} & 3/9  & 0/9  \\
-% \hline
-% \end{array} \]
-
-
-% As mentioned above in Section \ref{sect:wcm}, all recall increases naturally incur the cost of larger false alarms.
-
-
-% \textcolor{red}{The most recent technique introduced by Benning et al~\cite{bennin2017mahakil} is MAHAKIL which is based on chromosomal theory of inheritance. A reproduction package was not available, so, coded their methods from scratch (our replication package for that code is now online (Blinded for Review).}
-% %\footnote{Available to download from https://github.com/ai-se/MAHAKIL_imbalance}
-% \textcolor{red}{Their study reported that {\sma} performed better than all other previous imbalance techniques (techniques reported by Bennin et al.) for recall and false alarm and produced similar results against MAHAKIL for recall measure. That said, they advocate MAHAKIL sicne it was observed
-% to have better  (i.e. lower) false alarm rates.}
-
-% % \textcolor{red}{We find this to be highly unlikely as we know from Zhang's equation~\cite{zhang2007comments} that if recall is increased then false alarm would also increase. The other important factor, find to be missing was an automated method of tuning the parameters of an imbalance technique and thus we introduced {\smb} and compared the 2 methods.}
-
-% \textcolor{red}{To show the increase in recall would also result in false alarm, we compared the MAHAKIL results against the {\sma}. As shown in figure (available from http://ibb.co/e02bmk), we observed that we are seeing about 30\% improvement on {\sma} over MAHAKIL. But this also resulted in the increment of false alarm, which is not desired. But we see MAHAKIL wins over {\sma} in terms of AUC in most cases.}
-
-% \textcolor{red}{For the comparative analysis of {\smb} and MAHAKIL, please look at the results from Figure~\ref{fig:s2_mahakil}.
-% %which is available from http://ibb.co/fGZBK5. 
-% We observed that we are getting consistent improvement on {\smb} of about 30\% than MAHAKIL, and {\smb} also resulted in improved performance in terms of AUC.}
-
-% For more details on the differences between (a)~{\sma} vs MAHAKIL, see http://ibb.co/e02bmk (this chart is not included here, for reasons of space), for {\smb} vs MAHAKIL, please see Figure~\ref{fig:s2_mahakil}
-
+  
 \begin{figure*}[!t]
 \begin{minipage}{.5\linewidth}
 \centering
@@ -1452,7 +1324,24 @@ conclusions to report.
     performance measure $M_i$).  Same format as
     Figure~\ref{fig:tuned}.}
     \label{fig:auc22}
+    \vspace{-0.3cm}
 \end{figure*}
+
+However, the goal of this paper is to defend the claim that ``better data'' could be better than ``better
+data miners'', i.e., data pre-processing is more effective  than switching to another data miner.
+In this regard,   there is something insightful to conclude if we combine the results of {\em both}
+MAHAKIL and {\smb}.  
+In the MAHAKIL experiments, the researchers spent some time on tuning the learner's parameters. That is,  Figure~\ref{fig:s2_mahakil} is really a comparison
+of two treatments: tuned data miners+adjust data against just using {\smb} to adjust the data.
+Note that {\smb} still achieves better results  even though the MAHAKIL treatment {\em adjusted both
+data and data miners}. Since {\smb} performed so well without tuning the data miners,
+we can conclude from the conjunction of these experiments that  ``better data'' is better than using   ``better
+data miners''.
+
+Of course, there needs to be further studies done in other SE applications to make the above claim. There is also one more treatment {\em not} discussed in the paper: tuning {\em both}
+the data pre-processor {\em and} the data miners. This is a very, very large search space
+so while we have experiments running to explore this task, at this time we have not definitive
+conclusions to report.
 
 \section{Threats to Validity}
 \label{sect:validity}
@@ -1463,7 +1352,7 @@ results. Therefore, any conclusions made from this work must consider the follow
 \textbf{\textit{Order bias}}: With each data set how data samples are distributed in training and testing set is completely random. Though there could be times when all good samples are binned into training and testing set. To mitigate this order bias, we run
 the experiment 25 times by randomly changing the order of the data samples each time.
 
-\textbf{\textit{Sampling bias}} threatens any classification experiment, i.e., what matters there may not be true here. For example, the data sets used here comes from the SEACRAFT repository and were supplied by one individual. These data sets have used in various case studies by various researchers~\cite{he2012investigation,peters2013better,peters2013balancing,turhan2013empirical}, i.e., our results are not more biased than many other studies in this arena.
+\textbf{\textit{Sampling bias}} threatens any classification experiment, i.e., what matters there may not be true here. For e.g., the data sets used here comes from the SEACRAFT repository and were supplied by one individual. These data sets have used in various case studies by various researchers~\cite{he2012investigation,peters2013better,peters2013balancing,turhan2013empirical}, i.e., our results are not more biased than many other studies in this arena.
 That said, our nine open-source data sets   are mostly from Apache. Hence
 it is an open issue if our results hold for
  proprietary projects and open source projects from other sources.
@@ -1498,7 +1387,7 @@ than Figure~\ref{fig:auc22}. Hence, we recommend cross-measure assessment only i
 Prior work on ranking studies tried to improve software analytics by selecting better learners.
 Our results show that there may be {\em more} benefits in exploring data pre-processors like {\smb} because we found  that no  learner  was  usually  
 ``best''  
-across all  data  sets  and  all  evaluation  criteria. On the other hand, across the same data sets,
+across all  data  sets  and  all  evaluation  criteria. On one hand, across the same data sets,
 {\smb} was  consistently  used  by  whatever  learner  was  found  to  be ``best'' in the  AUC/recall results. On the other hand, for the precision and false alarm results, there was little evidence against the use of {\smb}. That is, creating better training data  (using techniques like {\smb}) may be  more important than  the  subsequent  choice  of a classifier. To say that another way, at least for defect prediction, ``better data'' is  better than ``better
 data miners''.
 
@@ -1527,7 +1416,8 @@ order to find the best parameters for that data set. {\smb} is one of the exampl
 
 \bibliographystyle{ACM-Reference-Format}
 %\medskip
- \input{main.bbl}
+%\bibliography{main}
+\input{main.bbl}
 
 
 \end{document}

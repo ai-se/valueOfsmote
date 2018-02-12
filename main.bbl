@@ -191,13 +191,24 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Fu and Menzies}{Fu and Menzies}{2017}]%
+\bibitem[\protect\citeauthoryear{Fu and Menzies}{Fu and Menzies}{2017a}]%
         {fu2017easy}
 \bibfield{author}{\bibinfo{person}{Wei Fu} {and} \bibinfo{person}{Tim
-  Menzies}.} \bibinfo{year}{2017}\natexlab{}.
+  Menzies}.} \bibinfo{year}{2017}\natexlab{a}.
 \newblock \showarticletitle{Easy over Hard: A Case Study on Deep Learning}.
 \newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1703.00133\/}}
   (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fu and Menzies}{Fu and Menzies}{2017b}]%
+        {fu2017revisiting}
+\bibfield{author}{\bibinfo{person}{Wei Fu} {and} \bibinfo{person}{Tim
+  Menzies}.} \bibinfo{year}{2017}\natexlab{b}.
+\newblock \showarticletitle{Revisiting unsupervised learning for defect
+  prediction}. In \bibinfo{booktitle}{{\em Proceedings of the 2017 11th Joint
+  Meeting on Foundations of Software Engineering}}. ACM,
+  \bibinfo{pages}{72--83}.
 \newblock
 
 
@@ -247,6 +258,19 @@
   classification method for software defect prediction with static code
   metrics}. In \bibinfo{booktitle}{{\em International Conference on Engineering
   Applications of Neural Networks}}. Springer, \bibinfo{pages}{223--234}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Guo, Zimmermann, Nagappan, and Murphy}{Guo
+  et~al\mbox{.}}{2011}]%
+        {guo2011not}
+\bibfield{author}{\bibinfo{person}{Philip~J Guo}, \bibinfo{person}{Thomas
+  Zimmermann}, \bibinfo{person}{Nachiappan Nagappan}, {and}
+  \bibinfo{person}{Brendan Murphy}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Not my bug! and other reasons for software bug
+  report reassignments}. In \bibinfo{booktitle}{{\em Proceedings of the ACM
+  2011 conference on Computer supported cooperative work}}. ACM,
+  \bibinfo{pages}{395--404}.
 \newblock
 
 
